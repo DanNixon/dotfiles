@@ -1,0 +1,3 @@
+# Nix configs
+
+Very much a work in progress...
