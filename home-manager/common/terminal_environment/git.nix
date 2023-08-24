@@ -1,0 +1,109 @@
+{ pkgs, ... }: {
+  home.packages = with pkgs; [
+    gfold
+  ];
+
+  programs.git = {
+    enable = true;
+
+    userName = "Dan Nixon";
+    userEmail = "dan@dan-nixon.com";
+
+    aliases = {
+      ap        = "add --patch";
+      s         = "status --short --branch";
+      co        = "checkout";
+      c         = "commit";
+      ca        = "commit --amend";
+      cf        = "commit --fixup";
+      d         = "diff";
+      ds        = "diff --staged";
+      br        = "branch";
+      brs       = "branch --list";
+      bra       = "branch --all";
+      brm       = "branch --merged";
+      l         = "log --pretty=concise -n 25";
+      ll        = "log --pretty=concise";
+      la        = "log --pretty=full --graph --show-signature";
+      lfp       = "log --pretty=concise --first-parent";
+      lg        = "log --pretty=concise --graph";
+      lb        = "log --pretty=cleangraph --graph --branches --simplify-by-decoration";
+      rl        = "log --pretty=reflog --walk-reflogs";
+      m         = "merge";
+      rb        = "rebase";
+      rbi       = "rebase --interactive";
+      rbc       = "rebase --continue";
+      p         = "push";
+      pu        = "push --set-upstream";
+      pfl       = "push --force-with-lease";
+      f         = "fetch";
+      unbugger  = "reset --hard HEAD";
+      cla       = "clean -ixd";
+      test-pr   = "!f() { git fetch $1 pull/$2/merge:pr/$2-merged && git checkout pr/$2-merged; }; f";
+      bundleall = "!f() { git bundle create $1 --all; }; f";
+    };
+
+    extraConfig = {
+      init = {
+        defaultBranch = "main";
+      };
+      push = {
+        default = "current";
+      };
+      pull = {
+        ff = "only";
+      };
+      fetch = {
+        prune = true;
+      };
+      rebase = {
+        autoSquash = true;
+      };
+      merge = {
+        conflictStyle = "diff3";
+        tool = "meld";
+      };
+      mergetool = {
+        prompt = false;
+      };
+      diff = {
+        colorMoved = "plain";
+        tool = "meld";
+      };
+      "diff \"bin\"" = {
+        textconv = "hexdump -v -C";
+      };
+      "diff \"zip\"" = {
+        textconv = "unzip -c -a";
+      };
+      difftool = {
+        prompt = false;
+      };
+      pretty = {
+        concise    = "%C(yellow)%h %C(reset)%ad %C(blue)%an %C(reset)%s%C(green)%d";
+        cleangraph = "%C(yellow)%h %C(reset)%ad %C(reset)%s%C(green)%d";
+        reflog     = "%C(yellow)%h %C(reset)%ad %C(blue)%an %C(reset)%gs%C(green)%d";
+      };
+    };
+
+    attributes = [
+      # FreeCad project file
+      "*.FCStd diff=zip"
+    ];
+
+    ignores = [
+      "*~"
+      # Direnv
+      ".env"
+      ".direnv"
+      ".envrc"
+      # Tomb
+      ".host"
+      ".last"
+      ".tty"
+      ".uid"
+    ];
+  };
+
+  programs.lazygit.enable = true;
+}

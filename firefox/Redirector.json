@@ -1,0 +1,23 @@
+{
+    "createdBy": "Redirector v3.5.3",
+    "createdAt": "2023-07-12T14:16:34.779Z",
+    "redirects": [
+        {
+            "description": "Redirect YouTube to Piped",
+            "exampleUrl": "https://www.youtube.com/watch?v=qzq0RbkHV78",
+            "exampleResult": "https://piped.video/watch?v=qzq0RbkHV78",
+            "error": null,
+            "includePattern": "https://*.youtube.com/*",
+            "excludePattern": "",
+            "patternDesc": "",
+            "redirectUrl": "https://piped.video/$2",
+            "patternType": "W",
+            "processMatches": "noProcessing",
+            "disabled": false,
+            "grouped": false,
+            "appliesTo": [
+                "main_frame"
+            ]
+        }
+    ]
+}
