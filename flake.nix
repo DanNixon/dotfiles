@@ -53,10 +53,6 @@
         specialArgs = { inherit inputs; };
         modules = [ ./nixos/maya ];
       };
-      mystia = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
-        modules = [ ./nixos/mystia ];
-      };
     };
 
     homeConfigurations = {
@@ -74,11 +70,6 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
         modules = [ ./home-manager/maya ];
-      };
-      mystia = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs outputs; };
-        modules = [ ./home-manager/mystia ];
       };
     };
   };
