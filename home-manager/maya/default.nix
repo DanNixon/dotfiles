@@ -10,6 +10,7 @@
     ../common/borgmatic.nix
     ../common/media.nix
     ../common/development.nix
+    ../common/email
     ../common/desktop_environment
   ];
 

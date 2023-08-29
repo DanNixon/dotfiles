@@ -1,4 +1,7 @@
 [formatter.nix]
 command = "alejandra"
 includes = [ "*.nix" ]
-excludes = [ "*/hardware-configuration.nix" ]
+excludes = [
+  "*/hardware-configuration.nix",
+  "home-manager/common/email/secrets.nix",
+]

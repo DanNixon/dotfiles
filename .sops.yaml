@@ -7,6 +7,11 @@ keys:
     - &maya age1w908m223s5xg3xmsm3zxwxcudryc4hcp8xk5kveq09kgupjtpqhqq4nqsd
 
 creation_rules:
+  - path_regex: home-manager/common/email/secrets.nix
+    key_groups:
+      - pgp:
+          - *dan
+
   - path_regex: nixos/common/dan/secrets/secrets.yaml
     key_groups:
       - pgp:

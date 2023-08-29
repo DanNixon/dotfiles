@@ -8,6 +8,7 @@
   imports = [
     ../common/terminal_environment
     ../common/borgmatic.nix
+    ../common/email
   ];
 
   programs.borgmatic.backups."main" = {
