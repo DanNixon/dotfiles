@@ -1,12 +1,7 @@
 { pkgs, ... }: {
   home.packages = with pkgs; [
-    buildah
-
     kubectl
     kubectx
-    kubernetes-helm
-
-    terraform
   ];
 
   programs.gh = {
