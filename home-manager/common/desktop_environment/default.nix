@@ -27,8 +27,10 @@
       defaultApplications = let
         multimedia = [ "mpv.desktop" "org.videolan.VLC.desktop" ];
       in {
+        "image/gif" = multimedia;
         "video/3gpp" = multimedia;
         "video/mp4" = multimedia;
+        "video/webm" = multimedia;
         "video/x-matroska" = multimedia;
         "video/x-msvideo" = multimedia;
       };
