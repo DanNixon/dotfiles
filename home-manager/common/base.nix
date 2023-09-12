@@ -1,4 +1,4 @@
-{ inputs, outputs, config, pkgs, ... }: {
+{ lib, inputs, outputs, config, pkgs, ... }: {
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -10,14 +10,14 @@
     ];
   };
 
-  home = {
-    username = "dan";
-    homeDirectory = "/home/dan";
-  };
-
   programs.home-manager.enable = true;
 
   systemd.user.startServices = "sd-switch";
 
-  home.stateVersion = "23.05";
+  home = {
+    username = lib.mkDefault "dan";
+    homeDirectory = lib.mkDefault "/home/dan";
+
+    stateVersion = lib.mkDefault "23.05";
+  };
 }
