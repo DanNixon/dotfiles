@@ -62,6 +62,11 @@
         extraSpecialArgs = { inherit inputs outputs; };
         modules = [ ./home-manager/akane ];
       };
+      generic = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+        modules = [ ./home-manager/generic ];
+      };
       kawashiro = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
