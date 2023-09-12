@@ -50,6 +50,4 @@
   home.packages = with pkgs; [
     scrcpy
   ];
-
-  home.stateVersion = "23.05";
 }

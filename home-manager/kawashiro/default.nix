@@ -37,6 +37,4 @@
   home.packages = with pkgs; [
     lightburn
   ];
-
-  home.stateVersion = "23.05";
 }
