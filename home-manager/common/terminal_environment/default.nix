@@ -17,17 +17,22 @@
   ];
 
   home.packages = with pkgs; [
+    bmon
     distrobox
+    dogdns
+    dua
     dyff
     file
     ffsend
     hexdump
+    htop
     ipcalc
     jq
     neofetch
     nix-diff
     nix-tree
     pinentry_curses
+    progress
     qrencode
     rclone
     rsync
@@ -38,6 +43,7 @@
     sshuttle
     termdown
     tomb
+    tree
     unzip
     wget
     zbar
