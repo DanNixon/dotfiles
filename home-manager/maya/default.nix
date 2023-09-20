@@ -22,11 +22,6 @@
   };
 
   wayland.windowManager.sway.config.output = {
-    eDP-1 = {
-      enable = "";
-      bg = "~/.local/share/wallpaper.png fill";
-      scale = "2.0";
-    };
     DP-1 = {
       enable = "";
       bg = "~/.local/share/wallpaper.png fill";
@@ -49,9 +44,6 @@
       block = "sound";
       driver = "pulseaudio";
       device_kind = "source";
-    }
-    {
-      block = "battery";
     }
     {
       block = "time";

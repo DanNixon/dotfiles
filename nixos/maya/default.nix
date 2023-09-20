@@ -1,7 +1,6 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
     ./hardware-configuration.nix
-    inputs.nixos-hardware.nixosModules.dell-xps-15-9560-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     ../common/common.nix
     ../common/dan.nix
