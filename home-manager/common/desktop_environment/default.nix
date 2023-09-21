@@ -10,6 +10,8 @@
   ];
 
   home.packages = with pkgs; [
+    ddcutil
+    ddcui
     de-screenshot
     headsetcontrol
     wdisplays

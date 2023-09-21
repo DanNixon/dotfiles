@@ -139,14 +139,6 @@
           "g" = "exec --no-startup-id ddcutil-modify-vcp 10 set 100";
 
           "escape" = "mode default";
-          "${modifier}+e" = "mode \"monitor contrast\"";
-        };
-
-        "monitor contrast" = {
-          "k" = "exec --no-startup-id ddcutil-modify-vcp 12 adjust +10";
-          "j" = "exec --no-startup-id ddcutil-modify-vcp 12 adjust -10";
-
-          "escape" = "mode default";
           "${modifier}+e" = "mode \"sink volume\"";
         };
       };
