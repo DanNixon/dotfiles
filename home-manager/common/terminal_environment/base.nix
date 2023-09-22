@@ -10,6 +10,7 @@
 
     df = "df -h";
     du = "du -h";
+    free = "free -h";
 
     lb = "lsblk";
 
