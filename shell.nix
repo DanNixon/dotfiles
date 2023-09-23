@@ -1,6 +1,12 @@
-# Shell for bootstrapping flake-enabled nix and other tooling
-{ pkgs ? (import ./nixpkgs.nix) { } }: {
+{ pkgs ? (import ./nixpkgs.nix) {} }: {
   default = pkgs.mkShell {
+    nativeBuildInputs = with pkgs; [
+      sops
+      ssh-to-age
+    ];
+  };
+
+  bootstrap = pkgs.mkShell {
     NIX_CONFIG = "experimental-features = nix-command flakes";
     nativeBuildInputs = with pkgs; [
       git
