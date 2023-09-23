@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230
     inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.sops-nix.nixosModules.sops
     ../common/adb.nix
     ../common/common.nix
     ../common/dan.nix

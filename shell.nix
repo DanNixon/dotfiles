@@ -7,6 +7,8 @@
       home-manager
       neovim
       nix
+      sops
+      ssh-to-age
     ];
   };
 }

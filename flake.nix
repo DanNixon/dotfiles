@@ -12,6 +12,12 @@
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
 
+    sops-nix = {
+      url = "github:Mic92/sops-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.nixpkgs-stable.follows = "nixpkgs";
+    };
+
     base16.url = "github:SenchoPens/base16.nix";
 
     base16-schemes = {

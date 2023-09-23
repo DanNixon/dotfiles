@@ -3,6 +3,7 @@
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd
+    inputs.sops-nix.nixosModules.sops
     ../common/common.nix
     ../common/dan.nix
     ../common/desktop-environment.nix

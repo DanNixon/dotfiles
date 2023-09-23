@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, pkgs, ... }: {
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
@@ -13,5 +13,14 @@
     enable = true;
     enableSSHSupport = true;
     enableExtraSocket = true;
+  };
+
+  sops.secrets.ssh_config = let
+    dan = config.users.users.dan;
+  in {
+    sopsFile = ./secrets.yaml;
+    owner = dan.name;
+    group = dan.group;
+    path = "${dan.home}/.ssh/config";
   };
 }
