@@ -2,7 +2,6 @@
   default = pkgs.mkShell {
     nativeBuildInputs = with pkgs; [
       sops
-      ssh-to-age
     ];
   };
 
