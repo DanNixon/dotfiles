@@ -7,7 +7,7 @@
     enable = true;
 
     backups."main" = {
-      retention.keepWithin = "3m";
+      retention.keepWithin = "1m";
 
       storage.extraConfig = {
         checkpoint_interval = 300;
