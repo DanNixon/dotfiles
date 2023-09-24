@@ -1,10 +1,22 @@
 { inputs, lib, config, pkgs, ... }: {
   imports = [
     ../common/terminal_environment
+    ../common/borgmatic.nix
     ../common/media.nix
     ../common/development.nix
     ../common/desktop_environment
   ];
+
+  programs.borgmatic.backups."main" = {
+    location = {
+      sourceDirectories = [
+        "/home/dan/docs"
+        "/home/dan/tombs"
+      ];
+      repositories = [ "ssh://r4zp295h@r4zp295h.repo.borgbase.com/./repo" ];
+    };
+    storage.encryptionPasscommand = "pass borg/akane/passphrase";
+  };
 
   wayland.windowManager.sway.config = {
     input."2:7:SynPS/2_Synaptics_TouchPad" = {
