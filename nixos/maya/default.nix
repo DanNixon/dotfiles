@@ -4,7 +4,8 @@
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.sops-nix.nixosModules.sops
     ../common/common.nix
-    ../common/dan.nix
+    ../common/dan
+    ../common/dan/secrets
     ../common/desktop-environment.nix
     ../common/encrypted-dns.nix
     ../common/locale.nix

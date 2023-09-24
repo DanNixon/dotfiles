@@ -6,7 +6,7 @@ keys:
     - &kawashiro age1s23urzha2dswqfle3zlt9a3sljscsuzxtmrge53p3xqg2375v52s869ld2
 
 creation_rules:
-  - path_regex: nixos/common/dan-secrets.yaml
+  - path_regex: nixos/common/dan/secrets/secrets.yaml
     key_groups:
       - pgp:
           - *dan

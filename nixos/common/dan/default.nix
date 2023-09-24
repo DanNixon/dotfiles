@@ -1,4 +1,4 @@
-{ config, pkgs, ... }: {
+{ pkgs, ... }: {
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
@@ -13,23 +13,5 @@
     enable = true;
     enableSSHSupport = true;
     enableExtraSocket = true;
-  };
-
-  sops.secrets = let
-    dan = config.users.users.dan;
-  in {
-    ssh_config = {
-      sopsFile = ./dan-secrets.yaml;
-      owner = dan.name;
-      group = dan.group;
-      path = "${dan.home}/.ssh/config";
-    };
-
-    rclone_config = {
-      sopsFile = ./dan-secrets.yaml;
-      owner = dan.name;
-      group = dan.group;
-      path = "${dan.home}/.config/rclone/rclone.conf";
-    };
   };
 }
