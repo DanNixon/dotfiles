@@ -51,4 +51,8 @@
   ];
 
   services.mpd.enable = true;
+
+  home.packages = with pkgs; [
+    inputs.satori.packages.${system}.satorictl.package
+  ];
 }

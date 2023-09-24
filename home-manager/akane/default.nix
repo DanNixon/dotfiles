@@ -61,5 +61,6 @@
 
   home.packages = with pkgs; [
     scrcpy
+    inputs.satori.packages.${system}.satorictl.package
   ];
 }

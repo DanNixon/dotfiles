@@ -29,6 +29,11 @@
       url = "github:base16-project/base16-vim";
       flake = false;
     };
+
+    satori = {
+      url = "github:dannixon/satori";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, ... }@inputs:
