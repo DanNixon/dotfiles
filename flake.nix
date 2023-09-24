@@ -5,9 +5,15 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    home-manager = {
-      url = "github:nix-community/home-manager/release-23.05";
+    disko = {
+      url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    nixos-anywhere = {
+      url = "github:nix-community/nixos-anywhere";
+      inputs.nixpkgs.follows = "nixpkgs";
+      inputs.disko.follows = "disko";
     };
 
     nixos-hardware.url = "github:nixos/nixos-hardware";
@@ -16,6 +22,11 @@
       url = "github:Mic92/sops-nix";
       inputs.nixpkgs.follows = "nixpkgs";
       inputs.nixpkgs-stable.follows = "nixpkgs";
+    };
+
+    home-manager = {
+      url = "github:nix-community/home-manager/release-23.05";
+      inputs.nixpkgs.follows = "nixpkgs";
     };
 
     base16.url = "github:SenchoPens/base16.nix";
@@ -49,7 +60,7 @@
 
     devShells = forAllSystems (system:
       let pkgs = nixpkgs.legacyPackages.${system};
-      in import ./shell.nix { inherit pkgs; }
+      in import ./shell.nix { inherit inputs pkgs; }
     );
 
     nixosConfigurations = {
@@ -64,6 +75,10 @@
       maya = nixpkgs.lib.nixosSystem {
         specialArgs = { inherit inputs; };
         modules = [ ./nixos/maya ];
+      };
+      yukari = nixpkgs.lib.nixosSystem {
+        specialArgs = { inherit inputs; };
+        modules = [ ./nixos/yukari ];
       };
     };
 
@@ -87,6 +102,11 @@
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
         extraSpecialArgs = { inherit inputs outputs; };
         modules = [ ./home-manager/maya ];
+      };
+      yukari = home-manager.lib.homeManagerConfiguration {
+        pkgs = nixpkgs.legacyPackages.x86_64-linux;
+        extraSpecialArgs = { inherit inputs outputs; };
+        modules = [ ./home-manager/yukari ];
       };
     };
   };

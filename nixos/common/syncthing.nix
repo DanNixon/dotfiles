@@ -1,4 +1,4 @@
-{ ... }: {
+{ lib, ... }: {
   services.syncthing = {
     enable = true;
 
@@ -9,6 +9,6 @@
     group = "users";
 
     guiAddress = "127.0.0.1:8384";
-    openDefaultPorts = true;
+    openDefaultPorts = lib.mkDefault true;
   };
 }

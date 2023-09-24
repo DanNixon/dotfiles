@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ lib, pkgs, ... }: {
   users.users.dan = {
     isNormalUser = true;
     description = "Dan";
@@ -10,7 +10,7 @@
   };
 
   programs.gnupg.agent = {
-    enable = true;
+    enable = lib.mkDefault true;
     enableSSHSupport = true;
     enableExtraSocket = true;
   };
