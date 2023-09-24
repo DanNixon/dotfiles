@@ -10,8 +10,6 @@
   programs.borgmatic.backups."main" = {
     location = {
       sourceDirectories = [
-        "/home/dan/.ssh"
-        "/home/dan/.local/share/password-store"
         "/home/dan/docs"
         "/home/dan/phone"
         "/home/dan/tombs"
