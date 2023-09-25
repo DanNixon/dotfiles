@@ -11,6 +11,7 @@
     location = {
       sourceDirectories = [
         "/home/dan/docs"
+        "/home/dan/phone"
         "/home/dan/tombs"
       ];
       repositories = [ "ssh://r4zp295h@r4zp295h.repo.borgbase.com/./repo" ];
