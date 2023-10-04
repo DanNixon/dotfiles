@@ -3,9 +3,10 @@
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230
     inputs.nixos-hardware.nixosModules.common-pc-ssd
+
     inputs.sops-nix.nixosModules.sops
     ../common/adb.nix
-    ../common/common.nix
+    ../common/base.nix
     ../common/dan
     ../common/dan/secrets
     ../common/desktop-environment.nix
@@ -31,6 +32,4 @@
   virtualisation.podman.enable = true;
   services.upower.enable = true;
   services.tailscale.enable = true;
-
-  system.stateVersion = "23.05";
 }

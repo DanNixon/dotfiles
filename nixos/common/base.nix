@@ -47,4 +47,6 @@
   programs.iftop.enable = true;
 
   programs.zsh.enable = true;
+
+  system.stateVersion = lib.mkDefault "23.05";
 }

@@ -4,7 +4,8 @@
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd
     inputs.sops-nix.nixosModules.sops
-    ../common/common.nix
+
+    ../common/base.nix
     ../common/dan
     ../common/dan/secrets
     ../common/desktop-environment.nix
@@ -31,6 +32,4 @@
   services.tailscale.enable = true;
 
   hardware.rtl-sdr.enable = true;
-
-  system.stateVersion = "23.05";
 }

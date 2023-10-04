@@ -6,13 +6,13 @@
   ];
 
   imports = [
+    inputs.disko.nixosModules.disko
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
-    inputs.disko.nixosModules.disko
     ./disk-config.nix
 
     inputs.sops-nix.nixosModules.sops
-    ../common/common.nix
+    ../common/base.nix
     ../common/dan
     ../common/encrypted-dns.nix
     ../common/locale.nix
@@ -48,6 +48,4 @@
   systemd.user.tmpfiles.rules = [ "d %t/gnupg 700 - - -" ];
 
   environment.systemPackages = with pkgs; [ update-storage ];
-
-  system.stateVersion = "23.05";
 }

@@ -2,8 +2,9 @@
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.common-pc-ssd
+
     inputs.sops-nix.nixosModules.sops
-    ../common/common.nix
+    ../common/base.nix
     ../common/dan
     ../common/dan/secrets
     ../common/desktop-environment.nix
@@ -30,6 +31,4 @@
   # i2c required for monitor control via ddcutil
   hardware.i2c.enable = true;
   users.users.dan.extraGroups = [ "i2c" "dialout" "plugdev" ];
-
-  system.stateVersion = "23.05";
 }
