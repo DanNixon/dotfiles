@@ -1,4 +1,8 @@
-{ inputs, pkgs, ... }: {
+{
+  inputs,
+  pkgs,
+  ...
+}: {
   scheme = "${inputs.base16-schemes}/material-darker.yaml";
 
   home.shellAliases = {

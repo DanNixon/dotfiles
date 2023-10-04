@@ -1,4 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.common-pc-ssd
@@ -30,5 +36,5 @@
 
   # i2c required for monitor control via ddcutil
   hardware.i2c.enable = true;
-  users.users.dan.extraGroups = [ "i2c" "dialout" "plugdev" ];
+  users.users.dan.extraGroups = ["i2c" "dialout" "plugdev"];
 }

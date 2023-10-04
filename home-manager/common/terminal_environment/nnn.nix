@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   home.sessionVariables = {
     NNN_OPTS = "d";
   };

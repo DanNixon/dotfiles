@@ -1,4 +1,10 @@
-{ inputs, outputs, config, pkgs, ... }: {
+{
+  inputs,
+  outputs,
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     borgbackup
   ];

@@ -1,5 +1,10 @@
-{ lib, writeTextFile, bash, git, rsync }:
-let
+{
+  lib,
+  writeTextFile,
+  bash,
+  git,
+  rsync,
+}: let
   name = "update-storage";
 in
   writeTextFile {

@@ -1,4 +1,4 @@
-{ pkgs }: {
+{pkgs}: {
   ddcutil-modify-vcp = pkgs.callPackage ./ddcutil-modify-vcp {};
   de-screenshot = pkgs.callPackage ./de-screenshot {};
   firefox-private = pkgs.callPackage ./firefox-private {};

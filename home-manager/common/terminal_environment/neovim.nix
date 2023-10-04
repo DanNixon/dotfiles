@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -7,9 +12,10 @@
     ];
     plugins = [
       # Colour scheme
-      (pkgs.vimPlugins.base16-vim.overrideAttrs (old:
-        let schemeFile = config.scheme inputs.base16-vim;
-        in { patchPhase = ''cp ${schemeFile} colors/base16-scheme.vim''; }
+      (pkgs.vimPlugins.base16-vim.overrideAttrs (
+        old: let
+          schemeFile = config.scheme inputs.base16-vim;
+        in {patchPhase = ''cp ${schemeFile} colors/base16-scheme.vim'';}
       ))
 
       # Used to format and make editing CSV files trivial
@@ -231,6 +237,4 @@
       nmap <Leader>q :q<CR>
     '';
   };
-
-
 }

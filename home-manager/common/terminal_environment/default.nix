@@ -1,4 +1,9 @@
-{ inputs, config, pkgs, ... }: {
+{
+  inputs,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     inputs.base16.homeManagerModule
 
@@ -39,7 +44,7 @@
     sipcalc
     shellcheck
     sshfs
-    sshpass  # Used for some sshuttle scripts
+    sshpass # Used for some sshuttle scripts
     sshuttle
     termdown
     tomb

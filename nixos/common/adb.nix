@@ -1,5 +1,5 @@
-{ ... }: {
+{...}: {
   programs.adb.enable = true;
 
-  users.users.dan.extraGroups = [ "adbusers" ];
+  users.users.dan.extraGroups = ["adbusers"];
 }

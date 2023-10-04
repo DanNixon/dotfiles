@@ -1,4 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../common/terminal_environment
     ../common/borgmatic.nix
@@ -14,7 +20,7 @@
         "/home/dan/phone"
         "/home/dan/tombs"
       ];
-      repositories = [ "ssh://r4zp295h@r4zp295h.repo.borgbase.com/./repo" ];
+      repositories = ["ssh://r4zp295h@r4zp295h.repo.borgbase.com/./repo"];
     };
     storage.encryptionPasscommand = "pass borg/akane/passphrase";
   };

@@ -1,4 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230
@@ -27,7 +33,7 @@
 
   networking.hostName = "akane";
 
-  users.users.dan.extraGroups = [ "dialout" ];
+  users.users.dan.extraGroups = ["dialout"];
 
   virtualisation.podman.enable = true;
   services.upower.enable = true;

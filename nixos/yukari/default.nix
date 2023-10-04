@@ -1,4 +1,11 @@
-{ inputs, lib, config, pkgs, modulesPath, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  modulesPath,
+  ...
+}: {
   nixpkgs.overlays = [
     (final: _prev: {
       update-storage = final.callPackage ./update-storage.nix {};
@@ -45,7 +52,7 @@
 
   # Disable gpg-agent, but ensure the directory is present for SSH forwarded socket
   programs.gnupg.agent.enable = false;
-  systemd.user.tmpfiles.rules = [ "d %t/gnupg 700 - - -" ];
+  systemd.user.tmpfiles.rules = ["d %t/gnupg 700 - - -"];
 
-  environment.systemPackages = with pkgs; [ update-storage ];
+  environment.systemPackages = with pkgs; [update-storage];
 }

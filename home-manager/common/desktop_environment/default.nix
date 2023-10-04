@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./components/alacritty.nix
     ./components/mako.nix
@@ -27,7 +31,7 @@
       enable = true;
 
       defaultApplications = let
-        multimedia = [ "mpv.desktop" "org.videolan.VLC.desktop" ];
+        multimedia = ["mpv.desktop" "org.videolan.VLC.desktop"];
       in {
         "image/gif" = multimedia;
         "video/3gpp" = multimedia;

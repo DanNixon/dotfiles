@@ -1,4 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ../common/terminal_environment
     ../common/media.nix

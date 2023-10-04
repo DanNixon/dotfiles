@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.zathura.enable = true;
 
   xdg.mimeApps.defaultApplications = {

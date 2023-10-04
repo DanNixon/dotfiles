@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     gfold
   ];
@@ -10,36 +10,36 @@
     userEmail = "dan@dan-nixon.com";
 
     aliases = {
-      ap        = "add --patch";
-      s         = "status --short --branch";
-      co        = "checkout";
-      c         = "commit";
-      ca        = "commit --amend";
-      cf        = "commit --fixup";
-      d         = "diff";
-      ds        = "diff --staged";
-      br        = "branch";
-      brs       = "branch --list";
-      bra       = "branch --all";
-      brm       = "branch --merged";
-      l         = "log --pretty=concise -n 25";
-      ll        = "log --pretty=concise";
-      la        = "log --pretty=full --graph --show-signature";
-      lfp       = "log --pretty=concise --first-parent";
-      lg        = "log --pretty=concise --graph";
-      lb        = "log --pretty=cleangraph --graph --branches --simplify-by-decoration";
-      rl        = "log --pretty=reflog --walk-reflogs";
-      m         = "merge";
-      rb        = "rebase";
-      rbi       = "rebase --interactive";
-      rbc       = "rebase --continue";
-      p         = "push";
-      pu        = "push --set-upstream";
-      pfl       = "push --force-with-lease";
-      f         = "fetch";
-      unbugger  = "reset --hard HEAD";
-      cla       = "clean -ixd";
-      test-pr   = "!f() { git fetch $1 pull/$2/merge:pr/$2-merged && git checkout pr/$2-merged; }; f";
+      ap = "add --patch";
+      s = "status --short --branch";
+      co = "checkout";
+      c = "commit";
+      ca = "commit --amend";
+      cf = "commit --fixup";
+      d = "diff";
+      ds = "diff --staged";
+      br = "branch";
+      brs = "branch --list";
+      bra = "branch --all";
+      brm = "branch --merged";
+      l = "log --pretty=concise -n 25";
+      ll = "log --pretty=concise";
+      la = "log --pretty=full --graph --show-signature";
+      lfp = "log --pretty=concise --first-parent";
+      lg = "log --pretty=concise --graph";
+      lb = "log --pretty=cleangraph --graph --branches --simplify-by-decoration";
+      rl = "log --pretty=reflog --walk-reflogs";
+      m = "merge";
+      rb = "rebase";
+      rbi = "rebase --interactive";
+      rbc = "rebase --continue";
+      p = "push";
+      pu = "push --set-upstream";
+      pfl = "push --force-with-lease";
+      f = "fetch";
+      unbugger = "reset --hard HEAD";
+      cla = "clean -ixd";
+      test-pr = "!f() { git fetch $1 pull/$2/merge:pr/$2-merged && git checkout pr/$2-merged; }; f";
       bundleall = "!f() { git bundle create $1 --all; }; f";
     };
 
@@ -80,9 +80,9 @@
         prompt = false;
       };
       pretty = {
-        concise    = "%C(yellow)%h %C(reset)%ad %C(blue)%an %C(reset)%s%C(green)%d";
+        concise = "%C(yellow)%h %C(reset)%ad %C(blue)%an %C(reset)%s%C(green)%d";
         cleangraph = "%C(yellow)%h %C(reset)%ad %C(reset)%s%C(green)%d";
-        reflog     = "%C(yellow)%h %C(reset)%ad %C(blue)%an %C(reset)%gs%C(green)%d";
+        reflog = "%C(yellow)%h %C(reset)%ad %C(blue)%an %C(reset)%gs%C(green)%d";
       };
     };
 

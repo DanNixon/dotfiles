@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   home.packages = with pkgs; [
     yubikey-manager
     yubikey-personalization
@@ -159,8 +159,8 @@
 
       with-fingerprint = true;
 
-      list-options = [ "show-uid-validity" ];
-      verify-options = [ "show-uid-validity" ];
+      list-options = ["show-uid-validity"];
+      verify-options = ["show-uid-validity"];
 
       default-recipient = "dan@dan-nixon.com";
       default-key = "dan@dan-nixon.com";

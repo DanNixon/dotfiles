@@ -1,4 +1,4 @@
-{ ... }: {
+{...}: {
   programs.zsh = {
     enable = true;
     initExtraBeforeCompInit = ''
@@ -14,7 +14,7 @@
       zstyle ':completion:*' verbose true
       zstyle :compinstall filename '/home/dan/.zshrc'
     '';
-    initExtra  = ''
+    initExtra = ''
       # Vi style key bindings
       bindkey -v
       KEYTIMEOUT=10

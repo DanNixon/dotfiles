@@ -1,10 +1,10 @@
-{ pkgs, ... }: {
+{pkgs, ...}: {
   fonts = {
     fontDir.enable = true;
 
     fonts = with pkgs; [
       (nerdfonts.override {
-        fonts = [ "DejaVuSansMono" ];
+        fonts = ["DejaVuSansMono"];
       })
     ];
   };

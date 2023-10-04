@@ -1,4 +1,4 @@
-{ config, ... }: {
+{config, ...}: {
   sops.secrets.ssh_config = let
     dan = config.users.users.dan;
   in {

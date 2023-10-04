@@ -1,4 +1,8 @@
-{ config, pkgs, ... }: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   home.packages = with pkgs; [
     ddcutil-modify-vcp
     media-control
@@ -12,7 +16,7 @@
     package = null;
 
     config = {
-      modifier = "Mod4";  # Super
+      modifier = "Mod4"; # Super
 
       keybindings = let
         modifier = config.wayland.windowManager.sway.config.modifier;
@@ -148,7 +152,7 @@
           position = "bottom";
           statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs config-main.toml";
           fonts = {
-            names = [ "DejaVuSansM Nerd Font Mono" ];
+            names = ["DejaVuSansM Nerd Font Mono"];
             size = 14.0;
           };
           colors = with config.scheme.withHashtag; {
@@ -180,7 +184,7 @@
       ];
 
       fonts = {
-        names = [ "DejaVuSansM Nerd Font Mono" ];
+        names = ["DejaVuSansM Nerd Font Mono"];
         size = 10.0;
       };
 
@@ -238,7 +242,6 @@
           # pointer_accel = 1;
         };
       };
-
 
       colors = with config.scheme.withHashtag; {
         background = "${base07}";

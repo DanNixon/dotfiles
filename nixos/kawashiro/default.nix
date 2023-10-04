@@ -1,4 +1,10 @@
-{ inputs, lib, config, pkgs, ... }: {
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  ...
+}: {
   imports = [
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.common-cpu-intel
@@ -25,7 +31,7 @@
 
   networking.hostName = "kawashiro";
 
-  users.users.dan.extraGroups = [ "dialout" "plugdev" ];
+  users.users.dan.extraGroups = ["dialout" "plugdev"];
 
   virtualisation.podman.enable = true;
   services.upower.enable = true;

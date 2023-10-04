@@ -47,66 +47,71 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs:
-  let
+  outputs = {
+    self,
+    nixpkgs,
+    home-manager,
+    ...
+  } @ inputs: let
     inherit (self) outputs;
     forAllSystems = nixpkgs.lib.genAttrs [
       "x86_64-linux"
       "aarch64-linux"
     ];
-  in
-  {
-    overlays = import ./overlays { inherit inputs; };
+  in {
+    overlays = import ./overlays {inherit inputs;};
 
-    devShells = forAllSystems (system:
-      let pkgs = nixpkgs.legacyPackages.${system};
-      in import ./shell.nix { inherit inputs pkgs; }
+    devShells = forAllSystems (
+      system: let
+        pkgs = nixpkgs.legacyPackages.${system};
+      in
+        import ./shell.nix {inherit inputs pkgs;}
     );
 
     nixosConfigurations = {
       akane = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
-        modules = [ ./nixos/akane ];
+        specialArgs = {inherit inputs outputs;};
+        modules = [./nixos/akane];
       };
       kawashiro = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
-        modules = [ ./nixos/kawashiro ];
+        specialArgs = {inherit inputs outputs;};
+        modules = [./nixos/kawashiro];
       };
       maya = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
-        modules = [ ./nixos/maya ];
+        specialArgs = {inherit inputs outputs;};
+        modules = [./nixos/maya];
       };
       yukari = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs outputs; };
-        modules = [ ./nixos/yukari ];
+        specialArgs = {inherit inputs outputs;};
+        modules = [./nixos/yukari];
       };
     };
 
     homeConfigurations = {
       akane = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs outputs; };
-        modules = [ ./home-manager/akane ];
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home-manager/akane];
       };
       generic = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs outputs; };
-        modules = [ ./home-manager/generic ];
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home-manager/generic];
       };
       kawashiro = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs outputs; };
-        modules = [ ./home-manager/kawashiro ];
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home-manager/kawashiro];
       };
       maya = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs outputs; };
-        modules = [ ./home-manager/maya ];
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home-manager/maya];
       };
       yukari = home-manager.lib.homeManagerConfiguration {
         pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = { inherit inputs outputs; };
-        modules = [ ./home-manager/yukari ];
+        extraSpecialArgs = {inherit inputs outputs;};
+        modules = [./home-manager/yukari];
       };
     };
   };
