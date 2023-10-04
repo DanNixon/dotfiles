@@ -1,4 +1,10 @@
 { inputs, lib, config, pkgs, modulesPath, ... }: {
+  nixpkgs.overlays = [
+    (final: _prev: {
+      update-storage = final.callPackage ./update-storage.nix {};
+    })
+  ];
+
   imports = [
     (modulesPath + "/installer/scan/not-detected.nix")
     (modulesPath + "/profiles/qemu-guest.nix")
@@ -40,6 +46,8 @@
   # Disable gpg-agent, but ensure the directory is present for SSH forwarded socket
   programs.gnupg.agent.enable = false;
   systemd.user.tmpfiles.rules = [ "d %t/gnupg 700 - - -" ];
+
+  environment.systemPackages = with pkgs; [ update-storage ];
 
   system.stateVersion = "23.05";
 }

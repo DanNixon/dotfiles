@@ -65,19 +65,19 @@
 
     nixosConfigurations = {
       akane = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs outputs; };
         modules = [ ./nixos/akane ];
       };
       kawashiro = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs outputs; };
         modules = [ ./nixos/kawashiro ];
       };
       maya = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs outputs; };
         modules = [ ./nixos/maya ];
       };
       yukari = nixpkgs.lib.nixosSystem {
-        specialArgs = { inherit inputs; };
+        specialArgs = { inherit inputs outputs; };
         modules = [ ./nixos/yukari ];
       };
     };
