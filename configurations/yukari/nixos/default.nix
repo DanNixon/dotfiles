@@ -51,9 +51,8 @@ inputs.nixpkgs.lib.nixosSystem {
 
       users.users.dan.initialPassword = "for-fucks-sake-change-this";
 
-      # Disable gpg-agent, but ensure the directory is present for SSH forwarded socket
-      programs.gnupg.agent.enable = false;
-      systemd.user.tmpfiles.rules = ["d %t/gnupg 700 - - -"];
+      # Required for gpg-agent forwarding
+      services.openssh.settings.StreamLocalBindUnlink = true;
 
       environment.systemPackages = with pkgs; [update-storage];
     })

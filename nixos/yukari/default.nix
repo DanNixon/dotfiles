@@ -1,0 +1,57 @@
+{
+  inputs,
+  lib,
+  config,
+  pkgs,
+  modulesPath,
+  ...
+}: {
+  nixpkgs.overlays = [
+    (final: _prev: {
+      update-storage = final.callPackage ./update-storage.nix {};
+    })
+  ];
+
+  imports = [
+    inputs.disko.nixosModules.disko
+    (modulesPath + "/installer/scan/not-detected.nix")
+    (modulesPath + "/profiles/qemu-guest.nix")
+    ./disk-config.nix
+
+    inputs.sops-nix.nixosModules.sops
+    ../common/base.nix
+    ../common/dan
+    ../common/encrypted-dns.nix
+    ../common/locale.nix
+    ../common/networkmanager.nix
+    ../common/ssh.nix
+    ../common/syncthing.nix
+  ];
+
+  boot.loader.grub = {
+    efiSupport = true;
+    efiInstallAsRemovable = true;
+  };
+
+  nixpkgs.hostPlatform = "x86_64-linux";
+
+  networking.hostName = "yukari";
+
+  networking.firewall.extraInputRules = ''
+    iifname "tailscale0" tcp dport 22 log prefix "firewall: new SSH connection: " counter accept
+    iifname "tailscale0" tcp dport 22000 log prefix "firewall: Syncthing: " counter accept
+    iifname "tailscale0" udp dport 22000 log prefix "firewall: Syncthing: " counter accept
+    iifname "tailscale0" udp dport 21027 log prefix "firewall: Syncthing: " counter accept
+  '';
+  services.openssh.openFirewall = false;
+  services.syncthing.openDefaultPorts = false;
+
+  services.tailscale.enable = true;
+
+  users.users.dan.initialPassword = "for-fucks-sake-change-this";
+
+  # Required for gpg-agent forwarding
+  services.openssh.settings.StreamLocalBindUnlink = true;
+
+  environment.systemPackages = with pkgs; [update-storage];
+}
