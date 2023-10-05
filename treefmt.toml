@@ -1,0 +1,4 @@
+[formatter.nix]
+command = "alejandra"
+includes = [ "*.nix" ]
+excludes = [ "*/hardware-configuration.nix" ]

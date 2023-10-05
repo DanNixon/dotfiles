@@ -3,7 +3,6 @@
   pkgs ? (import ./nixpkgs.nix) {},
 }: let
   common = with pkgs; [
-    alejandra
     sops
   ];
 in {
@@ -11,6 +10,9 @@ in {
     nativeBuildInputs =
       (with pkgs; [
         inputs.nixos-anywhere.packages.${system}.nixos-anywhere
+
+        alejandra
+        treefmt
       ])
       ++ common;
   };
