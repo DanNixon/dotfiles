@@ -3,5 +3,5 @@ command = "alejandra"
 includes = [ "*.nix" ]
 excludes = [
   "*/hardware-configuration.nix",
-  "home-manager/common/email/secrets.nix",
+  "modules/home-manager/email/secrets.nix",
 ]

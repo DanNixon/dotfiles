@@ -50,7 +50,6 @@
   outputs = {
     self,
     nixpkgs,
-    home-manager,
     ...
   } @ inputs: let
     inherit (self) outputs;
@@ -69,50 +68,18 @@
     );
 
     nixosConfigurations = {
-      akane = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./nixos/akane];
-      };
-      kawashiro = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./nixos/kawashiro];
-      };
-      maya = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./nixos/maya];
-      };
-      yukari = nixpkgs.lib.nixosSystem {
-        specialArgs = {inherit inputs outputs;};
-        modules = [./nixos/yukari];
-      };
+      akane = import ./configurations/akane/nixos {inherit inputs outputs;};
+      kawashiro = import ./configurations/kawashiro/nixos {inherit inputs outputs;};
+      maya = import ./configurations/maya/nixos {inherit inputs outputs;};
+      yukari = import ./configurations/yukari/nixos {inherit inputs outputs;};
     };
 
     homeConfigurations = {
-      akane = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/akane];
-      };
-      generic = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/generic];
-      };
-      kawashiro = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/kawashiro];
-      };
-      maya = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/maya];
-      };
-      yukari = home-manager.lib.homeManagerConfiguration {
-        pkgs = nixpkgs.legacyPackages.x86_64-linux;
-        extraSpecialArgs = {inherit inputs outputs;};
-        modules = [./home-manager/yukari];
-      };
+      akane = import ./configurations/akane/home-manager {inherit inputs outputs;};
+      generic = import ./configurations/generic/home-manager {inherit inputs outputs;};
+      kawashiro = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
+      maya = import ./configurations/maya/home-manager {inherit inputs outputs;};
+      yukari = import ./configurations/yukari/home-manager {inherit inputs outputs;};
     };
   };
 }
