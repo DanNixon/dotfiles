@@ -35,6 +35,7 @@ in {
       smtp = {
         host = "smtp.fastmail.com";
         port = 587;
+        tls.useStartTls = true;
       };
       msmtp.enable = true;
     };
@@ -61,6 +62,7 @@ in {
       smtp = {
         host = "smtp.gmail.com";
         port = 587;
+        tls.useStartTls = true;
       };
       msmtp.enable = true;
     };
@@ -82,6 +84,7 @@ in {
       smtp = {
         host = "smtp.office365.com";
         port = 587;
+        tls.useStartTls = true;
       };
       msmtp.enable = true;
     };
@@ -103,6 +106,7 @@ in {
       smtp = {
         host = "smtp.office365.com";
         port = 587;
+        tls.useStartTls = true;
       };
       msmtp.enable = true;
     };
