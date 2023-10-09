@@ -68,6 +68,7 @@ inputs.home-manager.lib.homeManagerConfiguration {
       services.mpd.enable = true;
 
       home.packages = with pkgs; [
+        lightburn
         scrcpy
         inputs.satori.packages.${system}.satorictl
       ];
