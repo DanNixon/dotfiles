@@ -17,7 +17,3 @@ Normal:
 ```sh
 home-manager switch --flake .#<config name>
 ```
-
-## In Progress
-
-- https://mynixos.com/nixpkgs/option/services.dnscrypt-proxy2.enable

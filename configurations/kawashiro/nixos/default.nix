@@ -15,7 +15,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/dan
     ../../../modules/nixos/dan/secrets
     ../../../modules/nixos/desktop-environment.nix
-    ../../../modules/nixos/encrypted-dns.nix
+    ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/locale.nix
     ../../../modules/nixos/networkmanager.nix
     ../../../modules/nixos/sound.nix
@@ -30,6 +30,11 @@ inputs.nixpkgs.lib.nixosSystem {
       };
 
       networking.hostName = "kawashiro";
+
+      services.dnscrypt-proxy2.settings.forwarding_rules = "/etc/dnscrypt-proxy2/forwarding-rules.txt";
+      environment.etc."dnscrypt-proxy2/forwarding-rules.txt".text = ''
+        castle.dan-nixon.com 100.71.249.35
+      '';
 
       users.users.dan.extraGroups = ["dialout" "plugdev"];
 

@@ -15,10 +15,9 @@ inputs.nixpkgs.lib.nixosSystem {
     })
     ./disk-config.nix
 
-    inputs.sops-nix.nixosModules.sops
     ../../../modules/nixos/base.nix
     ../../../modules/nixos/dan
-    ../../../modules/nixos/encrypted-dns.nix
+    ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/locale.nix
     ../../../modules/nixos/networkmanager.nix
     ../../../modules/nixos/ssh.nix
