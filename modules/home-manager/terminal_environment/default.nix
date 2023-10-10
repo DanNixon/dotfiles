@@ -15,6 +15,7 @@
     ./git.nix
     ./gpg.nix
     ./neovim.nix
+    ./nix-index.nix
     ./nnn.nix
     ./pass.nix
     ./tmux.nix
