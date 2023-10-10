@@ -1,5 +1,5 @@
 {
-  inputs,
+  inputs ? {},
   pkgs ? (import ./nixpkgs.nix) {},
 }: let
   common = with pkgs; [
@@ -21,7 +21,6 @@ in {
     NIX_CONFIG = "experimental-features = nix-command flakes";
     nativeBuildInputs =
       (with pkgs; [
-        alejandra
         git
         home-manager
         neovim
