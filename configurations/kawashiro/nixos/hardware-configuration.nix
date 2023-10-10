@@ -14,14 +14,14 @@
   boot.extraModulePackages = [ config.boot.kernelPackages.broadcom_sta ];
 
   fileSystems."/" =
-    { device = "/dev/disk/by-uuid/bfc8727e-e629-49e5-887b-cf004375f701";
+    { device = "/dev/disk/by-uuid/9b5f6f3f-2f09-4f92-a1c5-58243ce45601";
       fsType = "ext4";
     };
 
-  boot.initrd.luks.devices."luks-50b0e547-869d-48d4-a5ae-88314cc9c984".device = "/dev/disk/by-uuid/50b0e547-869d-48d4-a5ae-88314cc9c984";
+  boot.initrd.luks.devices."luks-125b80d2-c509-4eaf-b693-355b2374f22d".device = "/dev/disk/by-uuid/125b80d2-c509-4eaf-b693-355b2374f22d";
 
   fileSystems."/boot" =
-    { device = "/dev/disk/by-uuid/6D13-2E46";
+    { device = "/dev/disk/by-uuid/EC65-4E0A";
       fsType = "vfat";
     };
 
