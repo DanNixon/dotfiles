@@ -33,24 +33,12 @@
 
   hardware.enableRedistributableFirmware = true;
 
+  # Inspection/diagnostic tools
   environment.systemPackages = with pkgs; [
-    # Core tools
-    git
-    neovim
-
-    # Common inspection/diagnostic tools
     acpi
-    bmon
-    dogdns
-    dua
-    htop
     lm_sensors
-    progress
     smartmontools
-    tcpdump
-    tree
   ];
-
   programs.iftop.enable = true;
 
   programs.zsh.enable = true;

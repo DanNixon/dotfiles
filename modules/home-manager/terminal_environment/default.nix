@@ -9,7 +9,6 @@
 
     ../base.nix
 
-    ./base.nix
     ./direnv.nix
     ./fzf.nix
     ./git.nix
@@ -18,6 +17,7 @@
     ./nix-index.nix
     ./nnn.nix
     ./pass.nix
+    ./shell.nix
     ./tmux.nix
     ./zsh.nix
   ];
@@ -31,7 +31,7 @@
     file
     ffsend
     hexdump
-    htop
+    htop-vim
     ipcalc
     jq
     neofetch
@@ -47,6 +47,7 @@
     sshfs
     sshpass # Used for some sshuttle scripts
     sshuttle
+    tcpdump
     termdown
     tomb
     tree
