@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [
-    gfold
-  ];
-
   programs.git = {
     enable = true;
 
@@ -106,4 +102,8 @@
   };
 
   programs.lazygit.enable = true;
+
+  home.packages = with pkgs; [
+    gfold
+  ];
 }

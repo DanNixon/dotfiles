@@ -1,9 +1,11 @@
 {...}: {
   programs.tmux = {
     enable = true;
+
     escapeTime = 1;
     prefix = "M-Space";
     baseIndex = 1;
+
     extraConfig = ''
       bind-key -T root M-";" choose-tree -Z
 

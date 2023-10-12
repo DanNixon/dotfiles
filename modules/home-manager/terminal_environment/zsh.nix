@@ -1,6 +1,7 @@
 {...}: {
   programs.zsh = {
     enable = true;
+
     initExtraBeforeCompInit = ''
       zstyle ':completion:*' completer _expand _complete _ignored _approximate
       zstyle ':completion:*' completions 1
@@ -14,6 +15,7 @@
       zstyle ':completion:*' verbose true
       zstyle :compinstall filename '/home/dan/.zshrc'
     '';
+
     initExtra = ''
       # Vi style key bindings
       bindkey -v
