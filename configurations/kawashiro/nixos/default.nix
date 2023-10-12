@@ -18,7 +18,8 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/locale.nix
     ../../../modules/nixos/networkmanager.nix
-    ../../../modules/nixos/sound.nix
+    ../../../modules/nixos/peripherals/sound.nix
+    ../../../modules/nixos/peripherals/sdr.nix
     ../../../modules/nixos/ssh.nix
     ../../../modules/nixos/syncthing.nix
 
@@ -41,8 +42,6 @@ inputs.nixpkgs.lib.nixosSystem {
       virtualisation.podman.enable = true;
       services.upower.enable = true;
       services.tailscale.enable = true;
-
-      hardware.rtl-sdr.enable = true;
     }
   ];
 }

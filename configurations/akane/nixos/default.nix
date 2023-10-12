@@ -11,7 +11,6 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
     inputs.sops-nix.nixosModules.sops
-    ../../../modules/nixos/adb.nix
     ../../../modules/nixos/base.nix
     ../../../modules/nixos/dan
     ../../../modules/nixos/dan/secrets
@@ -19,8 +18,9 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/locale.nix
     ../../../modules/nixos/networkmanager.nix
-    ../../../modules/nixos/scanner.nix
-    ../../../modules/nixos/sound.nix
+    ../../../modules/nixos/peripherals/adb.nix
+    ../../../modules/nixos/peripherals/scanner.nix
+    ../../../modules/nixos/peripherals/sound.nix
     ../../../modules/nixos/ssh.nix
     ../../../modules/nixos/syncthing.nix
 

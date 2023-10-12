@@ -17,11 +17,14 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/locale.nix
     ../../../modules/nixos/networkmanager.nix
-    ../../../modules/nixos/sound.nix
+    ../../../modules/nixos/peripherals/ddcutil.nix
+    ../../../modules/nixos/peripherals/probe-rs.nix
+    ../../../modules/nixos/peripherals/scanner.nix
+    ../../../modules/nixos/peripherals/sound.nix
     ../../../modules/nixos/ssh.nix
     ../../../modules/nixos/syncthing.nix
 
-    {
+    ({pkgs, ...}: {
       boot = {
         loader.systemd-boot.enable = true;
         loader.efi.canTouchEfiVariables = true;
@@ -39,9 +42,7 @@ inputs.nixpkgs.lib.nixosSystem {
       services.upower.enable = true;
       services.tailscale.enable = true;
 
-      # i2c required for monitor control via ddcutil
-      hardware.i2c.enable = true;
-      users.users.dan.extraGroups = ["i2c" "dialout" "plugdev"];
-    }
+      users.users.dan.extraGroups = ["dialout" "plugdev"];
+    })
   ];
 }
