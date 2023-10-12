@@ -8,7 +8,6 @@
 in {
   home.packages = with pkgs; [
     neomutt
-    w3m
   ];
 
   xdg.configFile."neomutt/neomuttrc".text = ''

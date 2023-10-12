@@ -7,6 +7,7 @@
   secrets = import ./secrets.nix;
 in {
   imports = [
+    ./mailcap.nix
     ./neomutt.nix
   ];
 
