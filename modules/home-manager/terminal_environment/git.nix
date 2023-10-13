@@ -92,7 +92,6 @@
       # Direnv
       ".env"
       ".direnv"
-      ".envrc"
       # Tomb
       ".host"
       ".last"
