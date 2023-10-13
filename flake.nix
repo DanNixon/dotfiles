@@ -5,6 +5,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    flake-utils.url = "github:numtide/flake-utils";
+
     disko = {
       url = "github:nix-community/disko";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -55,36 +57,60 @@
   outputs = {
     self,
     nixpkgs,
+    flake-utils,
     ...
   } @ inputs: let
     inherit (self) outputs;
-    forAllSystems = nixpkgs.lib.genAttrs [
-      "x86_64-linux"
-      "aarch64-linux"
-    ];
-  in {
-    overlays = import ./overlays {inherit inputs;};
-
-    devShells = forAllSystems (
+  in
+    flake-utils.lib.eachDefaultSystem (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
-      in
-        import ./shell.nix {inherit inputs pkgs;}
-    );
+        nixos-anywhere = inputs.nixos-anywhere.packages.${system}.nixos-anywhere;
+        common = with pkgs; [
+          sops
+        ];
+      in {
+        devShells.default = pkgs.mkShell {
+          nativeBuildInputs =
+            (with pkgs; [
+              nixos-anywhere
 
-    nixosConfigurations = {
-      akane = import ./configurations/akane/nixos {inherit inputs outputs;};
-      kawashiro = import ./configurations/kawashiro/nixos {inherit inputs outputs;};
-      maya = import ./configurations/maya/nixos {inherit inputs outputs;};
-      yukari = import ./configurations/yukari/nixos {inherit inputs outputs;};
-    };
+              alejandra
+              treefmt
+            ])
+            ++ common;
+        };
 
-    homeConfigurations = {
-      akane = import ./configurations/akane/home-manager {inherit inputs outputs;};
-      generic = import ./configurations/generic/home-manager {inherit inputs outputs;};
-      kawashiro = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
-      maya = import ./configurations/maya/home-manager {inherit inputs outputs;};
-      yukari = import ./configurations/yukari/home-manager {inherit inputs outputs;};
+        devShells.bootstrap = pkgs.mkShell {
+          NIX_CONFIG = "experimental-features = nix-command flakes";
+          nativeBuildInputs =
+            (with pkgs; [
+              git
+              home-manager
+              neovim
+              nix
+              ssh-to-age
+            ])
+            ++ common;
+        };
+      }
+    )
+    // {
+      overlays = import ./overlays {inherit inputs;};
+
+      nixosConfigurations = {
+        akane = import ./configurations/akane/nixos {inherit inputs outputs;};
+        kawashiro = import ./configurations/kawashiro/nixos {inherit inputs outputs;};
+        maya = import ./configurations/maya/nixos {inherit inputs outputs;};
+        yukari = import ./configurations/yukari/nixos {inherit inputs outputs;};
+      };
+
+      homeConfigurations = {
+        akane = import ./configurations/akane/home-manager {inherit inputs outputs;};
+        generic = import ./configurations/generic/home-manager {inherit inputs outputs;};
+        kawashiro = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
+        maya = import ./configurations/maya/home-manager {inherit inputs outputs;};
+        yukari = import ./configurations/yukari/home-manager {inherit inputs outputs;};
+      };
     };
-  };
 }
