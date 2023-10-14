@@ -1,7 +1,11 @@
 {pkgs, ...}: {
   home.packages = with pkgs; [
+    distrobox
+
     kubectl
     kubectx
+
+    shellcheck
   ];
 
   programs.gh = {

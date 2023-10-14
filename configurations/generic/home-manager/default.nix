@@ -8,7 +8,6 @@ inputs.home-manager.lib.homeManagerConfiguration {
 
   modules = [
     ../../../modules/home-manager/terminal_environment
-    ../../../modules/home-manager/development.nix
 
     {
       # home = {

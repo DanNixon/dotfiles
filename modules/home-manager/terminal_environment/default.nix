@@ -23,10 +23,8 @@
   ];
 
   home.packages = with pkgs; [
-    distrobox
     pinentry_curses
     qrencode
-    shellcheck
     termdown
     zbar
 
