@@ -3,7 +3,6 @@
   outputs,
   lib,
   config,
-  pkgs,
   ...
 }: {
   nix = {
@@ -22,25 +21,18 @@
   };
 
   nixpkgs = {
+    config.allowUnfree = true;
+
     overlays = [
       outputs.overlays.additions
     ];
-
-    config = {
-      allowUnfree = true;
-    };
   };
 
   hardware.enableRedistributableFirmware = true;
 
-  # Inspection/diagnostic tools
-  environment.systemPackages = with pkgs; [
-    acpi
-    lm_sensors
-    smartmontools
-  ];
   programs.iftop.enable = true;
 
+  # Required to set user shell
   programs.zsh.enable = true;
 
   system.stateVersion = lib.mkDefault "23.05";

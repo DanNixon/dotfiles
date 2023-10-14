@@ -30,6 +30,7 @@
 
     # System tools
     htop-vim
+    lm_sensors
     neofetch
     progress
 
@@ -46,6 +47,7 @@
 
     # Disk/filesystem tools
     dua
+    smartmontools
     tomb
     tree
     unzip
