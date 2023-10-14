@@ -23,36 +23,47 @@
   ];
 
   home.packages = with pkgs; [
-    bmon
     distrobox
-    dogdns
-    dua
-    dyff
-    file
-    ffsend
-    hexdump
+    pinentry_curses
+    qrencode
+    shellcheck
+    termdown
+    zbar
+
+    # System tools
     htop-vim
-    ipcalc
-    jq
     neofetch
+    progress
+
+    # Nix tools
     nix-diff
     nix-tree
-    pinentry_curses
-    progress
-    qrencode
+    nvd
+
+    # File tools
+    dyff
+    file
+    hexdump
+    jq
+
+    # Disk/filesystem tools
+    dua
+    tomb
+    tree
+    unzip
+
+    # Networking tools
+    bmon
+    ffsend
+    dogdns
+    ipcalc
     rclone
     rsync
     sipcalc
-    shellcheck
     sshfs
     sshpass # Used for some sshuttle scripts
     sshuttle
     tcpdump
-    termdown
-    tomb
-    tree
-    unzip
     wget
-    zbar
   ];
 }
