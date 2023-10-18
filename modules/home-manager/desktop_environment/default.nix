@@ -42,4 +42,10 @@
       };
     };
   };
+
+  # Required for Flatpak apps to have access to system fonts
+  home.file.fonts = {
+    target = ".local/share/fonts";
+    source = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/X11/fonts";
+  };
 }
