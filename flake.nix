@@ -103,6 +103,7 @@
         kawashiro = import ./configurations/kawashiro/nixos {inherit inputs outputs;};
         maya = import ./configurations/maya/nixos {inherit inputs outputs;};
         yukari = import ./configurations/yukari/nixos {inherit inputs outputs;};
+        yuyuko = import ./configurations/yuyuko/nixos {inherit inputs outputs;};
       };
 
       homeConfigurations = {
@@ -111,6 +112,7 @@
         kawashiro = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
         maya = import ./configurations/maya/home-manager {inherit inputs outputs;};
         yukari = import ./configurations/yukari/home-manager {inherit inputs outputs;};
+        yuyuko = import ./configurations/yuyuko/home-manager {inherit inputs outputs;};
       };
     };
 }
