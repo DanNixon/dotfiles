@@ -2,14 +2,18 @@
   inputs,
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+
     extraPackages = [
       pkgs.universal-ctags
+      pkgs-unstable.nixd
     ];
+
     plugins = [
       # Colour scheme
       (pkgs.vimPlugins.base16-vim.overrideAttrs (
@@ -79,6 +83,7 @@
       pkgs.vimPlugins.vim-nftables
       pkgs.vimPlugins.ron-vim
     ];
+
     extraConfig = ''
       set nocompatible
       set encoding=utf-8
@@ -117,6 +122,7 @@
 
       " Language server config
       let g:LanguageClient_serverCommands = {
+            \ 'nix': ['nixd'],
             \ 'rust': ['rust-analyzer'],
       \ }
 
