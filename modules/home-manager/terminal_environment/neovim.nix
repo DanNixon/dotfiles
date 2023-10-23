@@ -41,16 +41,16 @@
       pkgs.vimPlugins.LanguageClient-neovim
 
       # Enhanced spelling and grammar checking
-      inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.vimPlugins.vim-lexical
+      pkgs-unstable.vimPlugins.vim-lexical
 
       # Provides tree based file explorer
       pkgs.vimPlugins.nerdtree
 
       # Restores cursor position on opening previously opened files
-      inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.vimPlugins.restore-view-vim
+      pkgs-unstable.vimPlugins.restore-view-vim
 
       # Format text into one line per sentance
-      inputs.nixpkgs-unstable.legacyPackages.x86_64-linux.vimPlugins.vim-sentence-chopper
+      pkgs-unstable.vimPlugins.vim-sentence-chopper
 
       # Provides syntax checking
       pkgs.vimPlugins.syntastic
