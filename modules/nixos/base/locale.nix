@@ -1,9 +1,9 @@
-{...}: {
-  time.timeZone = "Europe/London";
+{lib, ...}: {
+  time.timeZone = lib.mkDefault "Europe/London";
 
-  i18n.defaultLocale = "en_GB.UTF-8";
+  i18n.defaultLocale = lib.mkDefault "en_GB.UTF-8";
 
-  i18n.extraLocaleSettings = {
+  i18n.extraLocaleSettings = lib.mkDefault {
     LC_ADDRESS = "en_GB.UTF-8";
     LC_IDENTIFICATION = "en_GB.UTF-8";
     LC_MEASUREMENT = "en_GB.UTF-8";
@@ -15,5 +15,5 @@
     LC_TIME = "en_GB.UTF-8";
   };
 
-  console.keyMap = "uk";
+  console.keyMap = lib.mkDefault "uk";
 }
