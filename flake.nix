@@ -5,8 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    flake-utils.url = "github:numtide/flake-utils";
-
     disko = {
       url = "github:nix-community/disko/v1.1.0";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -57,12 +55,19 @@
   outputs = {
     self,
     nixpkgs,
-    flake-utils,
     ...
   } @ inputs: let
     inherit (self) outputs;
-  in
-    flake-utils.lib.eachDefaultSystem (
+
+    systems = [
+      "x86_64-linux"
+      "x86_64-darwin"
+      "aarch64-darwin"
+      "aarch64-linux"
+    ];
+    forAllSystems = f: nixpkgs.lib.genAttrs systems (system: f system);
+  in {
+    devShells = forAllSystems (
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
         nixos-anywhere = inputs.nixos-anywhere.packages.${system}.nixos-anywhere;
@@ -70,7 +75,7 @@
           sops
         ];
       in {
-        devShells.default = pkgs.mkShell {
+        default = pkgs.mkShell {
           nativeBuildInputs =
             (with pkgs; [
               nixos-anywhere
@@ -81,7 +86,7 @@
             ++ common;
         };
 
-        devShells.bootstrap = pkgs.mkShell {
+        bootstrap = pkgs.mkShell {
           NIX_CONFIG = "experimental-features = nix-command flakes";
           nativeBuildInputs =
             (with pkgs; [
@@ -94,25 +99,25 @@
             ++ common;
         };
       }
-    )
-    // {
-      overlays = import ./overlays {inherit inputs;};
+    );
 
-      nixosConfigurations = {
-        akane = import ./configurations/akane/nixos {inherit inputs outputs;};
-        kawashiro = import ./configurations/kawashiro/nixos {inherit inputs outputs;};
-        maya = import ./configurations/maya/nixos {inherit inputs outputs;};
-        yukari = import ./configurations/yukari/nixos {inherit inputs outputs;};
-        yuyuko = import ./configurations/yuyuko/nixos {inherit inputs outputs;};
-      };
+    overlays = import ./overlays {inherit inputs;};
 
-      homeConfigurations = {
-        akane = import ./configurations/akane/home-manager {inherit inputs outputs;};
-        generic = import ./configurations/generic/home-manager {inherit inputs outputs;};
-        kawashiro = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
-        maya = import ./configurations/maya/home-manager {inherit inputs outputs;};
-        yukari = import ./configurations/yukari/home-manager {inherit inputs outputs;};
-        yuyuko = import ./configurations/yuyuko/home-manager {inherit inputs outputs;};
-      };
+    nixosConfigurations = {
+      akane = import ./configurations/akane/nixos {inherit inputs outputs;};
+      kawashiro = import ./configurations/kawashiro/nixos {inherit inputs outputs;};
+      maya = import ./configurations/maya/nixos {inherit inputs outputs;};
+      yukari = import ./configurations/yukari/nixos {inherit inputs outputs;};
+      yuyuko = import ./configurations/yuyuko/nixos {inherit inputs outputs;};
     };
+
+    homeConfigurations = {
+      akane = import ./configurations/akane/home-manager {inherit inputs outputs;};
+      generic = import ./configurations/generic/home-manager {inherit inputs outputs;};
+      kawashiro = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
+      maya = import ./configurations/maya/home-manager {inherit inputs outputs;};
+      yukari = import ./configurations/yukari/home-manager {inherit inputs outputs;};
+      yuyuko = import ./configurations/yuyuko/home-manager {inherit inputs outputs;};
+    };
+  };
 }
