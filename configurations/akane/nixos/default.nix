@@ -12,7 +12,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
     inputs.sops-nix.nixosModules.sops
     ../../../modules/nixos/base
-    ../../../modules/nixos/dan
+    outputs.nixosModules.dan
     ../../../modules/nixos/dan/secrets
     ../../../modules/nixos/desktop-environment.nix
     ../../../modules/nixos/dnscrypt-proxy.nix
@@ -37,11 +37,11 @@ inputs.nixpkgs.lib.nixosSystem {
         castle.dan-nixon.com 100.71.249.35
       '';
 
-      users.users.dan.extraGroups = ["dialout"];
-
       virtualisation.podman.enable = true;
       services.upower.enable = true;
       services.tailscale.enable = true;
+
+      dotfiles.dan.groups = ["video" "dialout"];
     }
   ];
 }

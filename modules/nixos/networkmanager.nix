@@ -4,5 +4,5 @@
 
   networking.networkmanager.enable = true;
 
-  users.users.dan.extraGroups = ["networkmanager"];
+  dotfiles.dan.groups = ["networkmanager"];
 }

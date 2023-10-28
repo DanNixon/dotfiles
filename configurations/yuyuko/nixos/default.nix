@@ -15,7 +15,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ./disk-config.nix
 
     ../../../modules/nixos/base
-    ../../../modules/nixos/dan
+    outputs.nixosModules.dan
     ../../../modules/nixos/desktop-environment.nix
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/networkmanager.nix
@@ -32,7 +32,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
       networking.hostName = "yuyuko";
 
-      users.users.dan.initialPassword = "for-fucks-sake-change-this";
+      dotfiles.dan.initialPassword = "for-fucks-sake-change-this";
     }
   ];
 }

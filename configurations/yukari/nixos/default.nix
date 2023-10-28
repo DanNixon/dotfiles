@@ -16,7 +16,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ./disk-config.nix
 
     ../../../modules/nixos/base
-    ../../../modules/nixos/dan
+    outputs.nixosModules.dan
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/networkmanager.nix
     ../../../modules/nixos/ssh.nix
@@ -49,10 +49,10 @@ inputs.nixpkgs.lib.nixosSystem {
 
       services.tailscale.enable = true;
 
-      users.users.dan.initialPassword = "for-fucks-sake-change-this";
+      dotfiles.dan.initialPassword = "for-fucks-sake-change-this";
 
       # Disable gpg-agent, but ensure the directory is present for SSH forwarded socket
-      programs.gnupg.agent.enable = false;
+      dotfiles.dan.enableGpgAgent = false;
       systemd.user.tmpfiles.rules = ["d %t/gnupg 700 - - -"];
 
       environment.systemPackages = with pkgs; [update-storage];

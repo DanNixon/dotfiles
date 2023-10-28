@@ -1,5 +1,5 @@
 {...}: {
   hardware.sane.enable = true;
 
-  users.users.dan.extraGroups = ["dialout" "scanner" "lp"];
+  dotfiles.dan.groups = ["dialout" "scanner" "lp"];
 }

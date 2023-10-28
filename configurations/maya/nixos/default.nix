@@ -11,7 +11,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
     inputs.sops-nix.nixosModules.sops
     ../../../modules/nixos/base
-    ../../../modules/nixos/dan
+    outputs.nixosModules.dan
     ../../../modules/nixos/dan/secrets
     ../../../modules/nixos/desktop-environment.nix
     ../../../modules/nixos/dnscrypt-proxy.nix
@@ -41,7 +41,7 @@ inputs.nixpkgs.lib.nixosSystem {
       services.upower.enable = true;
       services.tailscale.enable = true;
 
-      users.users.dan.extraGroups = ["dialout" "plugdev"];
+      dotfiles.dan.groups = ["video" "dialout"];
     })
   ];
 }
