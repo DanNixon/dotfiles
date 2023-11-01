@@ -13,7 +13,7 @@ in
       ../../../modules/home-manager/borgmatic.nix
       ../../../modules/home-manager/email
 
-      {
+      ({pkgs, ...}: {
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [
@@ -26,6 +26,10 @@ in
           };
           storage.encryptionPasscommand = "pass borg/yukari/passphrase";
         };
-      }
+
+        home.packages = with pkgs; [
+          inputs.satori.packages.${system}.satorictl
+        ];
+      })
     ];
   }
