@@ -13,7 +13,6 @@ in
       ../../../modules/home-manager/borgmatic.nix
       ../../../modules/home-manager/media.nix
       ../../../modules/home-manager/development.nix
-      ../../../modules/home-manager/email
       ../../../modules/home-manager/desktop_environment
 
       ({pkgs, ...}: {
