@@ -10,10 +10,10 @@ nixos-rebuild switch --flake .#<hostname>
 
 Bootstrap:
 ```sh
-nix run nixpkgs#home-manager -- switch --flake .#<config name>
+nix run nixpkgs#home-manager -- switch --flake .
 ```
 
 Normal:
 ```sh
-home-manager switch --flake .#<config name>
+home-manager switch --flake .
 ```

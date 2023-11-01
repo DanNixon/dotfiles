@@ -116,12 +116,12 @@
     };
 
     homeConfigurations = {
-      akane = import ./configurations/akane/home-manager {inherit inputs outputs;};
+      "dan@akane" = import ./configurations/akane/home-manager {inherit inputs outputs;};
       generic = import ./configurations/generic/home-manager {inherit inputs outputs;};
-      kawashiro = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
-      maya = import ./configurations/maya/home-manager {inherit inputs outputs;};
-      yukari = import ./configurations/yukari/home-manager {inherit inputs outputs;};
-      yuyuko = import ./configurations/yuyuko/home-manager {inherit inputs outputs;};
+      "dan@kawashiro" = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
+      "dan@maya" = import ./configurations/maya/home-manager {inherit inputs outputs;};
+      "dan@yukari" = import ./configurations/yukari/home-manager {inherit inputs outputs;};
+      "dan@yuyuko" = import ./configurations/yuyuko/home-manager {inherit inputs outputs;};
     };
   };
 }
