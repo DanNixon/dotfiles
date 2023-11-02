@@ -17,8 +17,6 @@
     mpc-cli
   ];
 
-  programs.feh.enable = true;
-
   programs.mpv = {
     enable = true;
 

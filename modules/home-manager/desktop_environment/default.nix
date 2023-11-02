@@ -31,14 +31,32 @@
       enable = true;
 
       defaultApplications = let
-        multimedia = ["mpv.desktop" "org.videolan.VLC.desktop"];
+        image = ["feh.desktop"];
+        video = ["mpv.desktop" "org.videolan.VLC.desktop"];
       in {
-        "image/gif" = multimedia;
-        "video/3gpp" = multimedia;
-        "video/mp4" = multimedia;
-        "video/webm" = multimedia;
-        "video/x-matroska" = multimedia;
-        "video/x-msvideo" = multimedia;
+        "image/bmp" = image;
+        "image/gif" = image;
+        "image/jpeg" = image;
+        "image/jpg" = image;
+        "image/pjpeg" = image;
+        "image/png" = image;
+        "image/tiff" = image;
+        "image/x-bmp" = image;
+        "image/x-pcx" = image;
+        "image/x-png" = image;
+        "image/x-portable-anymap" = image;
+        "image/x-portable-bitmap" = image;
+        "image/x-portable-graymap" = image;
+        "image/x-portable-pixmap" = image;
+        "image/x-tga" = image;
+        "image/x-xbitmap" = image;
+        "image/heif" = image;
+
+        "video/3gpp" = video;
+        "video/mp4" = video;
+        "video/webm" = video;
+        "video/x-matroska" = video;
+        "video/x-msvideo" = video;
       };
     };
   };
