@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./imv.nix
     ./zathura.nix
   ];
 
