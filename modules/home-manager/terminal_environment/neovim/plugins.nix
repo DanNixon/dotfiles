@@ -13,6 +13,9 @@
       in {patchPhase = ''cp ${schemeFile} colors/base16-scheme.vim'';}
     ))
 
+    # GitHub copilot integration
+    pkgs.vimPlugins.copilot-vim
+
     # Used to format and make editing CSV files trivial
     pkgs.vimPlugins.csv
 
