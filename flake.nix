@@ -71,32 +71,29 @@
       system: let
         pkgs = nixpkgs.legacyPackages.${system};
         nixos-anywhere = inputs.nixos-anywhere.packages.${system}.nixos-anywhere;
-        common = with pkgs; [
-          sops
-        ];
       in {
         default = pkgs.mkShell {
-          nativeBuildInputs =
-            (with pkgs; [
-              nixos-anywhere
+          packages = with pkgs; [
+            nixos-anywhere
 
-              alejandra
-              treefmt
-            ])
-            ++ common;
+            alejandra
+            treefmt
+
+            sops
+          ];
         };
 
         bootstrap = pkgs.mkShell {
           NIX_CONFIG = "experimental-features = nix-command flakes";
-          nativeBuildInputs =
-            (with pkgs; [
-              git
-              home-manager
-              neovim
-              nix
-              ssh-to-age
-            ])
-            ++ common;
+
+          packages = with pkgs; [
+            git
+            home-manager
+            neovim
+            nix
+            ssh-to-age
+            sops
+          ];
         };
       }
     );
