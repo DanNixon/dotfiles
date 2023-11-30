@@ -30,7 +30,6 @@
 
     # System tools
     bottom
-    htop-vim
     lm_sensors
     neofetch
     progress
