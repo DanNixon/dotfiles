@@ -5,6 +5,7 @@ set -exo pipefail
 flatpak install \
   org.mozilla.firefox \
   org.chromium.Chromium \
+  com.microsoft.Edge \
   com.github.Eloston.UngoogledChromium \
   org.kicad.KiCad \
   org.freecadweb.FreeCAD \
