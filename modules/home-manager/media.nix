@@ -26,7 +26,6 @@
       sponsorblock
       thumbfast
       vr-reversal
-      youtube-quality
     ];
 
     config = {

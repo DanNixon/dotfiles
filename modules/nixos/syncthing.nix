@@ -2,8 +2,8 @@
   services.syncthing = {
     enable = true;
 
-    dataDir = "/home/dan";
     configDir = "/home/dan/.config/syncthing";
+    dataDir = "/home/dan/.config/syncthing";
 
     user = "dan";
     group = "users";

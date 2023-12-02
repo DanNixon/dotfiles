@@ -23,7 +23,7 @@
   ];
 
   home.packages = with pkgs; [
-    pinentry_curses
+    pinentry-curses
     qrencode
     termdown
     zbar
