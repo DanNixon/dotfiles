@@ -5,3 +5,7 @@ excludes = [
   "*/hardware-configuration.nix",
   "modules/home-manager/email/secrets.nix",
 ]
+
+[formatter.markdown]
+command = "mdl"
+includes = [ "*.md" ]

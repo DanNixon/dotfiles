@@ -78,6 +78,7 @@
 
             alejandra
             treefmt
+            mdl
 
             sops
           ];
