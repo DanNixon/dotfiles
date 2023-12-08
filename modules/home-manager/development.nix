@@ -6,6 +6,9 @@
     kubectx
 
     shellcheck
+
+    # Line of code reporting tool
+    tokei
   ];
 
   programs.gh = {
