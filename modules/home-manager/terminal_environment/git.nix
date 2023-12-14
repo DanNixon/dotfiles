@@ -8,24 +8,21 @@
     aliases = {
       ap = "add --patch";
       s = "status --short --branch";
-      co = "checkout";
+      ss = "show";
+      sw = "switch";
       c = "commit";
       ca = "commit --amend";
       cf = "commit --fixup";
       d = "diff";
       ds = "diff --staged";
-      br = "branch";
-      brs = "branch --list";
-      bra = "branch --all";
-      brm = "branch --merged";
-      l = "log --pretty=concise -n 25";
-      ll = "log --pretty=concise";
+      b = "branch";
+      bs = "branch --list";
+      ba = "branch --all";
+      l = "log --pretty=concise";
       la = "log --pretty=full --graph --show-signature";
-      lfp = "log --pretty=concise --first-parent";
       lg = "log --pretty=concise --graph";
       lb = "log --pretty=cleangraph --graph --branches --simplify-by-decoration";
       rl = "log --pretty=reflog --walk-reflogs";
-      m = "merge";
       rb = "rebase";
       rbi = "rebase --interactive";
       rbc = "rebase --continue";
@@ -33,10 +30,8 @@
       pu = "push --set-upstream";
       pfl = "push --force-with-lease";
       f = "fetch";
-      unbugger = "reset --hard HEAD";
       cla = "clean -ixd";
       test-pr = "!f() { git fetch $1 pull/$2/merge:pr/$2-merged && git checkout pr/$2-merged; }; f";
-      bundleall = "!f() { git bundle create $1 --all; }; f";
     };
 
     extraConfig = {
