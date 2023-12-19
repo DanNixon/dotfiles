@@ -1,8 +1,4 @@
-{
-  pkgs,
-  pkgs-unstable,
-  ...
-}: {
+{pkgs, ...}: {
   imports = [
     ./config.nix
     ./plugins.nix
@@ -12,9 +8,9 @@
     enable = true;
     defaultEditor = true;
 
-    extraPackages = [
-      pkgs.universal-ctags
-      pkgs-unstable.nixd
+    extraPackages = with pkgs; [
+      universal-ctags
+      nixd
     ];
   };
 }
