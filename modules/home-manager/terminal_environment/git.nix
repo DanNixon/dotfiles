@@ -9,6 +9,7 @@
       ap = "add --patch";
       s = "status --short --branch";
       ss = "show";
+      co = "checkout";
       sw = "switch";
       c = "commit";
       ca = "commit --amend";
