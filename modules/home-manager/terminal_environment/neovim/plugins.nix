@@ -74,6 +74,5 @@
     vimPlugins.vim-polyglot
     vimPlugins.vim-openscad
     vimPlugins.vim-nftables
-    vimPlugins.ron-vim
   ];
 }
