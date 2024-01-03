@@ -22,6 +22,13 @@
     ./zsh.nix
   ];
 
+  # System tools
+  programs.bottom.enable = true;
+
+  # File tools
+  programs.ripgrep.enable = true;
+  programs.jq.enable = true;
+
   home.packages = with pkgs; [
     pinentry-curses
     qrencode
@@ -29,7 +36,6 @@
     zbar
 
     # System tools
-    bottom
     lm_sensors
     neofetch
     progress
@@ -43,7 +49,6 @@
     dyff
     file
     hexdump
-    jq
 
     # Disk/filesystem tools
     dua

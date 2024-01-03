@@ -5,6 +5,8 @@
 }: {
   scheme = "${inputs.base16-schemes}/material-darker.yaml";
 
+  programs.dircolors.enable = true;
+
   home.shellAliases = {
     ".." = "cd ..";
     l = "ls --color=auto -lFh";
@@ -40,9 +42,5 @@
     stripexif = "exiftool -all=";
     today = "date '+%Y-%m-%d'";
     zfs-ls = "zfs list -o name,referenced,used,available,encryption,keystatus,mounted,mountpoint";
-  };
-
-  programs.dircolors = {
-    enable = true;
   };
 }
