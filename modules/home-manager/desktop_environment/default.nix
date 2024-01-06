@@ -35,23 +35,12 @@
         video = ["mpv.desktop" "org.videolan.VLC.desktop"];
       in {
         "image/bmp" = image;
-        "image/gif" = image;
         "image/jpeg" = image;
         "image/jpg" = image;
-        "image/pjpeg" = image;
         "image/png" = image;
-        "image/tiff" = image;
-        "image/x-bmp" = image;
-        "image/x-pcx" = image;
-        "image/x-png" = image;
-        "image/x-portable-anymap" = image;
-        "image/x-portable-bitmap" = image;
-        "image/x-portable-graymap" = image;
-        "image/x-portable-pixmap" = image;
-        "image/x-tga" = image;
-        "image/x-xbitmap" = image;
-        "image/heif" = image;
+        "image/webp" = image;
 
+        "image/gif" = video;
         "video/3gpp" = video;
         "video/mp4" = video;
         "video/webm" = video;
