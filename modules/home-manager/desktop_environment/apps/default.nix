@@ -2,6 +2,7 @@
   imports = [
     ./feh.nix
     ./imv.nix
+    ./mpv.nix
     ./zathura.nix
   ];
 

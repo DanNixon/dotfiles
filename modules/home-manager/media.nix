@@ -17,30 +17,6 @@
     mpc-cli
   ];
 
-  programs.mpv = {
-    enable = true;
-
-    scripts = with pkgs.mpvScripts; [
-      sponsorblock
-      thumbfast
-      vr-reversal
-    ];
-
-    config = {
-      input-ipc-server = "/tmp/mpv-socket";
-    };
-
-    bindings = {
-      "l" = "seek 5";
-      "h" = "seek -5";
-      "k" = "seek 60";
-      "j" = "seek -60";
-
-      # Make shift-j cycle subtitles normally (since j is used for Vi style transport)
-      "J" = "cycle sub";
-    };
-  };
-
   programs.ncmpcpp = {
     enable = true;
 
