@@ -5,13 +5,6 @@
 
     filetype off
 
-    " Restores cursor position on opening previously opened files
-    "Plug 'https://github.com/vim-scripts/restore_view.vim'
-    " Enhanced spelling and grammar checking
-    "Plug 'https://github.com/reedes/vim-lexical'
-    " Format text into one line per sentance
-    "Plug 'https://github.com/Konfekt/vim-sentencewrap'
-
     """"""""""""""""""
     " GENERAL CONFIG "
     """"""""""""""""""
