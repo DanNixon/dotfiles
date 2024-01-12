@@ -132,9 +132,6 @@
     map <Leader>j <Plug>(easymotion-bd-w)
     nmap <Leader>j <Plug>(easymotion-overwin-w)
 
-    " Code format shortcut
-    map <Leader>F :Autoformat<CR>
-
     " Toggle NERDTree
     map <Leader>n :NERDTreeToggle<CR>
 

@@ -61,9 +61,6 @@
     vimPlugins.vim-airline
     vimPlugins.vim-airline-themes
 
-    # Invokes code formatting tools from Vim
-    vimPlugins.vim-autoformat
-
     # Provides easy line/block comment toggling
     vimPlugins.vim-commentary
 
