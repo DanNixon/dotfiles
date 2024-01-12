@@ -24,9 +24,6 @@
     # Applies formatting rules based on editorconfig files
     vimPlugins.editorconfig-vim
 
-    # Git commands
-    vimPlugins.fugitive
-
     # Fuzzy finding
     vimPlugins.fzf-vim
 
