@@ -19,15 +19,6 @@
     let g:tagbar_autofocus = 1
     let g:tagbar_compact = 1
 
-    " Syntastic config
-    let g:syntastic_mode_map = {
-          \ 'mode': 'passive',
-          \ 'active_filetypes': [],
-          \ 'passive_filetypes': []
-    \ }
-    let g:syntastic_auto_loc_list = 1
-    let g:syntastic_aggregate_errors = 1
-
     " Language server config
     let g:LanguageClient_serverCommands = {
           \ 'nix': ['nixd'],
@@ -115,10 +106,6 @@
 
     " Handy shortcut for replacing words
     map <Leader>r :%s/\<<C-r><C-w>\>/
-
-    " Syntax checking
-    map <Leader>c :SyntasticCheck<CR>
-    map <Leader>C :SyntasticReset<CR>
 
     " Manual spelling toggle
     map <Leader>s :Spell<CR>

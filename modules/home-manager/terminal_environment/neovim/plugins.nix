@@ -42,9 +42,6 @@
     # Format text into one line per sentance
     vimPlugins.vim-sentence-chopper
 
-    # Provides syntax checking
-    vimPlugins.syntastic
-
     # Tab completion
     vimPlugins.supertab
 
