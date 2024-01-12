@@ -61,9 +61,6 @@
     # Provides easy line/block comment toggling
     vimPlugins.vim-commentary
 
-    # File query/modification commands
-    vimPlugins.vim-eunuch
-
     # Syntax highlighting
     vimPlugins.vim-polyglot
     vimPlugins.vim-openscad
