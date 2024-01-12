@@ -3,6 +3,7 @@
     ./feh.nix
     ./imv.nix
     ./mpv.nix
+    ./vscode.nix
     ./zathura.nix
   ];
 
