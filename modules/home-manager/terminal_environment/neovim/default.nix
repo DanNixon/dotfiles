@@ -1,6 +1,7 @@
 {pkgs, ...}: {
   imports = [
-    ./config.nix
+    ./config-lua.nix
+    ./config-vim.nix
     ./plugins.nix
   ];
 

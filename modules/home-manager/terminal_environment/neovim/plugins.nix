@@ -30,11 +30,11 @@
     # Fuzzy finding
     vimPlugins.fzf-vim
 
-    # Language server client
-    vimPlugins.LanguageClient-neovim
-
     # Enhanced spelling and grammar checking
     vimPlugins.vim-lexical
+
+    # Language server client
+    vimPlugins.nvim-lspconfig
 
     # Provides tree based file explorer
     vimPlugins.neo-tree-nvim
@@ -44,9 +44,6 @@
 
     # Format text into one line per sentance
     vimPlugins.vim-sentence-chopper
-
-    # Tab completion
-    vimPlugins.supertab
 
     # Provides ctags based navigation of current file
     vimPlugins.tagbar

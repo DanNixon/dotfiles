@@ -19,12 +19,6 @@
     let g:tagbar_autofocus = 1
     let g:tagbar_compact = 1
 
-    " Language server config
-    let g:LanguageClient_serverCommands = {
-          \ 'nix': ['nixd'],
-          \ 'rust': ['rust-analyzer'],
-    \ }
-
     " Spelling config
     let g:lexical#spell_key = '<leader>ss'
     let g:lexical#thesaurus_key = '<leader>st'
@@ -42,6 +36,7 @@
 
     " Airline config
     let g:airline_powerline_fonts = 1
+    let g:airline#extensions#ale#enabled = 1
 
     set laststatus=2
     set timeoutlen=500
@@ -54,9 +49,6 @@
     " Complete options (disable preview scratch window, limit popup items)
     set completeopt=menu,menuone,longest
     set pumheight=15
-
-    " SuperTab option for context aware completion
-    let g:SuperTabDefaultCompletionType = "context"
 
     " Set options to restore from last session
     set viewoptions=cursor,slash,unix
@@ -97,8 +89,11 @@
     " KEY MAPPINGS "
     """"""""""""""""
 
-    " Language server menu
-    nmap <Leader>l <Plug>(lcn-menu)
+    " Popup menu interaction
+    inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-X>\<C-O>"
+    inoremap <expr> <cr> pumvisible() ? "\<Esc>" : "\<cr>"
+    inoremap <silent><expr> j pumvisible() ? "\<C-n>" : "j"
+    inoremap <silent><expr> k pumvisible() ? "\<C-p>" : "k"
 
     " Handy shortcut for replacing words
     map <Leader>r :%s/\<<C-r><C-w>\>/
@@ -129,13 +124,5 @@
     nmap <Leader>w :w<CR>
     nmap <Leader>x :x<CR>
     nmap <Leader>q :q<CR>
-  '';
-
-  programs.neovim.extraLuaConfig = ''
-    require("neo-tree").setup({
-      source_selector = {
-        winbar = true
-      }
-    })
   '';
 }
