@@ -85,10 +85,6 @@
     " Highlight current line
     set cursorline
 
-    " NERDTree config
-    let g:NERDTreeChDirMode = 2 " Change working dir to NERDTree dir
-    let g:NERDTreeMinimalUI = 1
-
     """""""""""""""""""""""""""""""
     " MISC COMMANDS AND FUNCTIONS "
     """""""""""""""""""""""""""""""
@@ -119,8 +115,8 @@
     map <Leader>j <Plug>(easymotion-bd-w)
     nmap <Leader>j <Plug>(easymotion-overwin-w)
 
-    " Toggle NERDTree
-    map <Leader>n :NERDTreeToggle<CR>
+    " Toggle file tree
+    map <Leader>n :Neotree reveal toggle<CR>
 
     " Toggle tagbar
     map <Leader>t :TagbarToggle<CR>
@@ -133,5 +129,13 @@
     nmap <Leader>w :w<CR>
     nmap <Leader>x :x<CR>
     nmap <Leader>q :q<CR>
+  '';
+
+  programs.neovim.extraLuaConfig = ''
+    require("neo-tree").setup({
+      source_selector = {
+        winbar = true
+      }
+    })
   '';
 }

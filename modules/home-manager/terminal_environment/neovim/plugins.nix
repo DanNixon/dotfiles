@@ -34,7 +34,7 @@
     vimPlugins.vim-lexical
 
     # Provides tree based file explorer
-    vimPlugins.nerdtree
+    vimPlugins.neo-tree-nvim
 
     # Restores cursor position on opening previously opened files
     vimPlugins.restore-view-vim
