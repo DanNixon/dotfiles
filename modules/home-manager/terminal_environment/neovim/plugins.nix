@@ -18,6 +18,9 @@
     # Used to format and make editing CSV files trivial
     vimPlugins.csv
 
+    # Icons (e.g. filetype) used by other plugins
+    vimPlugins.nvim-web-devicons
+
     # Fast jumping to markers in a file
     vimPlugins.easymotion
 
