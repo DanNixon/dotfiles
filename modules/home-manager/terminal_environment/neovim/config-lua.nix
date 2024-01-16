@@ -21,9 +21,9 @@
 
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
 
-        vim.keymap.set('n', '<space>R', vim.lsp.buf.rename, opts)
+        vim.keymap.set('n', '<Leader>R', vim.lsp.buf.rename, opts)
 
-        vim.api.nvim_create_user_command('CodeAction', vim.lsp.buf.code_action, opts)
+        vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, opts)
       end,
     })
 
