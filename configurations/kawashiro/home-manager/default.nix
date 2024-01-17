@@ -43,6 +43,8 @@ in
           }
         ];
 
+        programs.bottom.settings.flags.battery = true;
+
         home.packages = with pkgs; [
           lightburn
         ];
