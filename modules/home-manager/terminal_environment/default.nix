@@ -19,6 +19,7 @@
     ./pass.nix
     ./shell.nix
     ./tmux.nix
+    ./xplr.nix
     ./zsh.nix
   ];
 
