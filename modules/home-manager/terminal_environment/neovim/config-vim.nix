@@ -77,6 +77,17 @@
     " Highlight current line
     set cursorline
 
+    " NERDTree config
+    let g:NERDTreeMinimalUI = 1
+
+    function! NERDTreeOpen()
+      if @% == ""
+        NERDTreeCWD
+      else
+        NERDTreeFind
+      endif
+    endfunction
+
     """""""""""""""""""""""""""""""
     " MISC COMMANDS AND FUNCTIONS "
     """""""""""""""""""""""""""""""
@@ -103,15 +114,18 @@
     map <Leader>S :SpellOff<CR>
 
     " Find shortcuts
-    map <Leader>f :Files<CR>
+    map <Leader>f :GFiles<CR>
+    map <Leader>F :Files<CR>
     map <Leader>b :Buffers<CR>
+    map <Leader>g :Rg<CR>
 
     " easymotion word jumping
     map <Leader>j <Plug>(easymotion-bd-w)
     nmap <Leader>j <Plug>(easymotion-overwin-w)
 
-    " Toggle file tree
-    map <Leader>n :Neotree reveal toggle<CR>
+    " NERDTree
+    map <Leader>n :call NERDTreeOpen()<CR>
+    map <Leader>N :NERDTreeClose<CR>
 
     " Toggle tagbar
     map <Leader>t :TagbarToggle<CR>

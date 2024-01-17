@@ -26,11 +26,5 @@
         vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, opts)
       end,
     })
-
-    require("neo-tree").setup({
-      source_selector = {
-        winbar = true
-      }
-    })
   '';
 }

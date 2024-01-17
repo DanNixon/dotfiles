@@ -18,9 +18,6 @@
     # Used to format and make editing CSV files trivial
     vimPlugins.csv
 
-    # Icons (e.g. filetype) used by other plugins
-    vimPlugins.nvim-web-devicons
-
     # Fast jumping to markers in a file
     vimPlugins.easymotion
 
@@ -37,12 +34,12 @@
     vimPlugins.nvim-lspconfig
 
     # Provides tree based file explorer
-    vimPlugins.neo-tree-nvim
+    vimPlugins.nerdtree
 
     # Restores cursor position on opening previously opened files
     vimPlugins.restore-view-vim
 
-    # Format text into one line per sentance
+    # Format text into one line per sentence
     vimPlugins.vim-sentence-chopper
 
     # Provides ctags based navigation of current file
