@@ -12,6 +12,7 @@
     extraPackages = with pkgs; [
       universal-ctags
       nixd
+      nodejs-slim
     ];
   };
 }

@@ -13,7 +13,8 @@
     ))
 
     # GitHub copilot integration
-    vimPlugins.copilot-vim
+    vimPlugins.copilot-lua
+    vimPlugins.copilot-cmp
 
     # Used to format and make editing CSV files trivial
     vimPlugins.csv
@@ -59,5 +60,12 @@
     vimPlugins.vim-polyglot
     vimPlugins.vim-openscad
     vimPlugins.vim-nftables
+
+    vimPlugins.vim-vsnip
+    vimPlugins.cmp-vsnip
+
+    vimPlugins.nvim-cmp
+    vimPlugins.cmp-nvim-lsp
+    vimPlugins.cmp-path
   ];
 }

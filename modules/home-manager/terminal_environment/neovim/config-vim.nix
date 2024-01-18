@@ -100,12 +100,6 @@
     " KEY MAPPINGS "
     """"""""""""""""
 
-    " Popup menu interaction
-    inoremap <silent><expr> <S-TAB> pumvisible() ? "\<C-p>" : "\<C-X>\<C-O>"
-    inoremap <expr> <cr> pumvisible() ? "\<Esc>" : "\<cr>"
-    inoremap <silent><expr> j pumvisible() ? "\<C-n>" : "j"
-    inoremap <silent><expr> k pumvisible() ? "\<C-p>" : "k"
-
     " Handy shortcut for replacing words
     map <Leader>r :%s/\<<C-r><C-w>\>/
 

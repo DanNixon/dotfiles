@@ -1,8 +1,10 @@
 {...}: {
   programs.neovim.extraLuaConfig = ''
+    -- Language server config
+    local capabilities = require('cmp_nvim_lsp').default_capabilities()
     local lspconfig = require('lspconfig')
-    lspconfig.nixd.setup {}
-    lspconfig.rust_analyzer.setup {}
+    lspconfig.nixd.setup { capabilities = capabilities }
+    lspconfig.rust_analyzer.setup { capabilities = capabilities }
 
     vim.keymap.set('n', '<space>df', vim.diagnostic.open_float)
     vim.keymap.set('n', '<space>dl', vim.diagnostic.setloclist)
@@ -10,8 +12,6 @@
     vim.api.nvim_create_autocmd('LspAttach', {
       group = vim.api.nvim_create_augroup('UserLspConfig', {}),
       callback = function(ev)
-        vim.bo[ev.buf].omnifunc = 'v:lua.vim.lsp.omnifunc'
-
         local opts = { buffer = ev.buf }
 
         vim.keymap.set('n', 'gD', vim.lsp.buf.declaration, opts)
@@ -26,5 +26,64 @@
         vim.keymap.set('n', 'ca', vim.lsp.buf.code_action, opts)
       end,
     })
+
+    -- Completion config
+    local cmp = require('cmp')
+
+    local has_words_before = function()
+      unpack = unpack or table.unpack
+      local line, col = unpack(vim.api.nvim_win_get_cursor(0))
+      return col ~= 0 and vim.api.nvim_buf_get_lines(0, line - 1, line, true)[1]:sub(col, col):match("%s") == nil
+    end
+
+    cmp.setup({
+      completion = {
+        autocomplete = false,
+      },
+      snippet = {
+        expand = function(args)
+          vim.fn["vsnip#anonymous"](args.body)
+        end,
+      },
+      window = {
+        completion = cmp.config.window.bordered(),
+        documentation = cmp.config.window.bordered(),
+      },
+      preselect = cmp.PreselectMode.None,
+      mapping = cmp.mapping.preset.insert({
+        ['<Esc>'] = cmp.mapping.abort(),
+        ['<CR>'] = cmp.mapping.confirm({ select = true }),
+
+        ['<Tab>'] = cmp.mapping(function(fallback)
+          if has_words_before() then
+            cmp.complete()
+          else
+            fallback()
+          end
+        end, { "i", "s" }),
+
+        ['j'] = cmp.mapping.select_next_item(),
+        ['k'] = cmp.mapping.select_prev_item(),
+
+        ['J'] = cmp.mapping.scroll_docs(4),
+        ['K'] = cmp.mapping.scroll_docs(-4),
+      }),
+      sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'vsnip' },
+        { name = 'copilot' },
+        { name = 'path' },
+      }, {
+        { name = 'buffer' },
+      })
+    })
+
+    -- Copilot config
+    require("copilot").setup({
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    })
+
+    require("copilot_cmp").setup()
   '';
 }
