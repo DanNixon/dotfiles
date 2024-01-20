@@ -5,7 +5,6 @@
     defaultOptions = [
       "--no-mouse"
       "--cycle"
-      "--bind tab:up,btab:down"
     ];
   };
 }

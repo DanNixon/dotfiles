@@ -12,6 +12,20 @@
       in {patchPhase = ''cp ${schemeFile} colors/base16-scheme.vim'';}
     ))
 
+    # Provides powerline style status line
+    vimPlugins.vim-airline
+    vimPlugins.vim-airline-themes
+
+    # Provides easy line/block comment toggling
+    vimPlugins.vim-commentary
+
+    # Completion
+    vimPlugins.nvim-cmp
+    vimPlugins.vim-vsnip
+    vimPlugins.cmp-vsnip
+    vimPlugins.cmp-nvim-lsp
+    vimPlugins.cmp-path
+
     # GitHub copilot integration
     vimPlugins.copilot-lua
     vimPlugins.copilot-cmp
@@ -26,7 +40,7 @@
     vimPlugins.editorconfig-vim
 
     # Fuzzy finding
-    vimPlugins.fzf-vim
+    vimPlugins.fzf-lua
 
     # Enhanced spelling and grammar checking
     vimPlugins.vim-lexical
@@ -49,23 +63,12 @@
     # Query and insert unicode characters
     vimPlugins.unicode-vim
 
-    # Provides powerline style status line
-    vimPlugins.vim-airline
-    vimPlugins.vim-airline-themes
-
-    # Provides easy line/block comment toggling
-    vimPlugins.vim-commentary
+    # Icons (e.g. file types)for other plugins
+    vimPlugins.nvim-web-devicons
 
     # Syntax highlighting
     vimPlugins.vim-polyglot
     vimPlugins.vim-openscad
     vimPlugins.vim-nftables
-
-    vimPlugins.vim-vsnip
-    vimPlugins.cmp-vsnip
-
-    vimPlugins.nvim-cmp
-    vimPlugins.cmp-nvim-lsp
-    vimPlugins.cmp-path
   ];
 }

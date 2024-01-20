@@ -108,10 +108,12 @@
     map <Leader>S :SpellOff<CR>
 
     " Find shortcuts
-    map <Leader>f :GFiles<CR>
-    map <Leader>F :Files<CR>
-    map <Leader>b :Buffers<CR>
-    map <Leader>g :Rg<CR>
+    map <Leader>f :FzfLua git_files<CR>
+    map <Leader>F :FzfLua<CR>
+    map <Leader>b :FzfLua buffers<CR>
+    map <Leader>g :FzfLua live_grep<CR>
+    nmap cf :FzfLua lsp_finder<CR>
+    nmap ca :FzfLua lsp_code_actions<CR>
 
     " easymotion word jumping
     map <Leader>j <Plug>(easymotion-bd-w)
