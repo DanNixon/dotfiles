@@ -46,18 +46,19 @@
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
 
         ['<Tab>'] = cmp.mapping(function(fallback)
-          if has_words_before() then
+          if cmp.visible() then
+            cmp.select_next_item()
+          elseif has_words_before() then
             cmp.complete()
           else
             fallback()
           end
         end, { "i", "s" }),
 
-        ['j'] = cmp.mapping.select_next_item(),
-        ['k'] = cmp.mapping.select_prev_item(),
+        ['<S-Tab>'] = cmp.mapping.select_prev_item(),
 
-        ['J'] = cmp.mapping.scroll_docs(4),
-        ['K'] = cmp.mapping.scroll_docs(-4),
+        ['<Up>'] = cmp.mapping.select_prev_item(),
+        ['<Down>'] = cmp.mapping.select_next_item(),
       }),
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
