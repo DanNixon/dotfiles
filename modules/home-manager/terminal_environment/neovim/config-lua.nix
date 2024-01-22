@@ -61,9 +61,9 @@
         ['<Down>'] = cmp.mapping.select_next_item(),
       }),
       sources = cmp.config.sources({
+        { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
-        { name = 'copilot' },
         { name = 'path' },
       }, {
         { name = 'buffer' },
