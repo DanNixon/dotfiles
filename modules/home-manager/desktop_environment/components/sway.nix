@@ -195,14 +195,6 @@
 
       window = {
         titlebar = false;
-        commands = [
-          {
-            criteria = {
-              app_id = "Alacritty";
-            };
-            command = "opacity 0.92";
-          }
-        ];
       };
 
       gaps = {
