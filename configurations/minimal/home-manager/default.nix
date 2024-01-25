@@ -21,9 +21,12 @@ in
         home.packages = with pkgs; [
           # System tools
           bottom
+          dmidecode
           lm_sensors
-          neofetch
+          fastfetch
+          pciutils
           progress
+          usbutils
 
           # Disk/filesystem tools
           dua

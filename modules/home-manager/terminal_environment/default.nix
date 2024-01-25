@@ -38,9 +38,12 @@
     zbar
 
     # System tools
+    dmidecode
     lm_sensors
-    neofetch
+    fastfetch
+    pciutils
     progress
+    usbutils
 
     # Nix tools
     nix-diff
