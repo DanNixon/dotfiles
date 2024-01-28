@@ -17,6 +17,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/desktop-environment.nix
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/networkmanager.nix
+    ../../../modules/nixos/peripherals/adb.nix
     ../../../modules/nixos/peripherals/probe-rs.nix
     ../../../modules/nixos/peripherals/sound.nix
     ../../../modules/nixos/peripherals/sdr.nix
