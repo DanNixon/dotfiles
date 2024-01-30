@@ -1,4 +1,5 @@
 {
+  inputs,
   config,
   pkgs,
   ...
@@ -10,8 +11,18 @@
     ./components/tofi.nix
     ./components/warpd.nix
 
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
     ./apps
   ];
+
+  services.flatpak = {
+    enable = true;
+    packages = [
+      "org.mozilla.firefox"
+      "com.github.tchx84.Flatseal"
+      "org.rncbc.qpwgraph"
+    ];
+  };
 
   home.packages = with pkgs; [
     ddcutil

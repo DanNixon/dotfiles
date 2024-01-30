@@ -1,10 +1,11 @@
 # Flatpak
 
-## Setup
+## Font setup
 
-- `./setup.sh`
-- Select apps in `install-apps.sh`
-- `./install-apps.sh`
+```sh
+flatpak --user override --filesystem=$HOME/.local/share/fonts
+flatpak --user override --filesystem=/nix/store
+```
 
 ## App specific config
 

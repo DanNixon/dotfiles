@@ -20,4 +20,8 @@
   programs.k9s = {
     enable = true;
   };
+
+  services.flatpak.packages = [
+    "net.werwolv.ImHex"
+  ];
 }
