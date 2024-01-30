@@ -10,12 +10,27 @@ in
 
     modules = [
       ../../../modules/home-manager/terminal_environment
-      ../../../modules/home-manager/borgmatic.nix
-      ../../../modules/home-manager/media.nix
-      ../../../modules/home-manager/development.nix
       ../../../modules/home-manager/desktop_environment
+      ../../../modules/home-manager/borgmatic.nix
+      ../../../modules/home-manager/cad.nix
+      ../../../modules/home-manager/development.nix
+      ../../../modules/home-manager/media.nix
+      ../../../modules/home-manager/office.nix
 
       ({pkgs, ...}: {
+        home.packages = with pkgs; [
+          inputs.satori.packages.${system}.satorictl
+        ];
+
+        services.flatpak.packages = [
+          "org.chromium.Chromium"
+          "com.microsoft.Edge"
+
+          "com.valvesoftware.Steam"
+        ];
+
+        services.mpd.enable = true;
+
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [
@@ -57,12 +72,6 @@ in
             interval = 1;
             format = " $timestamp.datetime(f:'%Y-%m-%d %H:%M:%S') ";
           }
-        ];
-
-        services.mpd.enable = true;
-
-        home.packages = with pkgs; [
-          inputs.satori.packages.${system}.satorictl
         ];
       })
     ];

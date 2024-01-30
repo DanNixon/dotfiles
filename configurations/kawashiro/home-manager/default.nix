@@ -10,11 +10,24 @@ in
 
     modules = [
       ../../../modules/home-manager/terminal_environment
-      ../../../modules/home-manager/media.nix
-      ../../../modules/home-manager/development.nix
       ../../../modules/home-manager/desktop_environment
+      ../../../modules/home-manager/cad.nix
+      ../../../modules/home-manager/development.nix
+      ../../../modules/home-manager/media.nix
+      ../../../modules/home-manager/office.nix
 
       ({pkgs, ...}: {
+        home.packages = with pkgs; [
+          lightburn
+        ];
+
+        services.flatpak.packages = [
+          "org.chromium.Chromium"
+          "com.microsoft.Edge"
+
+          "com.vesc_project.VescTool"
+        ];
+
         wayland.windowManager.sway.config.output = {
           eDP-1 = {
             enable = "";
@@ -44,10 +57,6 @@ in
         ];
 
         programs.bottom.settings.flags.battery = true;
-
-        home.packages = with pkgs; [
-          lightburn
-        ];
       })
     ];
   }

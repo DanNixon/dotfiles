@@ -10,12 +10,27 @@ in
 
     modules = [
       ../../../modules/home-manager/terminal_environment
-      ../../../modules/home-manager/borgmatic.nix
-      ../../../modules/home-manager/media.nix
-      ../../../modules/home-manager/development.nix
       ../../../modules/home-manager/desktop_environment
+      ../../../modules/home-manager/borgmatic.nix
+      ../../../modules/home-manager/cad.nix
+      ../../../modules/home-manager/development.nix
+      ../../../modules/home-manager/media.nix
+      ../../../modules/home-manager/office.nix
 
       ({pkgs, ...}: {
+        home.packages = with pkgs; [
+          lightburn
+          scrcpy
+          inputs.satori.packages.${system}.satorictl
+        ];
+
+        services.flatpak.packages = [
+          "org.chromium.Chromium"
+          "com.microsoft.Edge"
+        ];
+
+        services.mpd.enable = true;
+
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [
@@ -67,15 +82,7 @@ in
           }
         ];
 
-        services.mpd.enable = true;
-
         programs.bottom.settings.flags.battery = true;
-
-        home.packages = with pkgs; [
-          lightburn
-          scrcpy
-          inputs.satori.packages.${system}.satorictl
-        ];
       })
     ];
   }

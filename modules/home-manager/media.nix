@@ -17,6 +17,13 @@
     mpc-cli
   ];
 
+  services.flatpak.packages = [
+    "org.gimp.GIMP"
+    "org.inkscape.Inkscape"
+    "org.musicbrainz.Picard"
+    "org.videolan.VLC"
+  ];
+
   programs.ncmpcpp = {
     enable = true;
 
