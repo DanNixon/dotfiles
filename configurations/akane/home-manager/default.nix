@@ -27,6 +27,8 @@ in
         services.flatpak.packages = [
           "org.chromium.Chromium"
           "com.microsoft.Edge"
+
+          "com.adobe.Flash-Player-Projector"
         ];
 
         services.mpd.enable = true;
