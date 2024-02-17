@@ -24,6 +24,15 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/ssh.nix
     ../../../modules/nixos/syncthing.nix
 
+    ({pkgs, ...}: let
+      nur-no-pkgs = import inputs.nur {
+        nurpkgs = import inputs.nixpkgs {system = "x86_64-linux";};
+        repoOverrides = {DanNixon = import inputs.nur-dannixon {};};
+      };
+    in {
+      imports = [nur-no-pkgs.repos.DanNixon.modules.healthchecks-heartbeat];
+    })
+
     {
       boot = {
         loader.systemd-boot.enable = true;

@@ -342,6 +342,52 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1624561540,
+        "narHash": "sha256-izJ2PYZMGMsSkg+e7c9A1x3t/yOLT+qzUM6WQsc2tqo=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "c6a049a3d32293b24c0f894a840872cf67fd7c11",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
+    "nur": {
+      "locked": {
+        "lastModified": 1707874634,
+        "narHash": "sha256-JVj91PhZVTxp39SgZekFrzFIFXxjws0+MedXliCzXPw=",
+        "owner": "nix-community",
+        "repo": "NUR",
+        "rev": "bb1b80932f0d5d34624d4d1260071cc9ef88dedc",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "repo": "NUR",
+        "type": "github"
+      }
+    },
+    "nur-dannixon": {
+      "inputs": {
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1708172593,
+        "narHash": "sha256-pjW61yURi4Z5cHC5GK2AidDuqHu3uKuHpuvCFBuCyR4=",
+        "path": "/home/dan/git/nur-packages",
+        "type": "path"
+      },
+      "original": {
+        "path": "/home/dan/git/nur-packages",
+        "type": "path"
+      }
+    },
     "root": {
       "inputs": {
         "base16": "base16",
@@ -355,6 +401,8 @@
         "nixos-hardware": "nixos-hardware",
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
+        "nur": "nur",
+        "nur-dannixon": "nur-dannixon",
         "satori": "satori",
         "sops-nix": "sops-nix"
       }

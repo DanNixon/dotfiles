@@ -5,6 +5,9 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-23.11";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
+    nur.url = "github:nix-community/NUR";
+    nur-dannixon.url = "path:/home/dan/git/nur-packages";
+
     disko = {
       url = "github:nix-community/disko/v1.1.0";
       inputs.nixpkgs.follows = "nixpkgs";
