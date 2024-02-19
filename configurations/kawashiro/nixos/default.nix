@@ -12,7 +12,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
     inputs.sops-nix.nixosModules.sops
     ../../../modules/nixos/base
-    outputs.nixosModules.dan
+    ../../../modules/nixos/dan
     ../../../modules/nixos/dan/secrets
     ../../../modules/nixos/desktop-environment.nix
     ../../../modules/nixos/dnscrypt-proxy.nix

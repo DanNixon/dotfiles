@@ -103,10 +103,6 @@
 
     overlays = import ./overlays {inherit inputs;};
 
-    nixosModules = {
-      dan = import ./modules/nixos/dan;
-    };
-
     nixosConfigurations = {
       akane = import ./configurations/akane/nixos {inherit inputs outputs;};
       kawashiro = import ./configurations/kawashiro/nixos {inherit inputs outputs;};

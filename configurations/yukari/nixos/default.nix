@@ -16,7 +16,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ./disk-config.nix
 
     ../../../modules/nixos/base
-    outputs.nixosModules.dan
+    ../../../modules/nixos/dan
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/networkmanager.nix
     ../../../modules/nixos/ssh.nix
