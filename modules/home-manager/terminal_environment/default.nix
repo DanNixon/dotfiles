@@ -21,6 +21,7 @@
     ./shell.nix
     ./tmux.nix
     ./xplr.nix
+    ./zellij.nix
     ./zsh.nix
   ];
 

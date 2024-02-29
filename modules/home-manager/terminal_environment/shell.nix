@@ -38,6 +38,7 @@
     t = "cat $HOME/notebook/todo.txt";
     tt = "$EDITOR $HOME/notebook/todo.txt";
     mx = "pulsemixer";
+    zj = "zellij";
 
     stripexif = "exiftool -all=";
     today = "date '+%Y-%m-%d'";

@@ -14,7 +14,7 @@ in
       ../../../modules/home-manager/terminal_environment/git.nix
       ../../../modules/home-manager/terminal_environment/neovim
       ../../../modules/home-manager/terminal_environment/shell.nix
-      ../../../modules/home-manager/terminal_environment/tmux.nix
+      ../../../modules/home-manager/terminal_environment/zellij.nix
       ../../../modules/home-manager/terminal_environment/zsh.nix
 
       ({pkgs, ...}: {
