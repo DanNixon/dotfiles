@@ -17,8 +17,6 @@
 
   services.flatpak.enable = true;
 
-  programs.light.enable = true;
-
   programs.sway.enable = true;
 
   services.udisks2.enable = true;

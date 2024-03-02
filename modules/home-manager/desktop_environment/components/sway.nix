@@ -8,9 +8,9 @@
     package = null;
 
     config = let
+      brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
       de-screenshot = "${pkgs.de-screenshot}/bin/de-screenshot";
       ddcutil-modify-vcp = "${pkgs.ddcutil-modify-vcp}/bin/ddcutil-modify-vcp";
-      light = "${pkgs.light}/bin/light";
       media-control = "${pkgs.media-control}/bin/media-control";
       pactl = "${pkgs.pulseaudio}/bin/pactl";
       tofi-run = "${pkgs.tofi}/bin/tofi-run";
@@ -76,8 +76,8 @@
         "XF86AudioLowerVolume" = "exec --no-startup-id ${pactl} set-sink-volume @DEFAULT_SINK@ -5%";
         "XF86AudioMute" = "exec --no-startup-id ${pactl} set-sink-mute @DEFAULT_SINK@ toggle";
 
-        "XF86MonBrightnessUp" = "exec --no-startup-id ${light} -A 5";
-        "XF86MonBrightnessDown" = "exec --no-startup-id ${light} -U 5";
+        "XF86MonBrightnessUp" = "exec --no-startup-id ${brightnessctl} set '+5%'";
+        "XF86MonBrightnessDown" = "exec --no-startup-id ${brightnessctl} set '5%-'";
 
         "XF86AudioPlay" = "exec --no-startup-id ${media-control} pause";
         "XF86AudioPause" = "exec --no-startup-id ${media-control} pause";
@@ -126,8 +126,8 @@
         };
 
         "laptop brightness" = {
-          "k" = "exec --no-startup-id ${light} -A 5";
-          "j" = "exec --no-startup-id ${light} -U 5";
+          "k" = "exec --no-startup-id ${brightnessctl} set '+5%'";
+          "j" = "exec --no-startup-id ${brightnessctl} set '5%-'";
 
           "escape" = "mode default";
           "${modifier}+e" = "mode \"monitor brightness\"";
