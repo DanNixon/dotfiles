@@ -3,10 +3,6 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [
-    warpd
-  ];
-
   home.file.warpd-conf = {
     target = ".config/warpd/config";
 

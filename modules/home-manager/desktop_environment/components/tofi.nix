@@ -3,10 +3,6 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [
-    tofi
-  ];
-
   home.file.tofi-config = {
     target = ".config/tofi/config";
 

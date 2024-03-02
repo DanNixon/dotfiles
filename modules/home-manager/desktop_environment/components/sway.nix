@@ -3,19 +3,20 @@
   pkgs,
   ...
 }: {
-  home.packages = with pkgs; [
-    ddcutil-modify-vcp
-    media-control
-
-    # Provide pactl (used for some other custom tools)
-    pulseaudio
-  ];
-
   wayland.windowManager.sway = {
     enable = true;
     package = null;
 
-    config = {
+    config = let
+      de-screenshot = "${pkgs.de-screenshot}/bin/de-screenshot";
+      ddcutil-modify-vcp = "${pkgs.ddcutil-modify-vcp}/bin/ddcutil-modify-vcp";
+      light = "${pkgs.light}/bin/light";
+      media-control = "${pkgs.media-control}/bin/media-control";
+      pactl = "${pkgs.pulseaudio}/bin/pactl";
+      tofi-run = "${pkgs.tofi}/bin/tofi-run";
+      warpd = "${pkgs.warpd}/bin/warpd";
+      xargs = "${pkgs.findutils}/bin/xargs";
+    in {
       modifier = "Mod4"; # Super
 
       keybindings = let
@@ -63,26 +64,26 @@
         "${modifier}+e" = "mode \"sink volume\"";
         "${modifier}+r" = "mode resize";
 
-        "${modifier}+m" = "exec warpd --hint";
-        "${modifier}+shift+m" = "exec warpd --normal";
+        "${modifier}+m" = "exec ${warpd} --hint";
+        "${modifier}+shift+m" = "exec ${warpd} --normal";
 
         "${modifier}+space" = "exec alacritty";
-        "${modifier}+semicolon" = "exec tofi-run | xargs swaymsg exec --";
+        "${modifier}+semicolon" = "exec ${tofi-run} | ${xargs} swaymsg exec --";
 
-        "${modifier}+p" = "exec de-screenshot";
+        "${modifier}+p" = "exec ${de-screenshot}";
 
-        "XF86AudioRaiseVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
-        "XF86AudioLowerVolume" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%";
-        "XF86AudioMute" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
+        "XF86AudioRaiseVolume" = "exec --no-startup-id ${pactl} set-sink-volume @DEFAULT_SINK@ +5%";
+        "XF86AudioLowerVolume" = "exec --no-startup-id ${pactl} set-sink-volume @DEFAULT_SINK@ -5%";
+        "XF86AudioMute" = "exec --no-startup-id ${pactl} set-sink-mute @DEFAULT_SINK@ toggle";
 
-        "XF86MonBrightnessUp" = "exec --no-startup-id light -A 5";
-        "XF86MonBrightnessDown" = "exec --no-startup-id light -U 5";
+        "XF86MonBrightnessUp" = "exec --no-startup-id ${light} -A 5";
+        "XF86MonBrightnessDown" = "exec --no-startup-id ${light} -U 5";
 
-        "XF86AudioPlay" = "exec --no-startup-id media-control pause";
-        "XF86AudioPause" = "exec --no-startup-id media-control pause";
-        "XF86AudioPrev" = "exec --no-startup-id media-control prev";
-        "XF86AudioNext" = "exec --no-startup-id media-control next";
-        "XF86AudioStop" = "exec --no-startup-id media-control stop";
+        "XF86AudioPlay" = "exec --no-startup-id ${media-control} pause";
+        "XF86AudioPause" = "exec --no-startup-id ${media-control} pause";
+        "XF86AudioPrev" = "exec --no-startup-id ${media-control} prev";
+        "XF86AudioNext" = "exec --no-startup-id ${media-control} next";
+        "XF86AudioStop" = "exec --no-startup-id ${media-control} stop";
       };
 
       modes = let
@@ -107,40 +108,40 @@
         };
 
         "sink volume" = {
-          "k" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%";
-          "j" = "exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%";
-          "h" = "exec --no-startup-id pactl set-sink-mute @DEFAULT_SINK@ toggle";
+          "k" = "exec --no-startup-id ${pactl} set-sink-volume @DEFAULT_SINK@ +5%";
+          "j" = "exec --no-startup-id ${pactl} set-sink-volume @DEFAULT_SINK@ -5%";
+          "h" = "exec --no-startup-id ${pactl} set-sink-mute @DEFAULT_SINK@ toggle";
 
           "escape" = "mode default";
           "${modifier}+e" = "mode \"source volume\"";
         };
 
         "source volume" = {
-          "k" = "exec --no-startup-id pactl set-source-volume @DEFAULT_SOURCE@ +5%";
-          "j" = "exec --no-startup-id pactl set-source-volume @DEFAULT_SOURCE@ -5%";
-          "h" = "exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle";
+          "k" = "exec --no-startup-id ${pactl} set-source-volume @DEFAULT_SOURCE@ +5%";
+          "j" = "exec --no-startup-id ${pactl} set-source-volume @DEFAULT_SOURCE@ -5%";
+          "h" = "exec --no-startup-id ${pactl} set-source-mute @DEFAULT_SOURCE@ toggle";
 
           "escape" = "mode default";
           "${modifier}+e" = "mode \"laptop brightness\"";
         };
 
         "laptop brightness" = {
-          "k" = "exec --no-startup-id light -A 5";
-          "j" = "exec --no-startup-id light -U 5";
+          "k" = "exec --no-startup-id ${light} -A 5";
+          "j" = "exec --no-startup-id ${light} -U 5";
 
           "escape" = "mode default";
           "${modifier}+e" = "mode \"monitor brightness\"";
         };
 
         "monitor brightness" = {
-          "k" = "exec --no-startup-id ddcutil-modify-vcp 10 adjust +10";
-          "j" = "exec --no-startup-id ddcutil-modify-vcp 10 adjust -10";
+          "k" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 adjust +10";
+          "j" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 adjust -10";
 
-          "a" = "exec --no-startup-id ddcutil-modify-vcp 10 set 20";
-          "s" = "exec --no-startup-id ddcutil-modify-vcp 10 set 40";
-          "d" = "exec --no-startup-id ddcutil-modify-vcp 10 set 60";
-          "f" = "exec --no-startup-id ddcutil-modify-vcp 10 set 80";
-          "g" = "exec --no-startup-id ddcutil-modify-vcp 10 set 100";
+          "a" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 20";
+          "s" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 40";
+          "d" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 60";
+          "f" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 80";
+          "g" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 100";
 
           "escape" = "mode default";
           "${modifier}+e" = "mode \"sink volume\"";
