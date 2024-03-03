@@ -10,6 +10,8 @@
   in ''
     default_mode "locked"
 
+    mouse_mode false
+
     keybinds clear-defaults=true {
         normal {
             bind "q" { Quit; }
