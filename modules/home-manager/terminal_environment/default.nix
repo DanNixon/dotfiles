@@ -19,7 +19,6 @@
     ./nnn.nix
     ./pass.nix
     ./shell.nix
-    ./tmux.nix
     ./xplr.nix
     ./zellij.nix
     ./zsh.nix
