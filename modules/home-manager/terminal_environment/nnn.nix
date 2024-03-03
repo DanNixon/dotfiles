@@ -1,4 +1,8 @@
 {...}: {
+  home.shellAliases = {
+    f = "nnn";
+  };
+
   programs.nnn.enable = true;
 
   home.sessionVariables = {

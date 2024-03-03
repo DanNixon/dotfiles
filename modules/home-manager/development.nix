@@ -1,4 +1,9 @@
 {pkgs, ...}: {
+  home.shellAliases = {
+    k = "kubectl";
+    kk = "k9s";
+  };
+
   home.packages = with pkgs; [
     distrobox
 

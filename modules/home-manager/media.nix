@@ -3,6 +3,10 @@
   pkgs,
   ...
 }: {
+  home.shellAliases = {
+    m = "ncmpcpp";
+  };
+
   home.packages = with pkgs; [
     # Tools to aid in creating digital copies/backups of physical media
     cdparanoia # Backing up audio CDs

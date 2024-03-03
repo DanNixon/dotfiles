@@ -1,4 +1,8 @@
 {config, ...}: {
+  home.shellAliases = {
+    zj = "zellij";
+  };
+
   programs.zellij.enable = true;
 
   xdg.configFile."zellij/config.kdl".text = let

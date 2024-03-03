@@ -1,4 +1,10 @@
 {pkgs, ...}: {
+  home.shellAliases = {
+    g = "git";
+    gs = "git s";
+    lg = "lazygit";
+  };
+
   programs.git = {
     enable = true;
 

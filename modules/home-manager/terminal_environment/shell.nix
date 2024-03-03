@@ -23,22 +23,11 @@
     q = "exit";
     c = "clear";
 
-    g = "git";
-    gs = "git s";
-    lg = "lazygit";
-
-    f = "nnn";
-    p = "pass";
-    tm = "tmux";
     tok = "tomb open -k -";
     v = "$EDITOR";
-    m = "ncmpcpp";
-    k = "kubectl";
-    kk = "k9s";
     t = "cat $HOME/notebook/todo.txt";
     tt = "$EDITOR $HOME/notebook/todo.txt";
     mx = "pulsemixer";
-    zj = "zellij";
 
     stripexif = "exiftool -all=";
     today = "date '+%Y-%m-%d'";
