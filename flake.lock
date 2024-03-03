@@ -18,34 +18,18 @@
         "type": "github"
       }
     },
-    "base16-schemes": {
-      "flake": false,
-      "locked": {
-        "lastModified": 1702718998,
-        "narHash": "sha256-VTczZi1C4WSzejpTFbneMonAdarRLtDnFehVxWs6ad0=",
-        "owner": "base16-project",
-        "repo": "base16-schemes",
-        "rev": "2b6f2d0677216ddda50c9cabd6ee70fae4665f81",
-        "type": "github"
-      },
-      "original": {
-        "owner": "base16-project",
-        "repo": "base16-schemes",
-        "type": "github"
-      }
-    },
     "base16-vim": {
       "flake": false,
       "locked": {
         "lastModified": 1709140173,
         "narHash": "sha256-vf2ukcTtWnW9+UishL00d64QcJSuJLCfEWwPLxzuQPg=",
-        "owner": "base16-project",
+        "owner": "tinted-theming",
         "repo": "base16-vim",
         "rev": "257d0d2aa78a41f5297620ce55268b8ab173c8d2",
         "type": "github"
       },
       "original": {
-        "owner": "base16-project",
+        "owner": "tinted-theming",
         "repo": "base16-vim",
         "type": "github"
       }
@@ -345,7 +329,6 @@
     "root": {
       "inputs": {
         "base16": "base16",
-        "base16-schemes": "base16-schemes",
         "base16-vim": "base16-vim",
         "disko": "disko",
         "home-manager": "home-manager",
@@ -356,7 +339,8 @@
         "nixpkgs": "nixpkgs",
         "nixpkgs-unstable": "nixpkgs-unstable",
         "satori": "satori",
-        "sops-nix": "sops-nix"
+        "sops-nix": "sops-nix",
+        "tt-schemes": "tt-schemes"
       }
     },
     "rust-analyzer-src": {
@@ -455,6 +439,22 @@
       "original": {
         "owner": "numtide",
         "repo": "treefmt-nix",
+        "type": "github"
+      }
+    },
+    "tt-schemes": {
+      "flake": false,
+      "locked": {
+        "lastModified": 1707678373,
+        "narHash": "sha256-1s6L7vkHKC+eFhDnvFTl1aAjKnTE407MWmMS6gvVg74=",
+        "owner": "tinted-theming",
+        "repo": "schemes",
+        "rev": "ae4ce8b0d1f9b247d3add88a23aec3d833ae76d1",
+        "type": "github"
+      },
+      "original": {
+        "owner": "tinted-theming",
+        "repo": "schemes",
         "type": "github"
       }
     }

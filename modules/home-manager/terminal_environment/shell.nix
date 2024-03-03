@@ -3,7 +3,7 @@
   pkgs,
   ...
 }: {
-  scheme = "${inputs.base16-schemes}/material-darker.yaml";
+  scheme = "${inputs.tt-schemes}/base16/material-darker.yaml";
 
   programs.dircolors.enable = true;
 

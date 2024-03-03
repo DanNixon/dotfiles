@@ -38,13 +38,13 @@
 
     base16.url = "github:SenchoPens/base16.nix";
 
-    base16-schemes = {
-      url = "github:base16-project/base16-schemes";
+    tt-schemes = {
+      url = "github:tinted-theming/schemes";
       flake = false;
     };
 
     base16-vim = {
-      url = "github:base16-project/base16-vim";
+      url = "github:tinted-theming/base16-vim";
       flake = false;
     };
 
