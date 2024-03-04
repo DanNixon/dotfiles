@@ -5,8 +5,6 @@
   ...
 }: {
   imports = [
-    inputs.base16.homeManagerModule
-
     ../base.nix
 
     ./direnv.nix

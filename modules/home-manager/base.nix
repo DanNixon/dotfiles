@@ -6,6 +6,11 @@
   pkgs,
   ...
 }: {
+  imports = [
+    inputs.base16.homeManagerModule
+    inputs.nix-flatpak.homeManagerModules.nix-flatpak
+  ];
+
   nixpkgs = {
     config = {
       allowUnfree = true;

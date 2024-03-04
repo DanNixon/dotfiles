@@ -11,7 +11,6 @@
     ./components/tofi.nix
     ./components/warpd.nix
 
-    inputs.nix-flatpak.homeManagerModules.nix-flatpak
     ./apps
   ];
 
