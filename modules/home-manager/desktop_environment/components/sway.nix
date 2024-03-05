@@ -23,7 +23,7 @@
         modifier = config.wayland.windowManager.sway.config.modifier;
         d_px = "100";
       in {
-        "${modifier}+g" = "exec swaylock --color 002030";
+        "${modifier}+g" = "exec ${pkgs.swaylock}/bin/swaylock";
         "${modifier}+shift+g" = "exit";
 
         "${modifier}+shift+q" = "kill";
@@ -283,5 +283,28 @@
       theme = "native";
       icons = "awesome4";
     };
+  };
+
+  programs.swaylock = {
+    enable = true;
+    settings = {
+      color = "${config.scheme.withHashtag.base00}";
+      indicator-idle-visible = true;
+    };
+  };
+
+  services.swayidle = {
+    enable = true;
+    timeouts = [
+      {
+        timeout = 55;
+        command = "${pkgs.swaylock}/bin/swaylock -fF";
+      }
+      {
+        timeout = 60;
+        command = "${pkgs.sway}/bin/swaymsg \"output * dpms off\"";
+        resumeCommand = "${pkgs.sway}/bin/swaymsg \"output * dpms on\"";
+      }
+    ];
   };
 }
