@@ -13,31 +13,41 @@
 
     aliases = {
       ap = "add --patch";
+
       s = "status --short --branch";
       ss = "show";
+
       co = "checkout";
       sw = "switch";
+
       c = "commit";
       ca = "commit --amend";
       cf = "commit --fixup";
+
       d = "diff";
       ds = "diff --staged";
-      b = "branch";
-      bs = "branch --list";
-      ba = "branch --all";
+
+      b = "branch --all";
+      bd = "branch -D";
+
       l = "log --pretty=concise";
       la = "log --pretty=full --graph --show-signature";
       lg = "log --pretty=concise --graph";
       lb = "log --pretty=cleangraph --graph --branches --simplify-by-decoration";
       rl = "log --pretty=reflog --walk-reflogs";
+
       rb = "rebase";
       rbi = "rebase --interactive";
       rbc = "rebase --continue";
+
       p = "push";
       pu = "push --set-upstream";
       pfl = "push --force-with-lease";
+
       f = "fetch";
+
       cla = "clean -ixd";
+
       test-pr = "!f() { git fetch $1 pull/$2/merge:pr/$2-merged && git checkout pr/$2-merged; }; f";
     };
 
