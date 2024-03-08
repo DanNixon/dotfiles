@@ -5,5 +5,6 @@
     "org.librecad.librecad"
     "org.openscad.OpenSCAD"
     "com.prusa3d.PrusaSlicer"
+    "com.bambulab.BambuStudio"
   ];
 }
