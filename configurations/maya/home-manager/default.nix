@@ -19,7 +19,7 @@ in
 
       ({pkgs, ...}: {
         home.packages = with pkgs; [
-          inputs.satori.packages.${system}.satorictl
+          nur.repos.DanNixon.satorictl-unstable
         ];
 
         services.flatpak.packages = [
