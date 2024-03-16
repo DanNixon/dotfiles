@@ -49,11 +49,6 @@
       url = "github:tinted-theming/base16-vim";
       flake = false;
     };
-
-    satori = {
-      url = "github:dannixon/satori";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
   outputs = {
