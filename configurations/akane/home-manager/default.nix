@@ -21,7 +21,7 @@ in
         home.packages = with pkgs; [
           lightburn
           scrcpy
-          inputs.satori.packages.${system}.satorictl
+          nur.repos.DanNixon.satorictl-unstable
         ];
 
         services.flatpak.packages = [
