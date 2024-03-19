@@ -3,9 +3,7 @@
   pkgs,
   lib,
   ...
-}: let
-  secrets = import ./secrets.nix;
-in {
+}: {
   home.packages = with pkgs; [
     neomutt
   ];
@@ -91,94 +89,16 @@ in {
     color normal            default       default
 
     # Mailboxes
-    set folder    = ~/.mail/
-
-    set spoolfile = "+local/Inbox"
-    set record    = "+local/Sent"
-    set trash     = "+local/Trash"
-    set postponed = "+local/Drafts"
-
-    mailboxes \
-      +local \
-      +local/Inbox \
-      +local/Sent \
-      +local/Archive \
-      +local/Drafts \
-      +local/Trash
-
-    mailboxes ${lib.strings.concatMapStringsSep " " (x: "+local/" + x) secrets.extra-local-mailboxes}
+    set folder = ~/.mail/
 
     # Account: fastmail
     mailboxes \
       +fastmail \
       +fastmail/Inbox \
-      +fastmail/Spam
-
-    folder-hook \
-      "+fastmail.*" \
-      'source ~/${config.xdg.configFile."neomutt/accounts/fastmail".target}'
-
-    # Account: gmail
-    mailboxes \
-      +gmail \
-      +gmail/Inbox \
-      "+gmail/[Google Mail]" \
-      "+gmail/[Google Mail]/Spam"
-
-    folder-hook \
-      "+gmail.*" \
-      'source ~/${config.xdg.configFile."neomutt/accounts/gmail".target}'
-
-    # Account: outlook-1
-    mailboxes \
-      +outlook-1 \
-      +outlook-1/Inbox \
-      +outlook-1/Junk
-
-    folder-hook \
-      "+outlook-1.*" \
-      'source ~/${config.xdg.configFile."neomutt/accounts/outlook-1".target}'
-
-    # Account: outlook-2
-    mailboxes \
-      +outlook-2 \
-      +outlook-2/Inbox \
-      +outlook-2/Junk
-
-    folder-hook \
-      "+outlook-2.*" \
-      'source ~/${config.xdg.configFile."neomutt/accounts/outlook-2".target}'
-  '';
-
-  xdg.configFile."neomutt/accounts/fastmail".text = let
-    a = secrets.accounts.fastmail;
-  in ''
-    set from = "${a.address}"
-    set realname  = "${a.realName}"
-    set sendmail = "msmtp -a fastmail"
-  '';
-
-  xdg.configFile."neomutt/accounts/gmail".text = let
-    a = secrets.accounts.gmail;
-  in ''
-    set from = "${a.address}"
-    set realname  = "${a.realName}"
-    set sendmail = "msmtp -a gmail"
-  '';
-
-  xdg.configFile."neomutt/accounts/outlook-1".text = let
-    a = secrets.accounts.outlook-1;
-  in ''
-    set from = "${a.address}"
-    set realname  = "${a.realName}"
-    set sendmail = "msmtp -a outlook-1"
-  '';
-
-  xdg.configFile."neomutt/accounts/outlook-2".text = let
-    a = secrets.accounts.outlook-2;
-  in ''
-    set from = "${a.address}"
-    set realname  = "${a.realName}"
-    set sendmail = "msmtp -a outlook-2"
+      +fastmail/Archive \
+      +fastmail/Drafts \
+      +fastmail/Sent \
+      +fastmail/Spam \
+      +fastmail/Trash
   '';
 }
