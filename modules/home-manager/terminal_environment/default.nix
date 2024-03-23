@@ -11,7 +11,7 @@
     ./fzf.nix
     ./git.nix
     ./gpg.nix
-    ./joshuto.nix
+    # ./joshuto.nix
     ./neovim
     ./nix-index.nix
     ./nnn.nix
