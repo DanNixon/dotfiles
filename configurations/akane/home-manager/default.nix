@@ -21,6 +21,7 @@ in
         home.packages = with pkgs; [
           lightburn
           scrcpy
+          nur.repos.DanNixon.metty
           nur.repos.DanNixon.satorictl-unstable
         ];
 

@@ -1,5 +1,9 @@
 # Cheat Sheet
 
+## Inputs
+
+- Update a single input: `nix flake lock --update-input INPUT`
+
 ## NixOS
 
 - Update now: `nixos-rebuild switch --flake .`

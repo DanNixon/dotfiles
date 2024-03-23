@@ -19,6 +19,7 @@ in
 
       ({pkgs, ...}: {
         home.packages = with pkgs; [
+          nur.repos.DanNixon.metty
           nur.repos.DanNixon.satorictl-unstable
         ];
 
