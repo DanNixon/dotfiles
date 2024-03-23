@@ -73,7 +73,7 @@
       in {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            # nixos-anywhere
+            nixos-anywhere
 
             alejandra
             treefmt
