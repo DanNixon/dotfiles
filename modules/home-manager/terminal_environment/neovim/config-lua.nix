@@ -61,7 +61,6 @@
         ['<Down>'] = cmp.mapping.select_next_item(),
       }),
       sources = cmp.config.sources({
-        { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
         { name = 'path' },
@@ -69,14 +68,6 @@
         { name = 'buffer' },
       })
     })
-
-    -- Copilot config
-    require("copilot").setup({
-      suggestion = { enabled = false },
-      panel = { enabled = false },
-    })
-
-    require("copilot_cmp").setup()
 
     -- Fuzzy finding config
     require('fzf-lua').setup{

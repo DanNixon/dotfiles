@@ -26,10 +26,6 @@
     vimPlugins.cmp-nvim-lsp
     vimPlugins.cmp-path
 
-    # GitHub copilot integration
-    vimPlugins.copilot-lua
-    vimPlugins.copilot-cmp
-
     # Used to format and make editing CSV files trivial
     vimPlugins.csv
 
