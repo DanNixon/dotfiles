@@ -23,6 +23,8 @@
     vimPlugins.nvim-cmp
     vimPlugins.vim-vsnip
     vimPlugins.cmp-vsnip
+    vimPlugins.cmp-calc
+    vimPlugins.cmp-buffer
     vimPlugins.cmp-nvim-lsp
     vimPlugins.cmp-path
 
@@ -59,7 +61,7 @@
     # Query and insert unicode characters
     vimPlugins.unicode-vim
 
-    # Icons (e.g. file types)for other plugins
+    # Icons (e.g. file types) for other plugins
     vimPlugins.nvim-web-devicons
 
     # Syntax highlighting

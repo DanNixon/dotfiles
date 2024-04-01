@@ -3,8 +3,23 @@
     -- Language server config
     local capabilities = require('cmp_nvim_lsp').default_capabilities()
     local lspconfig = require('lspconfig')
+
+    lspconfig.marksman.setup { capabilities = capabilities }
+
     lspconfig.nixd.setup { capabilities = capabilities }
+
     lspconfig.rust_analyzer.setup { capabilities = capabilities }
+
+    lspconfig.yamlls.setup {
+      capabilities = capabilities,
+      settings = {
+        yaml = {
+          schemas = {
+            ["https://json.schemastore.org/github-workflow.json"] = "/.github/workflows/*",
+          },
+        },
+      },
+    }
 
     vim.keymap.set('n', '<space>df', vim.diagnostic.open_float)
     vim.keymap.set('n', '<space>dl', vim.diagnostic.setloclist)
@@ -14,7 +29,7 @@
       callback = function(ev)
         local opts = { buffer = ev.buf }
         vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-        vim.keymap.set('n', '<Leader>R', vim.lsp.buf.rename, opts)
+        vim.keymap.set('n', 'cr', vim.lsp.buf.rename, opts)
       end,
     })
 
@@ -28,6 +43,19 @@
     end
 
     cmp.setup({
+      formatting = {
+        format = function(entry, vim_item)
+          vim_item.kind = string.format('[%s]', vim_item.kind)
+          vim_item.menu = ({
+            nvim_lsp = "[LSP]",
+            vsnip = "[Snip]",
+            buffer = "[Buffer]",
+            path = "[Path]",
+            calc = "[Calc]",
+          })[entry.source.name]
+          return vim_item
+        end
+      },
       completion = {
         autocomplete = false,
       },
@@ -63,9 +91,9 @@
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
-        { name = 'path' },
-      }, {
         { name = 'buffer' },
+        { name = 'path' },
+        { name = 'calc' },
       })
     })
 

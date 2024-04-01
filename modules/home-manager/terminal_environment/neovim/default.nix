@@ -11,8 +11,11 @@
 
     extraPackages = with pkgs; [
       universal-ctags
+
+      # Language servers
+      marksman
       nixd
-      nodejs-slim
+      yaml-language-server
     ];
   };
 }
