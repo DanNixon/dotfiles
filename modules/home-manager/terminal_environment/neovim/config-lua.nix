@@ -43,32 +43,23 @@
     end
 
     cmp.setup({
-      formatting = {
-        format = function(entry, vim_item)
-          vim_item.kind = string.format('[%s]', vim_item.kind)
-          vim_item.menu = ({
-            nvim_lsp = "[LSP]",
-            vsnip = "[Snip]",
-            buffer = "[Buffer]",
-            path = "[Path]",
-            calc = "[Calc]",
-          })[entry.source.name]
-          return vim_item
-        end
-      },
       completion = {
         autocomplete = false,
       },
+
       snippet = {
         expand = function(args)
           vim.fn["vsnip#anonymous"](args.body)
         end,
       },
+
       window = {
         completion = cmp.config.window.bordered(),
         documentation = cmp.config.window.bordered(),
       },
+
       preselect = cmp.PreselectMode.None,
+
       mapping = cmp.mapping.preset.insert({
         ['<Esc>'] = cmp.mapping.abort(),
         ['<CR>'] = cmp.mapping.confirm({ select = true }),
@@ -88,13 +79,31 @@
         ['<Up>'] = cmp.mapping.select_prev_item(),
         ['<Down>'] = cmp.mapping.select_next_item(),
       }),
+
       sources = cmp.config.sources({
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
-        { name = 'buffer' },
         { name = 'path' },
         { name = 'calc' },
-      })
+      }, {
+        { name = 'buffer' },
+      }),
+
+      formatting = {
+        format = function(entry, vim_item)
+          vim_item.kind = string.format('[%s]', vim_item.kind)
+
+          vim_item.menu = ({
+            nvim_lsp = "[LSP]",
+            vsnip = "[Snip]",
+            path = "[Path]",
+            calc = "[Calc]",
+            buffer = "[Buff]",
+          })[entry.source.name]
+
+          return vim_item
+        end
+      },
     })
 
     -- Fuzzy finding config
