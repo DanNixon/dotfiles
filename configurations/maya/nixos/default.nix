@@ -40,7 +40,11 @@ inputs.nixpkgs.lib.nixosSystem {
 
       virtualisation.podman.enable = true;
       services.upower.enable = true;
-      services.tailscale.enable = true;
+
+      services.tailscale = {
+        enable = true;
+        useRoutingFeatures = "client";
+      };
 
       dotfiles.dan.groups = ["video" "dialout"];
 
