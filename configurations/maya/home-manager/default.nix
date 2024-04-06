@@ -36,6 +36,8 @@ in
           location = {
             sourceDirectories = [
               "/home/dan/docs"
+              "/home/dan/notebook"
+              "/home/dan/.local/share/password-store"
               "/home/dan/phone"
               "/home/dan/tombs"
             ];
