@@ -104,6 +104,7 @@
       akane = import ./configurations/akane/nixos {inherit inputs outputs;};
       kawashiro = import ./configurations/kawashiro/nixos {inherit inputs outputs;};
       maya = import ./configurations/maya/nixos {inherit inputs outputs;};
+      mitori = import ./configurations/mitori/nixos {inherit inputs outputs;};
       yukari = import ./configurations/yukari/nixos {inherit inputs outputs;};
       yuyuko = import ./configurations/yuyuko/nixos {inherit inputs outputs;};
     };
@@ -112,6 +113,7 @@
       "dan@akane" = import ./configurations/akane/home-manager {inherit inputs outputs;};
       generic = import ./configurations/generic/home-manager {inherit inputs outputs;};
       "dan@kawashiro" = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
+      "dan@mitori" = import ./configurations/mitori/home-manager {inherit inputs outputs;};
       "dan@maya" = import ./configurations/maya/home-manager {inherit inputs outputs;};
       minimal = import ./configurations/minimal/home-manager {inherit inputs outputs;};
       "dan@yukari" = import ./configurations/yukari/home-manager {inherit inputs outputs;};
