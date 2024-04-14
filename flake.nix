@@ -79,6 +79,7 @@
             treefmt
             mdl
 
+            ssh-to-age
             sops
           ];
         };
@@ -89,10 +90,6 @@
           packages = with pkgs; [
             git
             home-manager
-            neovim
-            nix
-            ssh-to-age
-            sops
           ];
         };
       }
