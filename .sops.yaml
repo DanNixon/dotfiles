@@ -5,6 +5,7 @@ keys:
     - &akane age1xl6gggups43c5j6stvjeaf0fky0u28mmthe45vfva3hg2vn7cyeqdv8md8
     - &kawashiro age1v6mp6g8qc0frz5r8tq4ajqc49ey0eul4yqeglevgrt8huga2s4qsym5hc0
     - &maya age1w908m223s5xg3xmsm3zxwxcudryc4hcp8xk5kveq09kgupjtpqhqq4nqsd
+    - &mitori age19tct0nf4cuvj0lveptda469raqtgewwg882rqr4y93g2m2wxrskqnttklq
 
 creation_rules:
   - path_regex: modules/home-manager/email/secrets.nix
@@ -20,3 +21,4 @@ creation_rules:
           - *akane
           - *kawashiro
           - *maya
+          - *mitori
