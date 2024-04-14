@@ -24,7 +24,6 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/peripherals/sound.nix
     ../../../modules/nixos/peripherals/sdr.nix
     ../../../modules/nixos/ssh.nix
-    ../../../modules/nixos/syncthing.nix
 
     {
       boot = {
