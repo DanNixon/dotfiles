@@ -1,8 +1,11 @@
-# Yukari
+# `yukari`
+
+## Hardware
+
+Hetzner CPX11 VM in Helsinki.
 
 ## Deployment
 
-- Create Hetzner VM: Helsinki, Ubuntu 22.04, CPX11
 - `nixos-anywhere --tty --flake .#yukari root@<IP>`
 - Connect via web console
   - `passwd`
