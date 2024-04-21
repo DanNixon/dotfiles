@@ -18,6 +18,7 @@
     ./pass.nix
     ./shell.nix
     ./xplr.nix
+    ./yubikey.nix
     ./zellij.nix
     ./zsh.nix
   ];
