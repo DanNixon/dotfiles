@@ -29,7 +29,6 @@
     headsetcontrol
     wdisplays
     wl-clipboard
-    yubikey-touch-detector
     xdg-utils
   ];
 
