@@ -44,5 +44,7 @@ with lib; {
       enableSSHSupport = true;
       enableExtraSocket = true;
     };
+
+    services.pcscd.enable = true;
   };
 }
