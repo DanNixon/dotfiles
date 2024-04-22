@@ -7,6 +7,7 @@
   imports = [
     ../base.nix
 
+    ./age.nix
     ./direnv.nix
     ./fzf.nix
     ./git.nix
