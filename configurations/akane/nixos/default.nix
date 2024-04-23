@@ -21,6 +21,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/peripherals/probe-rs.nix
     ../../../modules/nixos/peripherals/scanner.nix
     ../../../modules/nixos/peripherals/sound.nix
+    ../../../modules/nixos/peripherals/yubikey.nix
     ../../../modules/nixos/ssh.nix
     ../../../modules/nixos/syncthing.nix
 

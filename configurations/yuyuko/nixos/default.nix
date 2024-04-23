@@ -20,6 +20,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/networkmanager.nix
     ../../../modules/nixos/peripherals/sound.nix
+    ../../../modules/nixos/peripherals/yubikey.nix
     ../../../modules/nixos/ssh.nix
 
     {
