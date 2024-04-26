@@ -32,7 +32,6 @@
   programs.jq.enable = true;
 
   home.packages = with pkgs; [
-    pinentry-curses
     qrencode
     termdown
     zbar
