@@ -17,7 +17,7 @@ in
       ../../../modules/home-manager/media.nix
       ../../../modules/home-manager/office.nix
 
-      ({pkgs, ...}: {
+      ({pkgs, ...}: rec {
         home.packages = with pkgs; [
           lightburn
           scrcpy
@@ -48,15 +48,19 @@ in
           storage.encryptionPasscommand = "pass borg/akane/passphrase";
         };
 
-        wayland.windowManager.sway.config = {
-          input."2:7:SynPS/2_Synaptics_TouchPad" = {
-            events = "disabled";
-          };
+        wayland.windowManager.sway = {
+          checkConfig = false; # Does not work with background image paths
 
-          output = {
-            LVDS-1 = {
-              enable = "";
-              bg = "~/.local/share/wallpaper.png fill";
+          config = {
+            input."2:7:SynPS/2_Synaptics_TouchPad" = {
+              events = "disabled";
+            };
+
+            output = {
+              LVDS-1 = {
+                enable = "";
+                bg = "~/${home.file.wallpaper.target} fill";
+              };
             };
           };
         };
