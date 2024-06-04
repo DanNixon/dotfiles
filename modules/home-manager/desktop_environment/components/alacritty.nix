@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   programs.alacritty = {
     enable = true;
 
@@ -38,9 +34,6 @@
       };
 
       mouse = {
-        double_click.threshold = 300;
-        triple_click.threshold = 300;
-        faux_scrolling_lines = 1;
         hide_when_typing = false;
       };
 
@@ -71,7 +64,7 @@
         ];
       };
 
-      key_bindings = [
+      keyboard.bindings = [
         {
           key = "C";
           mods = "Control|Shift";
