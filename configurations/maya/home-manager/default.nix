@@ -17,7 +17,7 @@ in
       ../../../modules/home-manager/media.nix
       ../../../modules/home-manager/office.nix
 
-      ({pkgs, ...}: {
+      ({pkgs, ...}: rec {
         home.packages = with pkgs; [
           nur.repos.DanNixon.metty
           nur.repos.DanNixon.satorictl-unstable
@@ -46,11 +46,15 @@ in
           storage.encryptionPasscommand = "pass borg/maya/passphrase";
         };
 
-        wayland.windowManager.sway.config.output = {
-          DP-1 = {
-            enable = "";
-            bg = "~/.local/share/wallpaper.png fill";
-            scale = "1.5";
+        wayland.windowManager.sway = {
+          checkConfig = false; # Does not work with background image paths
+
+          config.output = {
+            DP-1 = {
+              enable = "";
+              bg = "~/${home.file.wallpaper.target} fill";
+              scale = "1.5";
+            };
           };
         };
 
