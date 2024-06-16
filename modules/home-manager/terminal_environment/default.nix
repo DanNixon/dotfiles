@@ -31,7 +31,6 @@
   programs.jq.enable = true;
 
   home.packages = with pkgs; [
-    perlPackages.CryptHSXKPasswd
     qrencode
     termdown
     zbar
@@ -66,7 +65,6 @@
     ffsend
     dogdns
     ipcalc
-    rclone
     rsync
     sipcalc
     sshfs

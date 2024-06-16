@@ -17,10 +17,8 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.nixos-hardware.nixosModules.common-cpu-intel
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
-    inputs.sops-nix.nixosModules.sops
     ../../../modules/nixos/base
-    ../../../modules/nixos/dan
-    ../../../modules/nixos/dan/secrets
+    ../../../modules/nixos/dan.nix
     ../../../modules/nixos/desktop-environment.nix
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/networkmanager.nix

@@ -2,10 +2,10 @@ keys:
   - &users:
     - &dan 84E956241243C35EA286B410EA06B7ABA96D6BB8
   - &hosts:
-    - &akane age1xl6gggups43c5j6stvjeaf0fky0u28mmthe45vfva3hg2vn7cyeqdv8md8
-    - &kawashiro age1v6mp6g8qc0frz5r8tq4ajqc49ey0eul4yqeglevgrt8huga2s4qsym5hc0
-    - &maya age1w908m223s5xg3xmsm3zxwxcudryc4hcp8xk5kveq09kgupjtpqhqq4nqsd
-    - &mitori age19tct0nf4cuvj0lveptda469raqtgewwg882rqr4y93g2m2wxrskqnttklq
+    - &akane age1jtvca4vw7evxej6jcx6qpd0dgwtxv403vwq3tw0dkswf42u0lv0qmrj9a7
+    # - &kawashiro todo
+    - &maya age1lj6hkktydycuxw6q88490hh6g7hs3qg72taz3fle0rlcfuq4z3hqyuxl2w
+    - &mitori age1eqw40qudems2h872ft44qcnges4u0gfss9mh2hwcksvya9ul5saq4rrv4f
 
 creation_rules:
   - path_regex: modules/home-manager/email/secrets.nix
@@ -13,12 +13,12 @@ creation_rules:
       - pgp:
           - *dan
 
-  - path_regex: modules/nixos/dan/secrets/secrets.yaml
+  - path_regex: modules/home-manager/.*.secret.(yaml|yml|txt)
     key_groups:
       - pgp:
           - *dan
         age:
           - *akane
-          - *kawashiro
+          # - *kawashiro
           - *maya
           - *mitori

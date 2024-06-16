@@ -9,10 +9,8 @@ inputs.nixpkgs.lib.nixosSystem {
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
-    inputs.sops-nix.nixosModules.sops
     ../../../modules/nixos/base
-    ../../../modules/nixos/dan
-    ../../../modules/nixos/dan/secrets
+    ../../../modules/nixos/dan.nix
     ../../../modules/nixos/desktop-environment.nix
     ../../../modules/nixos/dnscrypt-proxy.nix
     ../../../modules/nixos/networkmanager.nix
@@ -26,7 +24,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/ssh.nix
     ../../../modules/nixos/syncthing.nix
 
-    ({pkgs, ...}: {
+    ({...}: {
       boot = {
         loader.systemd-boot.enable = true;
         loader.efi.canTouchEfiVariables = true;
