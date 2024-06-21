@@ -41,6 +41,7 @@
   };
 
   hardware.enableRedistributableFirmware = true;
+  services.fwupd.enable = true;
 
   programs.iftop.enable = true;
 
