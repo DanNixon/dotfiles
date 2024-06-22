@@ -1,15 +1,13 @@
 # Flatpak
 
-## Font setup
+## App specific configuration
 
-```sh
-flatpak --user override --filesystem=$HOME/.local/share/fonts
-flatpak --user override --filesystem=/nix/store
-```
+### Firefox
 
-## App specific config
+- Ensure `socket=x11` and `socket=fallback-x11` are disabled
+- Navigate to `about:support` and look for *Window Protocol* to verify Wayland is in use
 
 ### Chromium
 
-Navigate to `chrome://flags/#ozone-platform-hint` and set to `Auto` or `Wayland` to enable Wayland.
-Optionally then disable X11 for `org.chromium.Chromium`.
+- Ensure `socket=x11` and `socket=fallback-x11` are disabled
+- Navigate to `chrome://flags/#ozone-platform-hint` and set to *Wayland*
