@@ -35,8 +35,6 @@ in
           "com.adobe.Flash-Player-Projector"
         ];
 
-        services.mpd.enable = true;
-
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [

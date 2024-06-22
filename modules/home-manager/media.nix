@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   home.shellAliases = {
     m = "ncmpcpp";
   };
@@ -104,8 +100,6 @@
   programs.yt-dlp.enable = true;
 
   services.mpd = {
-    musicDirectory = "${config.home.homeDirectory}/music";
-
     extraConfig = ''
       audio_output {
         type "pulse"

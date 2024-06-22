@@ -1,4 +1,5 @@
 {
+  lib,
   config,
   pkgs,
   ...
@@ -40,7 +41,7 @@
       desktop = null;
       documents = "${config.home.homeDirectory}/documents";
       download = "${config.home.homeDirectory}/downloads";
-      music = "${config.home.homeDirectory}/music";
+      music = lib.mkDefault null;
       pictures = null;
       publicShare = null;
       templates = null;

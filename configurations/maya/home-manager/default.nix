@@ -20,7 +20,11 @@ in
       ../../../modules/home-manager/media.nix
       ../../../modules/home-manager/office.nix
 
-      ({pkgs, ...}: rec {
+      ({
+        config,
+        pkgs,
+        ...
+      }: rec {
         home.packages = with pkgs; [
           nur.repos.DanNixon.metty
           nur.repos.DanNixon.satorictl-unstable
@@ -33,6 +37,7 @@ in
           "com.valvesoftware.Steam"
         ];
 
+        xdg.userDirs.music = "${config.home.homeDirectory}/music";
         services.mpd.enable = true;
 
         programs.borgmatic.backups."main" = {
