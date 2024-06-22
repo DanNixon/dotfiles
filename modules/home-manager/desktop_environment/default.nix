@@ -1,5 +1,4 @@
 {
-  inputs,
   config,
   pkgs,
   ...
@@ -33,8 +32,22 @@
   ];
 
   xdg = {
-    mime.enable = true;
+    enable = true;
+    userDirs = {
+      enable = true;
+      createDirectories = true;
 
+      desktop = null;
+      documents = "${config.home.homeDirectory}/documents";
+      download = "${config.home.homeDirectory}/downloads";
+      music = "${config.home.homeDirectory}/music";
+      pictures = null;
+      publicShare = null;
+      templates = null;
+      videos = null;
+    };
+
+    mime.enable = true;
     mimeApps = {
       enable = true;
 
@@ -59,6 +72,7 @@
   };
 
   # Required for Flatpak apps to have access to system fonts
+  # TODO: is this still needed?
   home.file.fonts = {
     target = ".local/share/fonts";
     source = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/X11/fonts";
