@@ -1,4 +1,6 @@
 {pkgs, ...}: {
+  hardware.graphics.enable = true;
+
   fonts = {
     fontDir.enable = true;
 
