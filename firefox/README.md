@@ -1,28 +1,51 @@
 # Firefox
 
-## Addons
+While I would *love* to have Firefox just configure itself and not have to do this manually, there does not exist a good way to do so.
+Policies kind of get partially there, but are missing some settings that I would need.
+I am also pretty sure trying to do anyting smarter than manual configuration would fail the [is it worth the time?](https://xkcd.com/1205/) test.
 
-- [Dark Reader](https://github.com/darkreader/darkreader)
-  ([install](https://addons.mozilla.org/en-US/firefox/addon/darkreader/))
-- [Decentraleyes](https://git.synz.io/Synzvato/decentraleyes)
-  ([install](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes/))
-- Image Search Options
-  ([install](https://addons.mozilla.org/en-US/firefox/addon/image-search-options/))
-- [Multi-Account Containers](https://github.com/mozilla/multi-account-containers)
-  ([install](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers/))
-- [Privacy Badger](https://github.com/EFForg/privacybadger)
-  ([install](https://privacybadger.org/))
-- [Redirector](https://github.com/einaregilsson/Redirector)
-  ([install](https://addons.mozilla.org/en-US/firefox/addon/redirector/))
-- [Tridactyl](https://github.com/tridactyl/tridactyl)
-  ([install](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim/))
-- [uBlock](https://github.com/gorhill/uBlock)
-  ([install](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin/))
-- [Wallabagger](https://github.com/wallabag/wallabagger)
-  ([install](https://addons.mozilla.org/en-US/firefox/addon/wallabagger/))
+## Configuration steps
 
-## Tridactyl
-
-1. Load colour scheme: `:colourscheme --url https://raw.githubusercontent.com/DanNixon/dotfiles/main/tridactyl/base16-monokai.css base16-monokai`
-2. Load config: `:source --url https://raw.githubusercontent.com/DanNixon/dotfiles/main/tridactyl/tridactylrc`
-3. (when needed) reset settings: `:sanitise tridactyllocal tridactylsync`
+1. New Tab page
+   - Disable *Sponsored shortcuts*
+   - Disable *Recommended stories*
+   - Disable *Sponsored stories*
+2. Bookmarks Toolbar
+   - Set to *Never Show*
+3. Enable dark theme
+4. Install the following addons, allowing them to run in private windows:
+   - [Dark Reader](https://addons.mozilla.org/en-US/firefox/addon/darkreader)
+   - [Decentraleyes](https://addons.mozilla.org/en-US/firefox/addon/decentraleyes)
+   - [Privacy Badger](https://privacybadger.org)
+   - [Tridactyl](https://addons.mozilla.org/en-US/firefox/addon/tridactyl-vim)
+   - [uBlock Origin](https://addons.mozilla.org/en-US/firefox/addon/ublock-origin)
+5. Tridactyl
+   - Open a new tab and allow the request to change the new tab page
+   - Load colour scheme: `:colourscheme --url https://raw.githubusercontent.com/DanNixon/dotfiles/main/firefox/tridactyl/base16-monokai.css base16-monokai`
+   - Load config: `:source --url https://raw.githubusercontent.com/DanNixon/dotfiles/main/firefox/tridactyl/tridactylrc`
+   - Open a new tab and check that colour scheme and config are loaded and correct
+6. Install [Multi Account Containers](https://addons.mozilla.org/en-US/firefox/addon/multi-account-containers), not allowing it to run in normal windows
+   - Complete setup panels: no sync, no Mozilla VPN
+   - Delete default containers via Tridactyl `containerdelete`: "Personal", "Work", "Banking", "Shopping"
+7. Set plugin icon visibility
+   - Pinned to toolbar: Dark Reader
+   - Everything else in extensions menu
+8. Customize Toolbar
+   - Remove:
+      - Padding around omnibox
+      - Pocket icon
+      - Account icon
+   - Right of omnibox: Downloads, Dark Reader, Extensions
+9. *Settings* > *General*
+   - Disable *picture in picture video controls*
+10. *Settings* > *Search*
+   - Set default to *DuckDuckGo*
+11. *Settings* > *Privacy & Security*
+   - Enable no data sharing and no tracking under *Web Site Privacy Preferences*
+   - Disable *Ask to save passwords*
+   - Disable *Autofill*
+   - Enable *HTTPS-Only Mode in all windows*
+12. Optionally, or as required, install the following plugins:
+   - [Image Search Options](https://addons.mozilla.org/en-US/firefox/addon/image-search-options/)
+   - [Redirector](https://addons.mozilla.org/en-US/firefox/addon/redirector/)
+   - [Wallabagger](https://addons.mozilla.org/en-US/firefox/addon/wallabagger/)
