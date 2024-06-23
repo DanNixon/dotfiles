@@ -53,8 +53,8 @@ in
           checkConfig = false; # Does not work with background image paths
 
           config = {
-            input."2:7:SynPS/2_Synaptics_TouchPad" = {
-              events = "disabled";
+            input."2:10:TPPS/2_IBM_TrackPoint" = {
+              pointer_accel = "-0.25";
             };
 
             output = {
