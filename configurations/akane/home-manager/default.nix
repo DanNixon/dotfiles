@@ -74,7 +74,7 @@ in
         };
 
         home.file.wallpaper = {
-          source = ./wallpaper.png;
+          source = ../../../wallpapers/aya.png;
           target = ".local/share/wallpaper.png";
         };
 

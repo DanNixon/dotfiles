@@ -67,7 +67,7 @@ in
         };
 
         home.file.wallpaper = {
-          source = ./wallpaper.png;
+          source = ../../../wallpapers/sakuya-meiling.png;
           target = ".local/share/wallpaper.png";
         };
 

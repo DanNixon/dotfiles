@@ -20,7 +20,7 @@ in
       ../../../modules/home-manager/media.nix
       ../../../modules/home-manager/office.nix
 
-      ({pkgs, ...}: {
+      ({pkgs, ...}: rec {
         home.packages = with pkgs; [
           lightburn
           scrcpy
@@ -58,11 +58,17 @@ in
             };
 
             output = {
-              LVDS-1 = {
+              eDP-1 = {
                 enable = "";
+                bg = "~/${home.file.wallpaper.target} fill";
               };
             };
           };
+        };
+
+        home.file.wallpaper = {
+          source = ../../../wallpapers/aya.png;
+          target = ".local/share/wallpaper.png";
         };
 
         programs.i3status-rust.bars.main.blocks = [
