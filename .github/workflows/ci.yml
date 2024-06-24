@@ -16,28 +16,18 @@ jobs:
       - name: treefmt
         run: nix develop --command treefmt --fail-on-change
 
-  build-nixos-configs:
-    name: Build NixOS configurations
+  flake-check:
+    name: Flake Check
     needs:
       - formatting
     runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        config:
-          # - akane
-          # - kawashiro
-          # - maya
-          # - mitori
-          - yukari
-          # - yuyuko
 
     steps:
       - uses: actions/checkout@v4
       - uses: cachix/install-nix-action@V27
 
-      - name: Build config
-        run: nix run nixpkgs\#nixos-rebuild -- build --flake .\#${{ matrix.config }}
+      - name: flake check
+        run: nix flake check
 
   build-home-manager-configs:
     name: Build Home Manager configurations
