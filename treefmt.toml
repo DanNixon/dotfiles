@@ -3,7 +3,6 @@ command = "alejandra"
 includes = [ "*.nix" ]
 excludes = [
   "*/hardware-configuration.nix",
-  "modules/home-manager/email/secrets.nix",
 ]
 
 [formatter.markdown]
