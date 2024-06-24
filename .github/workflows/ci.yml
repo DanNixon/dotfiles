@@ -45,7 +45,6 @@ jobs:
           - dan@maya
           - minimal
           - dan@mitori
-          - dan@yukari
           - dan@yuyuko
 
     steps:
