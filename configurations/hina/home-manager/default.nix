@@ -42,7 +42,6 @@ in
               "/home/dan/notebook"
               "/home/dan/.local/share/password-store"
               "/home/dan/phone"
-              "/home/dan/tombs"
             ];
             repositories = ["ssh://g5ows5p1@g5ows5p1.repo.borgbase.com/./repo"];
           };
