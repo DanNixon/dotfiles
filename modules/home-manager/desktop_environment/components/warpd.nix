@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   home.file.warpd-conf = {
     target = ".config/warpd/config";
 

@@ -21,7 +21,7 @@ in
       ${text}
     '';
 
-    meta = with lib; {
+    meta = {
       mainProgram = name;
       description = description;
     };

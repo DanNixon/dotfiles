@@ -1,5 +1,4 @@
 {
-  lib,
   writeTextFile,
   runtimeShell,
 }: let
@@ -16,7 +15,7 @@ in
       flatpak run org.mozilla.firefox -- --private-window
     '';
 
-    meta = with lib; {
+    meta = {
       mainProgram = name;
       description = description;
     };

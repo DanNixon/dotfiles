@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{config, ...}: {
   home.file.tofi-config = {
     target = ".config/tofi/config";
 
