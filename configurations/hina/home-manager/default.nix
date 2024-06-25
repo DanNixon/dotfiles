@@ -54,7 +54,7 @@ in
 
           config = {
             input."2:10:TPPS/2_IBM_TrackPoint" = {
-              pointer_accel = "-0.25";
+              pointer_accel = "-0.4";
             };
 
             output = {
