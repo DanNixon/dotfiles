@@ -3,21 +3,15 @@
   lib,
   pkgs,
   ...
-}:
-with lib; {
+}: {
   options = {
-    dotfiles.dan.initialPassword = lib.mkOption {
-      type = with types; nullOr str;
-      default = null;
-    };
-
     dotfiles.dan.groups = lib.mkOption {
-      type = with types; listOf str;
+      type = with lib.types; listOf str;
       default = [];
     };
 
     dotfiles.dan.enableGpgAgent = lib.mkOption {
-      type = types.bool;
+      type = lib.types.bool;
       default = true;
     };
   };
@@ -40,7 +34,7 @@ with lib; {
         "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBGnGBOiciPIJpUKrgEx5bqEKu3eKCkeyBNieD/FOH7ArWSPI0S2c2AEhz/zCHFGD9PrQpg2s0ImEG/ZqwHHOUWw= dannixon-sk-p-blue"
       ];
 
-      initialPassword = config.dotfiles.dan.initialPassword;
+      initialPassword = "change-me";
     };
 
     programs.gnupg.agent = {

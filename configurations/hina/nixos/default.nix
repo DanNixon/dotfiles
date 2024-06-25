@@ -45,7 +45,6 @@ inputs.nixpkgs.lib.nixosSystem {
       };
 
       dotfiles.dan.groups = ["video" "dialout"];
-      dotfiles.dan.initialPassword = "change-me";
 
       # Required for Bambu Lab printer discovery
       networking.firewall.allowedUDPPorts = [2021];

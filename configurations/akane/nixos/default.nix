@@ -6,7 +6,14 @@ inputs.nixpkgs.lib.nixosSystem {
   specialArgs = {inherit inputs outputs;};
 
   modules = [
-    ./hardware-configuration.nix
+    inputs.disko.nixosModules.disko
+    ({modulesPath, ...}: {
+      imports = [
+        (modulesPath + "/installer/scan/not-detected.nix")
+      ];
+    })
+    ./hardware.nix
+    ./disk-config.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
@@ -21,15 +28,8 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/peripherals/sound.nix
     ../../../modules/nixos/peripherals/yubikey.nix
     ../../../modules/nixos/ssh.nix
-    ../../../modules/nixos/syncthing.nix
 
     {
-      boot = {
-        loader.systemd-boot.enable = true;
-        loader.efi.canTouchEfiVariables = true;
-        initrd.secrets."/crypto_keyfile.bin" = null;
-      };
-
       networking.hostName = "akane";
 
       services.dnscrypt-proxy2.settings.forwarding_rules = "/etc/dnscrypt-proxy2/forwarding-rules.txt";

@@ -11,53 +11,25 @@ in
     modules = [
       ../../../modules/home-manager/terminal_environment
       ../../../modules/home-manager/terminal_environment/hsxkpasswd
-      ../../../modules/home-manager/terminal_environment/rclone
       ../../../modules/home-manager/terminal_environment/ssh-config
       ../../../modules/home-manager/desktop_environment
-      ../../../modules/home-manager/borgmatic.nix
       ../../../modules/home-manager/cad.nix
       ../../../modules/home-manager/development.nix
       ../../../modules/home-manager/media.nix
       ../../../modules/home-manager/office.nix
 
-      ({
-        config,
-        pkgs,
-        ...
-      }: rec {
+      ({pkgs, ...}: {
         home.packages = with pkgs; [
           lightburn
-          scrcpy
           nur.repos.DanNixon.metty
-          nur.repos.DanNixon.satorictl-unstable
         ];
 
         services.flatpak.packages = [
           "org.chromium.Chromium"
           "com.microsoft.Edge"
-
-          "com.adobe.Flash-Player-Projector"
         ];
 
-        xdg.userDirs.music = "${config.home.homeDirectory}/music";
-        services.mpd.enable = true;
-
-        programs.borgmatic.backups."main" = {
-          location = {
-            sourceDirectories = [
-              "/home/dan/docs"
-              "/home/dan/notebook"
-              "/home/dan/.local/share/password-store"
-              "/home/dan/phone"
-            ];
-            repositories = ["ssh://r4zp295h@r4zp295h.repo.borgbase.com/./repo"];
-          };
-          storage.encryptionPasscommand = "pass borg/akane/passphrase";
-        };
-
         wayland.windowManager.sway = {
-          checkConfig = false; # Does not work with background image paths
-
           config = {
             input."2:7:SynPS/2_Synaptics_TouchPad" = {
               events = "disabled";
@@ -66,15 +38,9 @@ in
             output = {
               LVDS-1 = {
                 enable = "";
-                bg = "~/${home.file.wallpaper.target} fill";
               };
             };
           };
-        };
-
-        home.file.wallpaper = {
-          source = ../../../wallpapers/aya.png;
-          target = ".local/share/wallpaper.png";
         };
 
         programs.i3status-rust.bars.main.blocks = [

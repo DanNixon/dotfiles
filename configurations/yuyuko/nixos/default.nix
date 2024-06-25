@@ -32,8 +32,6 @@ inputs.nixpkgs.lib.nixosSystem {
       nixpkgs.hostPlatform = "x86_64-linux";
 
       networking.hostName = "yuyuko";
-
-      dotfiles.dan.initialPassword = "for-fucks-sake-change-this";
     }
   ];
 }
