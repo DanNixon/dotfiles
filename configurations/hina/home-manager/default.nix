@@ -38,13 +38,13 @@ in
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [
-              "/home/dan/docs"
+              "/home/dan/documents"
               "/home/dan/notebook"
               "/home/dan/.local/share/password-store"
               "/home/dan/phone"
               "/home/dan/tombs"
             ];
-            repositories = ["ssh://r4zp295h@r4zp295h.repo.borgbase.com/./repo"];
+            repositories = ["ssh://g5ows5p1@g5ows5p1.repo.borgbase.com/./repo"];
           };
           storage.encryptionPasscommand = "pass borg/hina/passphrase";
         };
