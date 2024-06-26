@@ -6,7 +6,6 @@ keys:
     - &hina age14gcf5lpetq2t4pe2nqmvfgm6agjfyakldy5hw2qt9r8yq0vw2yjqhuw4tt
     # - &kawashiro todo
     - &maya age1lj6hkktydycuxw6q88490hh6g7hs3qg72taz3fle0rlcfuq4z3hqyuxl2w
-    - &mitori age1eqw40qudems2h872ft44qcnges4u0gfss9mh2hwcksvya9ul5saq4rrv4f
 
 creation_rules:
   - path_regex: modules/home-manager/.*.secret.(yaml|yml|txt)
@@ -18,4 +17,3 @@ creation_rules:
           - *hina
           # - *kawashiro
           - *maya
-          - *mitori

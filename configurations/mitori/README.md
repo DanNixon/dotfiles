@@ -1,3 +1,0 @@
-# `mitori`
-
-Temporary hackspace laptop.
