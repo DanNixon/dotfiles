@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  services.printing.drivers = [pkgs.foomatic-db-ppds];
+  services.printing = {
+    enable = true;
+    drivers = [pkgs.foomatic-db-ppds];
+  };
 
   hardware.printers.ensurePrinters = [
     {

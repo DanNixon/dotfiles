@@ -1,5 +1,8 @@
 {pkgs, ...}: {
-  services.printing.drivers = [pkgs.hplip];
+  services.printing = {
+    enable = true;
+    drivers = [pkgs.hplip];
+  };
 
   hardware.printers.ensurePrinters = [
     {
