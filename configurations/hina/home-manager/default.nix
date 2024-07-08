@@ -20,7 +20,11 @@ in
       ../../../modules/home-manager/media.nix
       ../../../modules/home-manager/office.nix
 
-      ({pkgs, ...}: rec {
+      ({
+        config,
+        pkgs,
+        ...
+      }: rec {
         home.packages = with pkgs; [
           lightburn
           scrcpy
@@ -34,6 +38,9 @@ in
 
           "com.adobe.Flash-Player-Projector"
         ];
+
+        xdg.userDirs.music = "${config.home.homeDirectory}/music";
+        services.mpd.enable = true;
 
         programs.borgmatic.backups."main" = {
           location = {
