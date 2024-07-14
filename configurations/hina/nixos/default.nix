@@ -46,9 +46,6 @@ inputs.nixpkgs.lib.nixosSystem {
       };
 
       dotfiles.dan.groups = ["video" "dialout"];
-
-      # Required for Bambu Lab printer discovery
-      networking.firewall.allowedUDPPorts = [2021];
     }
   ];
 }
