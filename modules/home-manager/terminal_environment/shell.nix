@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  scheme = "${inputs.tt-schemes}/base16/material-darker.yaml";
+  scheme = "${inputs.tt-schemes}/base16/bright.yaml";
 
   programs.dircolors.enable = true;
 
