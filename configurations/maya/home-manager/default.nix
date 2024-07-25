@@ -60,7 +60,7 @@ in
             DP-1 = {
               enable = "";
               bg = "~/${home.file.wallpaper.target} fill";
-              scale = "1.5";
+              scale = "1.3";
             };
           };
         };
