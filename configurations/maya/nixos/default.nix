@@ -37,6 +37,8 @@ inputs.nixpkgs.lib.nixosSystem {
         castle.dan-nixon.com 100.103.214.89
       '';
 
+      hardware.bluetooth.enable = true;
+
       virtualisation.podman.enable = true;
       services.upower.enable = true;
 
