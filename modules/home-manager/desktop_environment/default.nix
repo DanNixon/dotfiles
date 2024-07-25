@@ -9,7 +9,6 @@
     ./components/mako.nix
     ./components/sway.nix
     ./components/tofi.nix
-    ./components/warpd.nix
 
     ./apps
   ];

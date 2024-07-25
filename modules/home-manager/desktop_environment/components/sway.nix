@@ -14,7 +14,6 @@
       media-control = "${pkgs.media-control}/bin/media-control";
       pactl = "${pkgs.pulseaudio}/bin/pactl";
       tofi-run = "${pkgs.tofi}/bin/tofi-run";
-      warpd = "${pkgs.warpd}/bin/warpd";
       xargs = "${pkgs.findutils}/bin/xargs";
     in {
       modifier = "Mod4"; # Super
@@ -63,9 +62,6 @@
 
         "${modifier}+e" = "mode \"sink volume\"";
         "${modifier}+r" = "mode resize";
-
-        "${modifier}+m" = "exec ${warpd} --hint";
-        "${modifier}+shift+m" = "exec ${warpd} --normal";
 
         "${modifier}+space" = "exec alacritty";
         "${modifier}+semicolon" = "exec ${tofi-run} | ${xargs} swaymsg exec --";
