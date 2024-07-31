@@ -37,9 +37,13 @@ inputs.nixpkgs.lib.nixosSystem {
         castle.dan-nixon.com 100.103.214.89
       '';
 
-      virtualisation.podman.enable = true;
       services.upower.enable = true;
-      services.tailscale.enable = true;
+      virtualisation.podman.enable = true;
+
+      services.tailscale = {
+        enable = true;
+        useRoutingFeatures = "client";
+      };
 
       dotfiles.dan.groups = ["video" "dialout"];
 

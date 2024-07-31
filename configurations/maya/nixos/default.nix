@@ -38,9 +38,8 @@ inputs.nixpkgs.lib.nixosSystem {
       '';
 
       hardware.bluetooth.enable = true;
-
-      virtualisation.podman.enable = true;
       services.upower.enable = true;
+      virtualisation.podman.enable = true;
 
       services.tailscale = {
         enable = true;
