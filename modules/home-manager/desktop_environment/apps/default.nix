@@ -10,4 +10,8 @@
     firefox-private
     gpxsee
   ];
+
+  services.flatpak.packages = [
+    "net.ankiweb.Anki"
+  ];
 }
