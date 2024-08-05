@@ -10,8 +10,6 @@
     defaultEditor = true;
 
     extraPackages = with pkgs; [
-      universal-ctags
-
       # Language servers
       marksman
       nixd

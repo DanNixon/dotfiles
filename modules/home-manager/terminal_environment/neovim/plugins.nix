@@ -4,69 +4,56 @@
   pkgs,
   ...
 }: {
-  programs.neovim.plugins = with pkgs; [
+  programs.neovim.plugins = with pkgs.vimPlugins; [
     # Colour scheme
-    (vimPlugins.base16-vim.overrideAttrs (
+    (base16-vim.overrideAttrs (
       old: let
         schemeFile = config.scheme inputs.base16-vim;
       in {patchPhase = ''cp ${schemeFile} colors/base16-scheme.vim'';}
     ))
 
-    # Provides powerline style status line
-    vimPlugins.vim-airline
-    vimPlugins.vim-airline-themes
-
     # Provides easy line/block comment toggling
-    vimPlugins.vim-commentary
+    vim-commentary
 
     # Completion
-    vimPlugins.nvim-cmp
-    vimPlugins.vim-vsnip
-    vimPlugins.cmp-vsnip
-    vimPlugins.cmp-calc
-    vimPlugins.cmp-buffer
-    vimPlugins.cmp-nvim-lsp
-    vimPlugins.cmp-path
+    nvim-cmp
+    vim-vsnip
+    cmp-vsnip
+    cmp-buffer
+    cmp-nvim-lsp
+    cmp-path
 
     # Used to format and make editing CSV files trivial
-    vimPlugins.csv
+    csv
 
     # Fast jumping to markers in a file
-    vimPlugins.easymotion
-
-    # Applies formatting rules based on editorconfig files
-    vimPlugins.editorconfig-vim
+    easymotion
 
     # Fuzzy finding
-    vimPlugins.fzf-lua
+    fzf-lua
+
+    # Status line
+    lualine-nvim
 
     # Enhanced spelling and grammar checking
-    vimPlugins.vim-lexical
+    vim-lexical
 
     # Language server client
-    vimPlugins.nvim-lspconfig
+    nvim-lspconfig
 
-    # Provides tree based file explorer
-    vimPlugins.nerdtree
+    # Tree based file explorer
+    neo-tree-nvim
 
     # Restores cursor position on opening previously opened files
-    vimPlugins.restore-view-vim
+    restore-view-vim
 
     # Format text into one line per sentence
-    vimPlugins.vim-sentence-chopper
+    vim-sentence-chopper
 
-    # Provides ctags based navigation of current file
-    vimPlugins.tagbar
+    # Treesitter
+    nvim-treesitter.withAllGrammars
 
     # Query and insert unicode characters
-    vimPlugins.unicode-vim
-
-    # Icons (e.g. file types) for other plugins
-    vimPlugins.nvim-web-devicons
-
-    # Syntax highlighting
-    vimPlugins.vim-polyglot
-    vimPlugins.vim-openscad
-    vimPlugins.vim-nftables
+    unicode-vim
   ];
 }

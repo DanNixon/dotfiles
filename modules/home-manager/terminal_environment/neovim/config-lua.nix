@@ -84,7 +84,6 @@
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
         { name = 'path' },
-        { name = 'calc' },
       }, {
         { name = 'buffer' },
       }),
@@ -97,7 +96,6 @@
             nvim_lsp = "[LSP]",
             vsnip = "[Snip]",
             path = "[Path]",
-            calc = "[Calc]",
             buffer = "[Buff]",
           })[entry.source.name]
 
@@ -107,13 +105,84 @@
     })
 
     -- Fuzzy finding config
-    require('fzf-lua').setup{
+    require('fzf-lua').setup({
       keymap = {
         fzf = {
           ["tab"]       = "down",
           ["shift-tab"] = "up",
-        }
-      }
-    }
+        },
+      },
+    })
+
+    -- Tree view config
+    vim.keymap.set('n', '<space>n', function()
+      require("neo-tree.command").execute({
+        action = "focus",
+      });
+    end
+    );
+
+    vim.keymap.set('n', '<space>N', function()
+      require("neo-tree.command").execute({
+        action = "close",
+      });
+    end
+    );
+
+    require("neo-tree").setup({
+      popup_border_style = "rounded",
+
+      default_component_configs = {
+        name = {
+          trainling_slash = true,
+          use_git_status_colors = false,
+        },
+      },
+
+      source_selector = {
+        winbar = true,
+        statusline = false,
+      },
+
+      filesystem = {
+        follow_current_file = {
+          enabled = true,
+        },
+      },
+    })
+
+    vim.cmd([[
+      highlight NeoTreeFloatNormal guifg=#ffffff guibg=#000000
+      highlight NeoTreeFloatTitle guifg=#ffffff guibg=#000000
+      highlight NeoTreeFloatBorder guifg=#ffffff guibg=#000000
+    ]])
+
+    -- Status line config
+    require('lualine').setup({
+      options = {
+        icons_enabled = false,
+        theme = "base16",
+        section_separators = { left = "", right = "" },
+        component_separators = { left = "|", right = "|" },
+      },
+      sections = {
+        lualine_a = {'mode'},
+        lualine_b = {'branch', 'diff'},
+        lualine_c = {'filename'},
+        lualine_x = {'filetype', 'encoding', 'fileformat'},
+        lualine_y = {'diagnostics'},
+        lualine_z = {'location'}
+      },
+    })
+
+    -- Treesitter config
+    require('nvim-treesitter.configs').setup({
+      highlight = {
+        enable = true,
+      },
+      indent = {
+        enable = true,
+      },
+    })
   '';
 }
