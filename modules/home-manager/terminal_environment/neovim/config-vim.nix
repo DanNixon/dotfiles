@@ -10,7 +10,7 @@
     """"""""""""""""""
 
     filetype plugin indent on
-    syntax on
+    syntax off
 
     " Use Space as Leader
     let mapleader = " "
@@ -33,10 +33,6 @@
 
     " Terminal title
     set title
-
-    " Airline config
-    let g:airline_powerline_fonts = 1
-    let g:airline#extensions#ale#enabled = 1
 
     set laststatus=2
     set timeoutlen=500
@@ -77,17 +73,6 @@
     " Highlight current line
     set cursorline
 
-    " NERDTree config
-    let g:NERDTreeMinimalUI = 1
-
-    function! NERDTreeOpen()
-      if @% == ""
-        NERDTreeCWD
-      else
-        NERDTreeFind
-      endif
-    endfunction
-
     """""""""""""""""""""""""""""""
     " MISC COMMANDS AND FUNCTIONS "
     """""""""""""""""""""""""""""""
@@ -108,25 +93,13 @@
     map <Leader>S :SpellOff<CR>
 
     " Find shortcuts
-    map <Leader>F :FzfLua<CR>
-    map <Leader>f :FzfLua git_files<CR>
-    map <Leader>b :FzfLua buffers<CR>
-    map <Leader>g :FzfLua live_grep<CR>
-    map <Leader>l :FzfLua lines<CR>
-    map <Leader>c :FzfLua commands<CR>
+    map <Leader>f :FzfLua<CR>
     nmap cf :FzfLua lsp_finder<CR>
     nmap ca :FzfLua lsp_code_actions<CR>
 
     " easymotion word jumping
     map <Leader>j <Plug>(easymotion-bd-w)
     nmap <Leader>j <Plug>(easymotion-overwin-w)
-
-    " NERDTree
-    map <Leader>n :call NERDTreeOpen()<CR>
-    map <Leader>N :NERDTreeClose<CR>
-
-    " Toggle tagbar
-    map <Leader>t :TagbarToggle<CR>
 
     " Easy indent/unindent
     vmap < <gv
