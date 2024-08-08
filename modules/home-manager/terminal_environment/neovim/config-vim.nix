@@ -94,6 +94,7 @@
 
     " Find shortcuts
     map <Leader>f :FzfLua<CR>
+    map <Leader>b :FzfLua buffers<CR>
     nmap cf :FzfLua lsp_finder<CR>
     nmap ca :FzfLua lsp_code_actions<CR>
 
