@@ -29,6 +29,8 @@
     wdisplays
     wl-clipboard
     xdg-utils
+
+    sway-helper
   ];
 
   xdg = {
