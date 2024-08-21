@@ -29,10 +29,28 @@ jobs:
       - name: flake check
         run: nix flake check
 
+  sway-helper-code-quality:
+    name: sway-helper code quality
+    needs:
+      - formatting
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        working-directory: ./overlays/pkgs/sway-helper
+
+    steps:
+      - uses: actions/checkout@v4
+      - uses: cachix/install-nix-action@V27
+
+      - name: clippy
+        run: nix develop --command cargo clippy --all-targets -- -D warnings
+
   build-home-manager-configs:
     name: Build Home Manager configurations
     needs:
       - formatting
+      - sway-helper-code-quality
     runs-on: ubuntu-latest
 
     strategy:

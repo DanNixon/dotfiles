@@ -68,12 +68,21 @@
           packages = with pkgs; [
             nixos-anywhere
 
+            # Formatting tools
             alejandra
+            rustfmt
             treefmt
             mdl
 
+            # Secret management
             ssh-to-age
             sops
+
+            # Rust toolchain
+            cargo
+            rustc
+            clippy
+            rust-analyzer
           ];
         };
 

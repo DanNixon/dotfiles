@@ -1,3 +1,7 @@
+[formatter.markdown]
+command = "mdl"
+includes = [ "*.md" ]
+
 [formatter.nix]
 command = "alejandra"
 includes = [ "*.nix" ]
@@ -5,6 +9,7 @@ excludes = [
   "*/hardware-configuration.nix",
 ]
 
-[formatter.markdown]
-command = "mdl"
-includes = [ "*.md" ]
+[formatter.rust]
+command = "rustfmt"
+options = ["--edition", "2021"]
+includes = [ "*.rs" ]

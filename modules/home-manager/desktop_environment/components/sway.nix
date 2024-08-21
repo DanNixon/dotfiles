@@ -44,29 +44,13 @@
         "${modifier}+comma" = "fullscreen";
         "${modifier}+period" = "floating toggle";
 
-        "${modifier}+a" = "workspace number 0";
-        "${modifier}+s" = "workspace number 1";
-        "${modifier}+d" = "workspace number 2";
-        "${modifier}+f" = "workspace number 3";
-        "${modifier}+x" = "workspace number 4";
-        "${modifier}+c" = "workspace number 5";
-        "${modifier}+v" = "workspace number 6";
-
-        "${modifier}+shift+a" = "move workspace number 0";
-        "${modifier}+shift+s" = "move workspace number 1";
-        "${modifier}+shift+d" = "move workspace number 2";
-        "${modifier}+shift+f" = "move workspace number 3";
-        "${modifier}+shift+x" = "move workspace number 4";
-        "${modifier}+shift+c" = "move workspace number 5";
-        "${modifier}+shift+v" = "move workspace number 6";
-
         "${modifier}+e" = "mode \"sink volume\"";
         "${modifier}+r" = "mode resize";
 
         "${modifier}+space" = "exec alacritty";
-        "${modifier}+semicolon" = "exec ${tofi-run} | ${xargs} swaymsg exec --";
-
         "${modifier}+p" = "exec ${de-screenshot}";
+
+        "${modifier}+semicolon" = "exec alacritty --class sway-helper -e sway-helper combi";
 
         "XF86AudioRaiseVolume" = "exec --no-startup-id ${pactl} set-sink-volume @DEFAULT_SINK@ +5%";
         "XF86AudioLowerVolume" = "exec --no-startup-id ${pactl} set-sink-volume @DEFAULT_SINK@ -5%";
@@ -201,7 +185,7 @@
 
       floating.criteria = [
         {
-          app_id = "FloatingAlacritty";
+          app_id = "sway-helper";
         }
         {
           instance = "qjackctl";
