@@ -4,10 +4,10 @@ version = "0.1.0"
 edition = "2021"
 
 [dependencies]
-clap = { version = "4.5.16", features = ["derive"] }
+clap = { version = "4.5.16", default-features = false, features = ["std", "help", "derive"] }
 colored = "2.1.0"
 edit = "0.1.5"
 fzf-wrapped = "0.1.4"
-regex = "1.10.6"
+regex = { version = "1.10.6", default-features = false, features = ["unicode"] }
 swayipc = "3.0.2"
 thiserror = "1.0.63"
