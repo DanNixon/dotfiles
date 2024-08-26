@@ -13,8 +13,6 @@
       ddcutil-modify-vcp = "${pkgs.ddcutil-modify-vcp}/bin/ddcutil-modify-vcp";
       media-control = "${pkgs.media-control}/bin/media-control";
       pactl = "${pkgs.pulseaudio}/bin/pactl";
-      tofi-run = "${pkgs.tofi}/bin/tofi-run";
-      xargs = "${pkgs.findutils}/bin/xargs";
     in {
       modifier = "Mod4"; # Super
 

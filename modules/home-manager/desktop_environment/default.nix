@@ -8,7 +8,6 @@
     ./components/alacritty.nix
     ./components/mako.nix
     ./components/sway.nix
-    ./components/tofi.nix
 
     ./apps
   ];
