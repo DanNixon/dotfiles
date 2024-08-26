@@ -189,10 +189,6 @@
           instance = "qjackctl";
           title = "JACK Audio Connection Kit*";
         }
-        {
-          app_id = "firefox";
-          title = "Firefox — Sharing Indicator";
-        }
       ];
 
       input = {

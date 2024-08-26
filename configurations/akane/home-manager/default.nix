@@ -65,6 +65,9 @@ in
         ];
 
         programs.bottom.settings.flags.battery = true;
+
+        # Work around issues with multiple KiCad windows on a single small monitor
+        wayland.windowManager.sway.config.floating.criteria = [{class = "KiCad";}];
       })
     ];
   }
