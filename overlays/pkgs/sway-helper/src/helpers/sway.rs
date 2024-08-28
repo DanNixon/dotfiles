@@ -55,6 +55,7 @@ pub(crate) fn get_containers_fzf_strings<'a>(
 
     if (node.node_type == NodeType::Con || node.node_type == NodeType::FloatingCon)
         && node.nodes.is_empty()
+        && node.app_id != Some("sway-helper".to_string())
     {
         let mut s = String::new();
 
