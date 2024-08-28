@@ -1,5 +1,6 @@
 mod combi;
 mod focus_window;
+mod move_window_to_workspace;
 mod new_workspace;
 mod rename_workspace;
 mod run;
@@ -8,6 +9,7 @@ mod switch_to_workspace;
 use self::{
     combi::Combi,
     focus_window::FocusWindow,
+    move_window_to_workspace::MoveWindowToWorkspace,
     new_workspace::{NewNamedWorkspace, NewWorkspace},
     rename_workspace::RenameWorkspace,
     run::Run,
@@ -28,6 +30,7 @@ pub(crate) enum Command {
     RenameWorkspace,
     SwitchToWorkspace,
     FocusWindow,
+    MoveWindowToWorkspace,
 }
 
 impl CliRun for Command {
@@ -40,6 +43,7 @@ impl CliRun for Command {
             Self::RenameWorkspace => RenameWorkspace {}.run(sway),
             Self::SwitchToWorkspace => SwitchToWorkspace {}.run(sway),
             Self::FocusWindow => FocusWindow {}.run(sway),
+            Self::MoveWindowToWorkspace => MoveWindowToWorkspace {}.run(sway),
         }
     }
 }
