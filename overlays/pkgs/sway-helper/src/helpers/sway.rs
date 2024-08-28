@@ -106,3 +106,14 @@ pub(crate) fn focus_container(
     sway.run_command(format!("[con_id={container_id}] focus"))?;
     Ok(())
 }
+
+pub(crate) fn move_container_to_workspace(
+    sway: &mut swayipc::Connection,
+    container_id: &str,
+    workspace_name: &str,
+) -> crate::Result<()> {
+    sway.run_command(format!(
+        "[con_id={container_id}] move to workspace {workspace_name}"
+    ))?;
+    Ok(())
+}
