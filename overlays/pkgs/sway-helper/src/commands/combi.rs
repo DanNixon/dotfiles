@@ -33,6 +33,7 @@ impl CliRun for Combi {
                 "new-named-workspace",
                 "rename-workspace",
                 "switch-to-workspace",
+                "move-window-here",
                 "move-window-to-workspace",
             ]
             .iter()
