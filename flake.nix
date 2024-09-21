@@ -104,7 +104,6 @@
       hina = import ./configurations/hina/nixos {inherit inputs outputs;};
       kawashiro = import ./configurations/kawashiro/nixos {inherit inputs outputs;};
       maya = import ./configurations/maya/nixos {inherit inputs outputs;};
-      yuyuko = import ./configurations/yuyuko/nixos {inherit inputs outputs;};
     };
 
     homeConfigurations = {
@@ -114,7 +113,6 @@
       "dan@kawashiro" = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
       "dan@maya" = import ./configurations/maya/home-manager {inherit inputs outputs;};
       minimal = import ./configurations/minimal/home-manager {inherit inputs outputs;};
-      "dan@yuyuko" = import ./configurations/yuyuko/home-manager {inherit inputs outputs;};
     };
   };
 }
