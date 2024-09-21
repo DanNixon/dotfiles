@@ -212,39 +212,39 @@
 
       colors = with config.scheme.withHashtag; {
         background = "${base07}";
-        focused = {
+        focused = rec {
+          border = childBorder;
           background = "${base0D}";
-          border = "${base05}";
           childBorder = "${base0D}";
-          indicator = "${base0D}";
+          indicator = childBorder;
           text = "${base00}";
         };
-        focusedInactive = {
+        focusedInactive = rec {
+          border = childBorder;
           background = "${base01}";
-          border = "${base01}";
           childBorder = "${base01}";
-          indicator = "${base03}";
+          indicator = childBorder;
           text = "${base05}";
         };
-        unfocused = {
+        unfocused = rec {
+          border = childBorder;
           background = "${base00}";
-          border = "${base01}";
           childBorder = "${base01}";
-          indicator = "${base01}";
+          indicator = childBorder;
           text = "${base05}";
         };
-        urgent = {
+        urgent = rec {
+          border = childBorder;
           background = "${base08}";
-          border = "${base08}";
           childBorder = "${base08}";
-          indicator = "${base08}";
+          indicator = childBorder;
           text = "${base00}";
         };
-        placeholder = {
+        placeholder = rec {
+          border = childBorder;
           background = "${base00}";
-          border = "${base00}";
           childBorder = "${base00}";
-          indicator = "${base00}";
+          indicator = childBorder;
           text = "${base05}";
         };
       };
