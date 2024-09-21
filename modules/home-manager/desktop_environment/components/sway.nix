@@ -204,10 +204,6 @@
           xkb_layout = "gb";
           xkb_options = "none";
         };
-        "1149:4130:Kensington_USB_Orbit" = {
-          accel_profile = "adaptive";
-          # pointer_accel = 1;
-        };
       };
 
       colors = with config.scheme.withHashtag; {
