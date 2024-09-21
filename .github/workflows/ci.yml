@@ -62,7 +62,6 @@ jobs:
           - dan@kawashiro
           - dan@maya
           - minimal
-          - dan@yuyuko
 
     steps:
       - uses: actions/checkout@v4
