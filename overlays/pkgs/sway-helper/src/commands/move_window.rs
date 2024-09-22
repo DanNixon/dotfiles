@@ -1,7 +1,10 @@
 use super::CliRun;
-use crate::helpers::sway::{
-    focus_container, get_container_id_from_fzf_string, get_containers_fzf_strings,
-    get_workspace_names, move_container_to_workspace, FocusedWorkspacePosition,
+use crate::helpers::{
+    run_fzf,
+    sway::{
+        focus_container, get_container_id_from_fzf_string, get_containers_fzf_strings,
+        get_workspace_names, move_container_to_workspace, FocusedWorkspacePosition,
+    },
 };
 
 pub(crate) struct MoveWindowHere {}
@@ -13,7 +16,7 @@ impl CliRun for MoveWindowHere {
         let mut items = Vec::new();
         get_containers_fzf_strings(&tree, None, &mut items);
 
-        let selection = crate::helpers::run_fzf("window to move", items)?;
+        let selection = run_fzf("window to move", items)?;
 
         let container_id = get_container_id_from_fzf_string(&selection)?;
 
@@ -40,7 +43,7 @@ impl CliRun for MoveWindowToWorkspace {
         let mut items = Vec::new();
         get_containers_fzf_strings(&tree, None, &mut items);
 
-        let selection = crate::helpers::run_fzf("window to move", items)?;
+        let selection = run_fzf("window to move", items)?;
 
         let container_id = get_container_id_from_fzf_string(&selection)?;
 
@@ -49,7 +52,7 @@ impl CliRun for MoveWindowToWorkspace {
         let workspace_names = get_workspace_names(sway, FocusedWorkspacePosition::Front)?;
 
         // Fuzzy select a workspace.
-        let workspace_name = crate::helpers::run_fzf("workspace to move to", workspace_names)?;
+        let workspace_name = run_fzf("workspace to move to", workspace_names)?;
 
         move_container_to_workspace(sway, &container_id, &workspace_name)
     }

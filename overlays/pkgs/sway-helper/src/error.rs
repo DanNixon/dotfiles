@@ -20,6 +20,21 @@ pub(crate) enum Error {
 
     #[error("Invalid input provided in combi mode: {0}")]
     CombiInvalidInput(String),
+
+    #[error("Invalid input provided in app run mode: {0}")]
+    AppRunInvalidInput(String),
+
+    #[error("Freedesktop app with ID {0} not found")]
+    AppWithIdNotFound(String),
+
+    #[error("Freedesktop app with ID {0} contains a malformed Exec")]
+    AppHasMalformedExec(String),
+
+    #[error("Freedesktop app with ID {0} has no actions")]
+    AppHasNoActions(String),
+
+    #[error("Freedesktop app with ID {0} has no action named {1}")]
+    AppHasNoAction(String, String),
 }
 
 pub(crate) type Result<T> = std::result::Result<T, Error>;

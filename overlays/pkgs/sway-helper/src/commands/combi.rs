@@ -1,9 +1,11 @@
 use super::CliRun;
 use crate::helpers::{
-    programs::list_programs_from_path,
-    sway::{
-        focus_container, get_container_id_from_fzf_string, get_containers_fzf_strings, run_program,
+    freedesktop::{
+        find_all_freedesktop_app_launchables, launch_freedesktop_app,
+        parse_freedesktop_app_and_action,
     },
+    run_fzf,
+    sway::{focus_container, get_container_id_from_fzf_string, get_containers_fzf_strings},
 };
 use clap::Parser;
 use colored::Colorize;
@@ -13,7 +15,7 @@ pub(crate) struct Combi {}
 
 const WIN: &str = "win";
 const CMD: &str = "cmd";
-const RUN: &str = "run";
+const APP: &str = "app";
 
 impl CliRun for Combi {
     fn run(&self, sway: &mut swayipc::Connection) -> crate::Result<()> {
@@ -35,20 +37,21 @@ impl CliRun for Combi {
                 "switch-to-workspace",
                 "move-window-here",
                 "move-window-to-workspace",
+                "path-run",
             ]
             .iter()
             .map(|i| format!("[{}] {i}", CMD.yellow())),
         );
 
-        // Get a list of all programs in PATH.
+        // Get a list of freedesktop applications and their actions
         options.extend(
-            &mut list_programs_from_path()
+            find_all_freedesktop_app_launchables()
                 .iter()
-                .map(|i| format!("[{}] {i}", RUN.blue())),
+                .map(|i| format!("[{}] {i}", APP.blue())),
         );
 
         // Fuzzy select something.
-        let selected = crate::helpers::run_fzf("combi", options)?;
+        let selected = run_fzf("combi", options)?;
 
         // Extract info from the selected item.
         let re = Regex::new(r"\[(\w+)\] (.+)$").expect("regex expression should be valid");
@@ -69,7 +72,12 @@ impl CliRun for Combi {
                     crate::Cli::try_parse_from(["", arg]).map_err(|_| invalid_input_error())?;
                 cli.command.run(sway)
             }
-            RUN => run_program(sway, arg),
+            APP => {
+                // Parse the app ID and action from the selected launchable.
+                let (app_id, action) = parse_freedesktop_app_and_action(arg)?;
+                // Launch the application.
+                launch_freedesktop_app(sway, app_id, action)
+            }
             _ => Err(invalid_input_error()),
         }
     }

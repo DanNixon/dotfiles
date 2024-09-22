@@ -1,5 +1,8 @@
 use super::CliRun;
-use crate::helpers::sway::{get_workspace_names, FocusedWorkspacePosition};
+use crate::helpers::{
+    run_fzf,
+    sway::{get_workspace_names, FocusedWorkspacePosition},
+};
 
 pub(crate) struct SwitchToWorkspace {}
 
@@ -16,7 +19,7 @@ impl CliRun for SwitchToWorkspace {
         )?);
 
         // Fuzzy select a workspace.
-        let selection = crate::helpers::run_fzf("workspace", workspace_names)?;
+        let selection = run_fzf("workspace", workspace_names)?;
 
         // Switch to the selected workspace.
         sway.run_command(format!("workspace {selection}"))?;

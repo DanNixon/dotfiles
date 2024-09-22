@@ -1,18 +1,20 @@
+mod app_run;
 mod combi;
 mod focus_window;
 mod move_window;
 mod new_workspace;
+mod path_run;
 mod rename_workspace;
-mod run;
 mod switch_to_workspace;
 
 use self::{
+    app_run::AppRun,
     combi::Combi,
     focus_window::FocusWindow,
     move_window::{MoveWindowHere, MoveWindowToWorkspace},
     new_workspace::{NewNamedWorkspace, NewWorkspace},
+    path_run::PathRun,
     rename_workspace::RenameWorkspace,
-    run::Run,
     switch_to_workspace::SwitchToWorkspace,
 };
 use clap::Subcommand;
@@ -24,7 +26,8 @@ pub(crate) trait CliRun {
 #[derive(Debug, Subcommand)]
 pub(crate) enum Command {
     Combi,
-    Run,
+    AppRun,
+    PathRun,
     NewWorkspace,
     NewNamedWorkspace,
     RenameWorkspace,
@@ -38,7 +41,8 @@ impl CliRun for Command {
     fn run(&self, sway: &mut swayipc::Connection) -> crate::Result<()> {
         match self {
             Self::Combi => Combi {}.run(sway),
-            Self::Run => Run {}.run(sway),
+            Self::AppRun => AppRun {}.run(sway),
+            Self::PathRun => PathRun {}.run(sway),
             Self::NewWorkspace => NewWorkspace {}.run(sway),
             Self::NewNamedWorkspace => NewNamedWorkspace {}.run(sway),
             Self::RenameWorkspace => RenameWorkspace {}.run(sway),

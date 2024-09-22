@@ -1,3 +1,4 @@
+pub(crate) mod freedesktop;
 pub(crate) mod programs;
 pub(crate) mod sway;
 
