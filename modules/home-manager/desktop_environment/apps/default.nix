@@ -12,5 +12,7 @@
 
   services.flatpak.packages = [
     "net.ankiweb.Anki"
+    "org.gnome.Calculator"
+    "org.gnome.Evince"
   ];
 }
