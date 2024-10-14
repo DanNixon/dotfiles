@@ -65,15 +65,9 @@ in
             output = {
               eDP-1 = {
                 enable = "";
-                bg = "~/${home.file.wallpaper.target} fill";
               };
             };
           };
-        };
-
-        home.file.wallpaper = {
-          source = ../../../wallpapers/aya.png;
-          target = ".local/share/wallpaper.png";
         };
 
         programs.i3status-rust.bars.main.blocks = [
