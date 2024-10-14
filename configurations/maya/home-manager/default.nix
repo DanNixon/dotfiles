@@ -24,7 +24,7 @@ in
         config,
         pkgs,
         ...
-      }: rec {
+      }: {
         home.packages = with pkgs; [
           nur.repos.DanNixon.metty
           nur.repos.DanNixon.satorictl-unstable
@@ -59,15 +59,9 @@ in
           config.output = {
             DP-1 = {
               enable = "";
-              bg = "~/${home.file.wallpaper.target} fill";
               scale = "1.3";
             };
           };
-        };
-
-        home.file.wallpaper = {
-          source = ../../../wallpapers/sakuya-meiling.png;
-          target = ".local/share/wallpaper.png";
         };
 
         programs.i3status-rust.bars.main.blocks = [
