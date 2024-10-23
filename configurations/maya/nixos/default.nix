@@ -46,10 +46,9 @@ inputs.nixpkgs.lib.nixosSystem {
         useRoutingFeatures = "client";
       };
 
-      dotfiles.dan.groups = ["video" "dialout"];
+      dotfiles.dan.groups = ["video" "dialout" "plugdev"];
 
-      # Required for Bambu Lab printer discovery
-      networking.firewall.allowedUDPPorts = [2021];
+      hardware.rtl-sdr.enable = true;
     })
   ];
 }
