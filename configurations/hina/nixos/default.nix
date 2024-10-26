@@ -35,7 +35,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
       services.dnscrypt-proxy2.settings.forwarding_rules = "/etc/dnscrypt-proxy2/forwarding-rules.txt";
       environment.etc."dnscrypt-proxy2/forwarding-rules.txt".text = ''
-        castle.dan-nixon.com 100.103.214.89
+        castle.dan-nixon.com 100.65.23.56
       '';
 
       hardware.bluetooth.enable = true;
