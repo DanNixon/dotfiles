@@ -7,6 +7,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
   modules = [
     ./hardware-configuration.nix
+    inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t470s
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
     ../../../modules/nixos/base

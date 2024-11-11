@@ -53,17 +53,6 @@ in
           storage.encryptionPasscommand = "pass borg/maya/passphrase";
         };
 
-        wayland.windowManager.sway = {
-          checkConfig = false; # Does not work with background image paths
-
-          config.output = {
-            DP-1 = {
-              enable = "";
-              scale = "1.3";
-            };
-          };
-        };
-
         programs.i3status-rust.bars.main.blocks = [
           {
             block = "sound";
@@ -76,11 +65,19 @@ in
             device_kind = "source";
           }
           {
+            block = "battery";
+          }
+          {
             block = "time";
             interval = 1;
             format = " $timestamp.datetime(f:'%Y-%m-%d %H:%M:%S') ";
           }
         ];
+
+        programs.bottom.settings.flags.battery = true;
+
+        # Work around issues with multiple KiCad windows on a single small monitor
+        wayland.windowManager.sway.config.floating.criteria = [{class = "KiCad";}];
       })
     ];
   }
