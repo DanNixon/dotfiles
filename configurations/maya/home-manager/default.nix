@@ -28,6 +28,7 @@ in
         home.packages = with pkgs; [
           nur.repos.DanNixon.metty
           nur.repos.DanNixon.satorictl-unstable
+          labelle # Label printer
         ];
 
         services.flatpak.packages = [
