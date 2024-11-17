@@ -50,6 +50,10 @@ inputs.nixpkgs.lib.nixosSystem {
       dotfiles.dan.groups = ["video" "dialout" "plugdev"];
 
       hardware.rtl-sdr.enable = true;
+
+      services.udev.extraRules = ''
+        ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0922", ATTRS{idProduct}=="1001", MODE="0666"
+      '';
     })
   ];
 }

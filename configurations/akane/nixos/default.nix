@@ -53,7 +53,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
       services.udev.extraRules = ''
         ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0922", ATTRS{idProduct}=="1001", MODE="0666"
-      ''; 
+      '';
     }
   ];
 }
