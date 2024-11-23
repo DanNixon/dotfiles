@@ -8,7 +8,7 @@
     # Colour scheme
     (base16-vim.overrideAttrs (
       old: let
-        schemeFile = config.scheme inputs.base16-vim;
+        schemeFile = config.scheme inputs.tinted-vim;
       in {patchPhase = ''cp ${schemeFile} colors/base16-scheme.vim'';}
     ))
 

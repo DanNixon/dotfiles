@@ -39,8 +39,8 @@
       flake = false;
     };
 
-    base16-vim = {
-      url = "github:tinted-theming/base16-vim";
+    tinted-vim = {
+      url = "github:tinted-theming/tinted-vim/24d384a064d09a20eca7e78a0bfe1fb302c0eb99";
       flake = false;
     };
   };
