@@ -27,6 +27,5 @@
 
     stripexif = "exiftool -all=";
     today = "date '+%Y-%m-%d'";
-    zfs-ls = "zfs list -o name,referenced,used,available,encryption,keystatus,mounted,mountpoint";
   };
 }
