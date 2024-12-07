@@ -109,7 +109,6 @@
       generic = import ./configurations/generic/home-manager {inherit inputs outputs;};
       "dan@kawashiro" = import ./configurations/kawashiro/home-manager {inherit inputs outputs;};
       "dan@maya" = import ./configurations/maya/home-manager {inherit inputs outputs;};
-      minimal = import ./configurations/minimal/home-manager {inherit inputs outputs;};
     };
   };
 }
