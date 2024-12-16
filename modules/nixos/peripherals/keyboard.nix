@@ -2,26 +2,8 @@
   services.kanata = {
     enable = true;
 
-    keyboards.default = {
-      extraDefCfg = ''
-        block-unmapped-keys yes
-        process-unmapped-keys yes
-
-        linux-dev-names-include (
-          "AT Translated Set 2 keyboard"
-        )
-      '';
-
-      config = ''
-        (defsrc
-          q     w     e     r     t       y     u     i     o     p
-          a     s     d     f     g       h     j     k     l     ;
-          z     x     c     v     b       n     m     ,     .     /
-                            lalt  tab     ret   spc
-
-          volu voldwn mute
-        )
-
+    keyboards = let
+      commonConfig = ''
         (deflocalkeys-linux
           # 43
           \ 86
@@ -108,6 +90,54 @@
           volu voldwn mute
         )
       '';
+    in {
+      default = {
+        extraDefCfg = ''
+          block-unmapped-keys yes
+          process-unmapped-keys yes
+
+          linux-dev-names-include (
+            "AT Translated Set 2 keyboard"
+          )
+        '';
+
+        config = ''
+          (defsrc
+            q     w     e     r     t       y     u     i     o     p
+            a     s     d     f     g       h     j     k     l     ;
+            z     x     c     v     b       n     m     ,     .     /
+                              lalt  tab     ret   spc
+
+            volu voldwn mute
+          )
+
+          ${commonConfig}
+        '';
+      };
+
+      ferris = {
+        extraDefCfg = ''
+          block-unmapped-keys yes
+          process-unmapped-keys yes
+
+          linux-dev-names-include (
+            "DPB Ferris sweep"
+          )
+        '';
+
+        config = ''
+          (defsrc
+            q     w     e     r     t       y     u     i     o     p
+            a     s     d     f     g       h     j     k     l     ;
+            z     x     c     v     b       n     m     ,     .     /
+                              esc   tab     ret   spc
+
+            volu voldwn mute
+          )
+
+          ${commonConfig}
+        '';
+      };
     };
   };
 }
