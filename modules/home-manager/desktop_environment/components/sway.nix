@@ -191,20 +191,7 @@
         }
       ];
 
-      input = {
-        "type:keyboard" = {
-          xkb_layout = "gb";
-          xkb_options = "altwin:swap_lalt_lwin,caps:none";
-        };
-        "4617:10533:DanNixon_Aya" = {
-          xkb_layout = "gb";
-          xkb_options = "none";
-        };
-        "49835:14649:DPB_Ferris_sweep" = {
-          xkb_layout = "gb";
-          xkb_options = "none";
-        };
-      };
+      input."type:keyboard".xkb_layout = "gb";
 
       colors = with config.scheme.withHashtag; {
         background = "${base07}";
