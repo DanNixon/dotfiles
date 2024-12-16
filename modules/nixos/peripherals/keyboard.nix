@@ -65,7 +65,7 @@
 
         (deflayer symbols_left
           XX    @!    @<    @>    XX      XX    XX    XX    XX    XX
-          {     }     S-9   S-0   S-'     XX    XX    =     +     @%
+          S-{   S-}   S-9   S-0   S-'     XX    XX    =     +     @%
           XX    @?    [     ]     XX      XX    XX    XX    XX    XX
                             XX    XX      del   bspc
 
