@@ -13,6 +13,7 @@
       # Language servers
       marksman
       nixd
+      openscad-lsp
       yaml-language-server
     ];
   };

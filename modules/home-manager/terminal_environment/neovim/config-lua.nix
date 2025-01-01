@@ -8,6 +8,8 @@
 
     lspconfig.nixd.setup { capabilities = capabilities }
 
+    lspconfig.openscad_lsp.setup { capabilities = capabilities }
+
     lspconfig.rust_analyzer.setup { capabilities = capabilities }
 
     lspconfig.yamlls.setup {
