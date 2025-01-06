@@ -10,7 +10,6 @@
     config = let
       brightnessctl = "${pkgs.brightnessctl}/bin/brightnessctl";
       de-screenshot = "${pkgs.de-screenshot}/bin/de-screenshot";
-      ddcutil-modify-vcp = "${pkgs.ddcutil-modify-vcp}/bin/ddcutil-modify-vcp";
       media-control = "${pkgs.media-control}/bin/media-control";
       pactl = "${pkgs.pulseaudio}/bin/pactl";
     in {
@@ -106,20 +105,6 @@
         "laptop brightness" = {
           "k" = "exec --no-startup-id ${brightnessctl} set '+5%'";
           "j" = "exec --no-startup-id ${brightnessctl} set '5%-'";
-
-          "escape" = "mode default";
-          "${modifier}+e" = "mode \"monitor brightness\"";
-        };
-
-        "monitor brightness" = {
-          "k" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 adjust +10";
-          "j" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 adjust -10";
-
-          "a" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 20";
-          "s" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 40";
-          "d" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 60";
-          "f" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 80";
-          "g" = "exec --no-startup-id ${ddcutil-modify-vcp} 10 set 100";
 
           "escape" = "mode default";
           "${modifier}+e" = "mode \"sink volume\"";
