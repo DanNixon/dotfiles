@@ -30,6 +30,8 @@
     termdown
     zbar
 
+    devenv
+
     # System tools
     dmidecode
     lm_sensors

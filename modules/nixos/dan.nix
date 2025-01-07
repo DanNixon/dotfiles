@@ -42,5 +42,9 @@
       enableSSHSupport = true;
       enableExtraSocket = true;
     };
+
+    nix.extraOptions = ''
+      trusted-users = root dan
+    '';
   };
 }
