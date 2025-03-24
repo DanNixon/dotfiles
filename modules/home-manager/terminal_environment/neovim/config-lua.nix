@@ -5,13 +5,9 @@
     local lspconfig = require('lspconfig')
 
     lspconfig.marksman.setup { capabilities = capabilities }
-
     lspconfig.nixd.setup { capabilities = capabilities }
-
     lspconfig.openscad_lsp.setup { capabilities = capabilities }
-
     lspconfig.rust_analyzer.setup { capabilities = capabilities }
-
     lspconfig.yamlls.setup {
       capabilities = capabilities,
       settings = {
@@ -83,6 +79,7 @@
       }),
 
       sources = cmp.config.sources({
+        { name = 'copilot' },
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
         { name = 'path' },
@@ -105,6 +102,14 @@
         end
       },
     })
+
+    -- Copilot config
+    require("copilot").setup({
+      suggestion = { enabled = false },
+      panel = { enabled = false },
+    })
+    require("CopilotChat").setup()
+    require("copilot_cmp").setup()
 
     -- Fuzzy finding config
     require('fzf-lua').setup({

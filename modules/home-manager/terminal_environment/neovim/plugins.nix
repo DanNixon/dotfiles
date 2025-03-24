@@ -22,6 +22,7 @@
     cmp-buffer
     cmp-nvim-lsp
     cmp-path
+    copilot-cmp
 
     # Used to format and make editing CSV files trivial
     csv
@@ -55,5 +56,9 @@
 
     # Query and insert unicode characters
     unicode-vim
+
+    # Github Copilot
+    copilot-lua
+    CopilotChat-nvim
   ];
 }

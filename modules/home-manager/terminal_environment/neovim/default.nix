@@ -10,6 +10,8 @@
     defaultEditor = true;
 
     extraPackages = with pkgs; [
+      nodejs
+
       # Language servers
       marksman
       nixd
