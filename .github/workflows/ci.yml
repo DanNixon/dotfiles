@@ -11,7 +11,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v30
+      - uses: cachix/install-nix-action@v31
 
       - name: treefmt
         run: nix develop --command treefmt --fail-on-change
@@ -24,7 +24,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v30
+      - uses: cachix/install-nix-action@v31
 
       - name: flake check
         run: nix flake check
@@ -41,7 +41,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v30
+      - uses: cachix/install-nix-action@v31
 
       - name: clippy
         run: nix develop --command cargo clippy --all-targets -- -D warnings
@@ -63,7 +63,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
-      - uses: cachix/install-nix-action@v30
+      - uses: cachix/install-nix-action@v31
 
       - name: Build config
         run: nix develop .\#bootstrap --command home-manager build --flake .\#${{ matrix.config }}
