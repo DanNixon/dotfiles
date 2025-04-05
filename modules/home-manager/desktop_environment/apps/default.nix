@@ -14,5 +14,6 @@
     "net.ankiweb.Anki"
     "org.gnome.Calculator"
     "org.gnome.Evince"
+    "io.kinvolk.Headlamp"
   ];
 }
