@@ -33,6 +33,7 @@
   };
 
   services.flatpak.packages = [
+    "io.kinvolk.Headlamp"
     "net.werwolv.ImHex"
   ];
 }
