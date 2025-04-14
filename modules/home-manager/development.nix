@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  pkgs,
+  pkgs-unstable,
+  ...
+}: {
   home.shellAliases = {
     k = "kubectl";
     kk = "k9s";
@@ -9,6 +13,8 @@
 
     kubectl
     kubectx
+
+    pkgs-unstable.talosctl
 
     shellcheck
 
