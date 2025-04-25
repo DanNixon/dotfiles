@@ -57,6 +57,11 @@ inputs.nixpkgs.lib.nixosSystem {
       services.udev.extraRules = ''
         ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0922", ATTRS{idProduct}=="1001", MODE="0666"
       '';
+
+      networking.extraHosts = ''
+        100.101.161.50 grafana.makerspace.dan-nixon.com
+        100.101.161.50 influxdb.makerspace.dan-nixon.com
+      '';
     })
   ];
 }
