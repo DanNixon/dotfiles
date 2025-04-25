@@ -1,4 +1,5 @@
 use crate::helpers::sway::run_program;
+use freedesktop_desktop_entry::unicase::Ascii;
 use regex::Regex;
 
 pub(crate) fn find_all_freedesktop_app_launchables() -> Vec<String> {
@@ -7,7 +8,9 @@ pub(crate) fn find_all_freedesktop_app_launchables() -> Vec<String> {
     freedesktop_desktop_entry::Iter::new(freedesktop_desktop_entry::default_paths())
         .entries(Some(&locales))
         .flat_map(|entry| {
-            let entry_name = entry.name(&locales).unwrap_or_else(|| entry.appid.clone());
+            let entry_name = entry
+                .name(&locales)
+                .unwrap_or_else(|| entry.appid.as_str().into());
 
             let mut launchables = vec![format!("{} ({})", entry_name, entry.appid)];
 
@@ -57,9 +60,8 @@ pub(crate) fn launch_freedesktop_app(
         freedesktop_desktop_entry::Iter::new(freedesktop_desktop_entry::default_paths())
             .entries(Some(&locales))
             .collect();
-    let entries = entries.iter();
 
-    let entry = freedesktop_desktop_entry::matching::find_entry_from_appid(entries, &app_id)
+    let entry = freedesktop_desktop_entry::find_app_by_id(&entries, Ascii::new(&app_id))
         .ok_or_else(|| crate::Error::AppWithIdNotFound(app_id.clone()))?;
 
     let exec = match action {
