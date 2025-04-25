@@ -117,7 +117,7 @@
           statusCommand = "${pkgs.i3status-rust}/bin/i3status-rs config-main.toml";
           fonts = {
             names = ["DejaVuSansM Nerd Font Mono"];
-            size = 14.0;
+            size = 12.0;
           };
           colors = with config.scheme.withHashtag; {
             separator = "${base07}";
@@ -149,7 +149,7 @@
 
       fonts = {
         names = ["DejaVuSansM Nerd Font Mono"];
-        size = 10.0;
+        size = 8.5;
       };
 
       focus = {
@@ -159,11 +159,6 @@
 
       window = {
         titlebar = false;
-      };
-
-      gaps = {
-        inner = 10;
-        outer = -2;
       };
 
       floating.criteria = [
