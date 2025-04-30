@@ -14,6 +14,8 @@
     kubectl
     kubectx
 
+    rustup
+
     pkgs-unstable.talosctl
 
     shellcheck
