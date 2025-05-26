@@ -10,15 +10,17 @@
   services.mako = with config.scheme.withHashtag; {
     enable = true;
 
-    font = "DejaVuSansM Nerd Font Mono";
+    settings = {
+      font = "DejaVuSansM Nerd Font Mono";
 
-    backgroundColor = "${base00}cc";
-    textColor = "${base07}";
-    borderColor = "${blue}";
+      background-color = "${base00}cc";
+      text-color = "${base07}";
+      border-color = "${blue}";
 
-    width = 400;
-    height = 150;
+      width = 400;
+      height = 150;
 
-    defaultTimeout = 5000;
+      default-timeout = 5000;
+    };
   };
 }

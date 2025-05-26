@@ -16,7 +16,7 @@
       zstyle :compinstall filename '/home/dan/.zshrc'
     '';
 
-    initExtra = ''
+    initContent = ''
       # Vi style key bindings
       bindkey -v
       KEYTIMEOUT=10
