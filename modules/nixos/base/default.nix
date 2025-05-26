@@ -21,14 +21,6 @@
     settings = {
       experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
-
-      substituters = [
-        "https://cache.nixos.org/"
-        "https://nur-dannixon.cachix.org"
-      ];
-      trusted-public-keys = [
-        "nur-dannixon.cachix.org-1:EHgimU2oe7pLXRF9Gji96CboWtyaFHC4pv5dMp/CRvw="
-      ];
     };
   };
 
