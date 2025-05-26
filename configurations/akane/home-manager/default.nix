@@ -21,7 +21,6 @@ in
       ({pkgs, ...}: {
         home.packages = with pkgs; [
           lightburn
-          nur.repos.DanNixon.metty
         ];
 
         services.flatpak.packages = [
