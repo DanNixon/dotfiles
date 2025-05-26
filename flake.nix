@@ -5,8 +5,6 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixos-25.05";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-    nur.url = "github:nix-community/NUR";
-
     disko = {
       url = "github:nix-community/disko/v1.6.1";
       inputs.nixpkgs.follows = "nixpkgs";
