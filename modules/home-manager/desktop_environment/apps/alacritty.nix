@@ -14,7 +14,7 @@
           x = 2;
           y = 2;
         };
-        decorations = "full";
+        decorations = "none";
         dynamic_title = true;
       };
 
