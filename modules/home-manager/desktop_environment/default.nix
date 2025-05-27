@@ -14,6 +14,7 @@
 
   services.flatpak = {
     enable = true;
+
     packages = [
       "org.mozilla.firefox"
       "com.github.tchx84.Flatseal"
@@ -53,7 +54,7 @@
       enable = true;
 
       defaultApplications = let
-        image = ["feh.desktop"];
+        image = ["imv.desktop"];
         video = ["mpv.desktop" "org.videolan.VLC.desktop"];
       in {
         "image/bmp" = image;
@@ -61,8 +62,8 @@
         "image/jpg" = image;
         "image/png" = image;
         "image/webp" = image;
+        "image/gif" = image;
 
-        "image/gif" = video;
         "video/3gpp" = video;
         "video/mp4" = video;
         "video/webm" = video;
