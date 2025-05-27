@@ -39,6 +39,7 @@
 
     programs.gnupg.agent = {
       enable = config.dotfiles.dan.enableGpgAgent;
+      pinentryPackage = pkgs.pinentry-gnome3;
       enableSSHSupport = true;
       enableExtraSocket = true;
     };
