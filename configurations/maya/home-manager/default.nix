@@ -52,27 +52,6 @@ in
           storage.encryptionPasscommand = "pass borg/maya/passphrase";
         };
 
-        programs.i3status-rust.bars.main.blocks = [
-          {
-            block = "sound";
-            driver = "pulseaudio";
-            device_kind = "sink";
-          }
-          {
-            block = "sound";
-            driver = "pulseaudio";
-            device_kind = "source";
-          }
-          {
-            block = "battery";
-          }
-          {
-            block = "time";
-            interval = 1;
-            format = " $timestamp.datetime(f:'%Y-%m-%d %H:%M:%S') ";
-          }
-        ];
-
         programs.bottom.settings.flags.battery = true;
       })
     ];

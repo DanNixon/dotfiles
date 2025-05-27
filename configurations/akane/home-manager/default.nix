@@ -28,41 +28,6 @@ in
           "com.microsoft.Edge"
         ];
 
-        wayland.windowManager.sway = {
-          config = {
-            input."2:7:SynPS/2_Synaptics_TouchPad" = {
-              events = "disabled";
-            };
-
-            output = {
-              LVDS-1 = {
-                enable = "";
-              };
-            };
-          };
-        };
-
-        programs.i3status-rust.bars.main.blocks = [
-          {
-            block = "sound";
-            driver = "pulseaudio";
-            device_kind = "sink";
-          }
-          {
-            block = "sound";
-            driver = "pulseaudio";
-            device_kind = "source";
-          }
-          {
-            block = "battery";
-          }
-          {
-            block = "time";
-            interval = 1;
-            format = " $timestamp.datetime(f:'%Y-%m-%d %H:%M:%S') ";
-          }
-        ];
-
         programs.bottom.settings.flags.battery = true;
       })
     ];
