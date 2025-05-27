@@ -29,7 +29,7 @@
     wl-clipboard
     xdg-utils
 
-    sway-helper
+    # sway-helper
   ];
 
   xdg = {
