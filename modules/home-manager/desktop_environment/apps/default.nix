@@ -1,5 +1,6 @@
 {pkgs, ...}: {
   imports = [
+    ./alacritty.nix
     ./imv.nix
     ./mpv.nix
     ./zathura.nix

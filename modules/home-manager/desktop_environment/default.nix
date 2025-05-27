@@ -5,10 +5,6 @@
   ...
 }: {
   imports = [
-    ./components/alacritty.nix
-    ./components/mako.nix
-    ./components/sway.nix
-
     ./apps
   ];
 
@@ -29,8 +25,6 @@
     wdisplays
     wl-clipboard
     xdg-utils
-
-    # sway-helper
   ];
 
   xdg = {
