@@ -78,4 +78,10 @@
     target = ".local/share/fonts";
     source = config.lib.file.mkOutOfStoreSymlink "/run/current-system/sw/share/X11/fonts";
   };
+
+  # COSMIC config files
+  xdg.configFile."cosmic" = {
+    source = ./cosmic_config;
+    recursive = true;
+  };
 }
