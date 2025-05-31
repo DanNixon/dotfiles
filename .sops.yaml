@@ -1,18 +1,25 @@
 keys:
-  - &users:
-    - &dan 84E956241243C35EA286B410EA06B7ABA96D6BB8
-  - &hosts:
-    - &akane age1y4vswzphs3gm3def7e82vqpmcpl5ce8e27ypf9fd8uljvqe4eqgszxtqzf
-    - &hina age14gcf5lpetq2t4pe2nqmvfgm6agjfyakldy5hw2qt9r8yq0vw2yjqhuw4tt
-    # - &kawashiro todo
-    - &maya age1lj6hkktydycuxw6q88490hh6g7hs3qg72taz3fle0rlcfuq4z3hqyuxl2w
+  - &dannixon-pgp 84E956241243C35EA286B410EA06B7ABA96D6BB8
+  - &dannixon-sk-yellow age1yubikey1qgxj47xg2sxwv95w0zhlqw7ay4qsdltjgura29wd57kmx5hjfdaxxxla29h
+  - &dannixon-sk-blue age1yubikey1q0ukp0umwpvky9eamjym59mh42p5nz5q02zvx5mhfy57t6xmnzzm5zvaugq
+  - &dannixon-sk-green age1yubikey1qvm5j08damled24uvgaeveg0znt9f8sr8e8d5e4sdh9j75g9z8wnq6s5lwg
+  - &dannixon-sk-red age1yubikey1q236gnfv88v7ln4drft9y7swllwc5la5m9dut57ck8e9kcs0e32zqnqfg8l
+
+  - &akane age1y4vswzphs3gm3def7e82vqpmcpl5ce8e27ypf9fd8uljvqe4eqgszxtqzf
+  - &hina age14gcf5lpetq2t4pe2nqmvfgm6agjfyakldy5hw2qt9r8yq0vw2yjqhuw4tt
+  # - &kawashiro todo
+  - &maya age1lj6hkktydycuxw6q88490hh6g7hs3qg72taz3fle0rlcfuq4z3hqyuxl2w
 
 creation_rules:
   - path_regex: modules/home-manager/.*.secret.(yaml|yml|txt)
     key_groups:
       - pgp:
-          - *dan
+          - *dannixon-pgp
         age:
+          - *dannixon-sk-yellow
+          - *dannixon-sk-blue
+          - *dannixon-sk-green
+          - *dannixon-sk-red
           - *akane
           - *hina
           # - *kawashiro
