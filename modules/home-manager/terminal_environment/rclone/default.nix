@@ -3,7 +3,9 @@
   pkgs,
   ...
 }: {
-  home.packages = [pkgs.rclone];
+  home.packages = with pkgs; [
+    rclone
+  ];
 
   sops.secrets.rclone_config = {
     sopsFile = ./config.secret.txt;

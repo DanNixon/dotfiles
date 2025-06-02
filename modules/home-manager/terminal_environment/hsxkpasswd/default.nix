@@ -3,7 +3,9 @@
   pkgs,
   ...
 }: {
-  home.packages = [pkgs.perlPackages.CryptHSXKPasswd];
+  home.packages = with pkgs; [
+    perlPackages.CryptHSXKPasswd
+  ];
 
   sops.secrets.hsxkpasswdrc = {
     sopsFile = ./hsxkpasswdrc.secret.txt;

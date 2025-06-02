@@ -30,9 +30,7 @@
     settings.git_protocol = "ssh";
   };
 
-  programs.k9s = {
-    enable = true;
-  };
+  programs.k9s.enable = true;
 
   services.flatpak.packages = [
     "io.kinvolk.Headlamp"
