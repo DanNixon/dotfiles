@@ -20,6 +20,7 @@ in
 
       ({pkgs, ...}: {
         home.packages = with pkgs; [
+          labelle # Label printer
           lightburn
         ];
 
