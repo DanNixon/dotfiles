@@ -18,6 +18,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/peripherals/adb.nix
     ../../../modules/nixos/peripherals/ddcutil.nix
     ../../../modules/nixos/peripherals/keyboard.nix
+    ../../../modules/nixos/peripherals/label-printers.nix
     ../../../modules/nixos/peripherals/printers/home.nix
     ../../../modules/nixos/peripherals/probe-rs.nix
     ../../../modules/nixos/peripherals/scanner.nix
@@ -52,12 +53,6 @@ inputs.nixpkgs.lib.nixosSystem {
       dotfiles.dan.groups = ["video" "dialout" "plugdev"];
 
       hardware.rtl-sdr.enable = true;
-
-      # Label printer
-      services.udev.extraRules = ''
-        ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0922", ATTRS{idProduct}=="1001", MODE="0666"
-        ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="0922", ATTRS{idProduct}=="0015", MODE="0666"
-      '';
 
       networking.extraHosts = ''
         100.101.161.50 grafana.makerspace.dan-nixon.com
