@@ -1,10 +1,10 @@
 # `maya`
 
-ThinkPad that I bought used for cheap recently.
+My main work/development PC, bought from an office clear out reseller for very little.
 
 ## Hardware
 
-- Lenovo ThinkPad T470s
-- Intel i7-7500U @ 2.7GHz
-- 16GB memory
+- HP ProDesk
+- Intel i7-8700 @ 4.6GHz
+- 24GB memory
 - 1TB NVMe SSD
