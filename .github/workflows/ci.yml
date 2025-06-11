@@ -41,7 +41,6 @@ jobs:
           - dan@akane
           - generic
           - dan@hina
-          - dan@kawashiro
           - dan@maya
 
     steps:
