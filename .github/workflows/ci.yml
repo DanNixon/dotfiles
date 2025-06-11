@@ -40,6 +40,7 @@ jobs:
         config:
           - dan@akane
           - generic
+          - dan@hina
           - dan@kawashiro
           - dan@maya
 
