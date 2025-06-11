@@ -8,8 +8,3 @@ includes = [ "*.nix" ]
 excludes = [
   "*/hardware-configuration.nix",
 ]
-
-[formatter.rust]
-command = "rustfmt"
-options = ["--edition", "2021"]
-includes = [ "*.rs" ]
