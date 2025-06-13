@@ -20,7 +20,11 @@ in
       ../../../modules/home-manager/media.nix
       ../../../modules/home-manager/office.nix
 
-      ({config, ...}: {
+      ({
+        config,
+        pkgs,
+        ...
+      }: {
         xdg.userDirs.music = "${config.home.homeDirectory}/music";
         services.mpd.enable = true;
 
@@ -38,6 +42,10 @@ in
         };
 
         programs.bottom.settings.flags.battery = true;
+
+        home.packages = with pkgs; [
+          labelle # Label printer
+        ];
       })
     ];
   }
