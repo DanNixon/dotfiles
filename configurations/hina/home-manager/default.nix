@@ -36,7 +36,7 @@ in
               "/home/dan/.local/share/password-store"
               "/home/dan/phone"
             ];
-            repositories = ["ssh://g5ows5p1@g5ows5p1.repo.borgbase.com/./repo"];
+            repositories = ["ssh://s770nxsc@s770nxsc.repo.borgbase.com/./repo"];
           };
           storage.encryptionPasscommand = "pass borg/hina/passphrase";
         };
