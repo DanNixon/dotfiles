@@ -47,7 +47,7 @@ in
               "/home/dan/.local/share/password-store"
               "/home/dan/phone"
             ];
-            repositories = ["n0f5xqc1@n0f5xqc1.repo.borgbase.com:repo"];
+            repositories = ["ssh://n0f5xqc1@n0f5xqc1.repo.borgbase.com/./repo"];
           };
           storage.encryptionPasscommand = "pass borg/maya/passphrase";
         };
