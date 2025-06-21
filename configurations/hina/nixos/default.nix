@@ -50,6 +50,11 @@ inputs.nixpkgs.lib.nixosSystem {
       };
 
       dotfiles.dan.groups = ["video" "dialout" "plugdev"];
+
+      networking.extraHosts = ''
+        100.101.161.50 grafana.makerspace.dan-nixon.com
+        100.101.161.50 influxdb.makerspace.dan-nixon.com
+      '';
     }
   ];
 }
