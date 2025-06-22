@@ -20,4 +20,6 @@
 
   # https://github.com/NixOS/nixpkgs/issues/259641#issuecomment-2910335440
   services.geoclue2.enable = true;
+
+  environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
 }
