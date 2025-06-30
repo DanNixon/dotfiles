@@ -1,1 +1,3 @@
-{pkgs}: {}
+{pkgs}: {
+  koishi = pkgs.callPackage ./koishi {};
+}

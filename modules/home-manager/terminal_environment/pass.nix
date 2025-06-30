@@ -1,8 +1,4 @@
 {pkgs, ...}: {
-  home.shellAliases = {
-    p = "pass";
-  };
-
   programs.password-store = {
     enable = true;
 

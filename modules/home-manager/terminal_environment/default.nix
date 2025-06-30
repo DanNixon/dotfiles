@@ -8,6 +8,7 @@
     ./git.nix
     ./gpg.nix
     ./joshuto.nix
+    ./koishi.nix
     ./neovim
     ./nix-index.nix
     ./nnn.nix
