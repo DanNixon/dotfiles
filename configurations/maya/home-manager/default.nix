@@ -44,6 +44,7 @@ in
             sourceDirectories = [
               "/home/dan/docs"
               "/home/dan/notebook"
+              "/home/dan/.local/share/koishi-store"
               "/home/dan/.local/share/password-store"
               "/home/dan/phone"
             ];
