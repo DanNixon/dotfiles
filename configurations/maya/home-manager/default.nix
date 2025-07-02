@@ -49,7 +49,7 @@ in
             ];
             repositories = ["ssh://n0f5xqc1@n0f5xqc1.repo.borgbase.com/./repo"];
           };
-          storage.encryptionPasscommand = "pass borg/maya/passphrase";
+          storage.encryptionPasscommand = "koishi get borg/maya.yaml passphrase";
         };
 
         programs.bottom.settings.flags.battery = true;

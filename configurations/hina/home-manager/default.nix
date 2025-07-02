@@ -38,7 +38,7 @@ in
             ];
             repositories = ["ssh://s770nxsc@s770nxsc.repo.borgbase.com/./repo"];
           };
-          storage.encryptionPasscommand = "pass borg/hina/passphrase";
+          storage.encryptionPasscommand = "koishi get borg/hina.yaml passphrase";
         };
 
         programs.bottom.settings.flags.battery = true;
