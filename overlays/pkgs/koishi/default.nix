@@ -1,6 +1,7 @@
 {
   fetchFromGitHub,
   rustPlatform,
+  installShellFiles,
 }:
 rustPlatform.buildRustPackage {
   name = "koishi";
@@ -9,12 +10,23 @@ rustPlatform.buildRustPackage {
     owner = "dannixon";
     repo = "koishi";
 
-    rev = "0f6f19752500d27418215b4c91d080a35b3997ed";
+    rev = "8939c3834391c6d2297a2cd03b45d9859fa54e22";
 
-    hash = "sha256-t9VNhLU61HxbaMyhhguidBXRSJaASYK/E407+n6A64g=";
+    hash = "sha256-duWSKgJCHFROFAt0wmDPQpejc+1MlH6zcpWYo16MKa8=";
   };
 
-  cargoHash = "sha256-MZBjmXRRL5D3Gs8a9tNUSEhpzWW6HIGK8h5eIPSIF/M=";
+  cargoHash = "sha256-1+1T11OwfV48rGT2wEcDrTyOBZQjxcrir5np3uDv9I4=";
+
+  nativeBuildInputs = [
+    installShellFiles
+  ];
 
   doCheck = false;
+
+  postInstall =  ''
+    installShellCompletion --cmd koishi \
+      --bash <(COMPLETE=bash $out/bin/koishi) \
+      --fish <(COMPLETE=fish $out/bin/koishi) \
+      --zsh <(COMPLETE=zsh $out/bin/koishi)
+  '';
 }
