@@ -2,6 +2,7 @@
   inputs,
   outputs,
   lib,
+  pkgs,
   config,
   ...
 }: {
@@ -34,6 +35,12 @@
 
   hardware.enableRedistributableFirmware = true;
   services.fwupd.enable = true;
+
+  environment.systemPackages = [
+    (lib.hiPrio pkgs.uutils-coreutils-noprefix)
+  ];
+
+  security.sudo-rs.enable = true;
 
   programs.iftop.enable = true;
 
