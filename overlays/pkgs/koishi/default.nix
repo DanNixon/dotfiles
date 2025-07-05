@@ -23,7 +23,7 @@ rustPlatform.buildRustPackage {
 
   doCheck = false;
 
-  postInstall =  ''
+  postInstall = ''
     installShellCompletion --cmd koishi \
       --bash <(COMPLETE=bash $out/bin/koishi) \
       --fish <(COMPLETE=fish $out/bin/koishi) \
