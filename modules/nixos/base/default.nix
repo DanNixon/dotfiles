@@ -7,7 +7,10 @@
   ...
 }: {
   imports = [
+    ./keyboard.nix
     ./locale.nix
+    ./networking.nix
+    ./sound.nix
   ];
 
   nix = {
@@ -41,8 +44,6 @@
   ];
 
   security.sudo-rs.enable = true;
-
-  programs.iftop.enable = true;
 
   # Required to set user shell
   programs.zsh.enable = true;

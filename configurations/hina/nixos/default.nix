@@ -19,14 +19,10 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/base
     ../../../modules/nixos/dan.nix
     ../../../modules/nixos/desktop-environment.nix
-    ../../../modules/nixos/dnscrypt-proxy.nix
-    ../../../modules/nixos/networkmanager.nix
-    ../../../modules/nixos/peripherals/keyboard.nix
     ../../../modules/nixos/peripherals/label-printers.nix
     ../../../modules/nixos/peripherals/printers/makerspace.nix
     ../../../modules/nixos/peripherals/probe-rs.nix
     ../../../modules/nixos/peripherals/scanner.nix
-    ../../../modules/nixos/peripherals/sound.nix
     ../../../modules/nixos/peripherals/yubikey.nix
     ../../../modules/nixos/ssh.nix
 
