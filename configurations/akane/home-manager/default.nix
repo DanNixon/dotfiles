@@ -10,13 +10,9 @@ in
 
     modules = [
       ../../../modules/home-manager/terminal_environment
-      ../../../modules/home-manager/terminal_environment/hsxkpasswd
-      ../../../modules/home-manager/terminal_environment/ssh-config
       ../../../modules/home-manager/desktop_environment
-      ../../../modules/home-manager/cad.nix
       ../../../modules/home-manager/development.nix
       ../../../modules/home-manager/media.nix
-      ../../../modules/home-manager/office.nix
 
       ({pkgs, ...}: {
         home.packages = with pkgs; [

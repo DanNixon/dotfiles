@@ -10,8 +10,6 @@
     kubectl
     kubectx
 
-    rustup
-
     shellcheck
 
     # Line of code reporting tool
@@ -25,9 +23,4 @@
   };
 
   programs.k9s.enable = true;
-
-  services.flatpak.packages = [
-    "io.kinvolk.Headlamp"
-    "net.werwolv.ImHex"
-  ];
 }

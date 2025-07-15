@@ -5,7 +5,10 @@
   ...
 }: {
   imports = [
-    ./apps
+    ./alacritty.nix
+    ./imv.nix
+    ./mpv.nix
+    ./zathura.nix
   ];
 
   services.flatpak = {
@@ -14,7 +17,31 @@
     packages = [
       "org.mozilla.firefox"
       "com.github.tchx84.Flatseal"
+
+      "net.werwolv.ImHex"
+
+      "org.gimp.GIMP"
+      "org.inkscape.Inkscape"
+
+      "org.musicbrainz.Picard"
+      "org.videolan.VLC"
+
+      "org.libreoffice.LibreOffice"
+      "com.jgraph.drawio.desktop"
+
+      "org.kicad.KiCad"
+      "org.freecadweb.FreeCAD"
+      "org.librecad.librecad"
+      "org.openscad.OpenSCAD"
+      "com.bambulab.BambuStudio"
+
       "org.rncbc.qpwgraph"
+
+      "net.ankiweb.Anki"
+      "org.gnome.Calculator"
+
+      "app.organicmaps.desktop"
+      "nl.sarine.gpx-viewer"
     ];
   };
 

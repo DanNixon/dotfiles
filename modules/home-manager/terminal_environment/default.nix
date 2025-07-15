@@ -7,13 +7,15 @@
     ./fzf.nix
     ./git.nix
     ./gpg.nix
-    ./joshuto.nix
+    ./hsxkpasswd
     ./koishi.nix
     ./neovim
     ./nix-index.nix
     ./nnn.nix
     ./pass.nix
+    ./rclone
     ./shell.nix
+    ./ssh-config
     ./yubikey.nix
     ./zellij.nix
     ./zsh.nix
@@ -60,7 +62,6 @@
 
     # Networking tools
     bmon
-    ffsend
     dogdns
     ipcalc
     rsync
