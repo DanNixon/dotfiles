@@ -15,7 +15,6 @@ inputs.nixpkgs.lib.nixosSystem {
     ./hardware.nix
     ./disk-config.nix
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t470s
-    inputs.nixos-hardware.nixosModules.common-pc-ssd
 
     ../../../modules/nixos/base
     ../../../modules/nixos/dan.nix
@@ -24,13 +23,12 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/networkmanager.nix
     ../../../modules/nixos/peripherals/keyboard.nix
     ../../../modules/nixos/peripherals/label-printers.nix
-    ../../../modules/nixos/peripherals/printers/home.nix
+    ../../../modules/nixos/peripherals/printers/makerspace.nix
     ../../../modules/nixos/peripherals/probe-rs.nix
     ../../../modules/nixos/peripherals/scanner.nix
     ../../../modules/nixos/peripherals/sound.nix
     ../../../modules/nixos/peripherals/yubikey.nix
     ../../../modules/nixos/ssh.nix
-    ../../../modules/nixos/syncthing.nix
 
     {
       networking.hostName = "hina";
@@ -51,10 +49,8 @@ inputs.nixpkgs.lib.nixosSystem {
 
       dotfiles.dan.groups = ["video" "dialout" "plugdev"];
 
-      networking.extraHosts = ''
-        100.101.161.50 grafana.makerspace.dan-nixon.com
-        100.101.161.50 influxdb.makerspace.dan-nixon.com
-      '';
+      # Required for Bambu Lab printer discovery
+      networking.firewall.allowedUDPPorts = [2021];
     }
   ];
 }

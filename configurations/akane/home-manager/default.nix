@@ -24,11 +24,6 @@ in
           lightburn
         ];
 
-        services.flatpak.packages = [
-          "org.chromium.Chromium"
-          "com.microsoft.Edge"
-        ];
-
         programs.bottom.settings.flags.battery = true;
       })
     ];
