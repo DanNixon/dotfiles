@@ -14,34 +14,12 @@ in
       ../../../modules/home-manager/terminal_environment/rclone
       ../../../modules/home-manager/terminal_environment/ssh-config
       ../../../modules/home-manager/desktop_environment
-      ../../../modules/home-manager/borgmatic.nix
       ../../../modules/home-manager/cad.nix
       ../../../modules/home-manager/development.nix
       ../../../modules/home-manager/media.nix
       ../../../modules/home-manager/office.nix
 
-      ({
-        config,
-        pkgs,
-        ...
-      }: {
-        xdg.userDirs.music = "${config.home.homeDirectory}/music";
-        services.mpd.enable = true;
-
-        programs.borgmatic.backups."main" = {
-          location = {
-            sourceDirectories = [
-              "/home/dan/documents"
-              "/home/dan/notebook"
-              "/home/dan/.local/share/koishi-store"
-              "/home/dan/.local/share/password-store"
-              "/home/dan/phone"
-            ];
-            repositories = ["ssh://s770nxsc@s770nxsc.repo.borgbase.com/./repo"];
-          };
-          storage.encryptionPasscommand = "koishi get borg/hina.yaml passphrase";
-        };
-
+      ({pkgs, ...}: {
         programs.bottom.settings.flags.battery = true;
 
         home.packages = with pkgs; [
