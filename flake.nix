@@ -93,6 +93,7 @@
       akane = import ./configurations/akane/nixos {inherit inputs outputs;};
       hina = import ./configurations/hina/nixos {inherit inputs outputs;};
       maya = import ./configurations/maya/nixos {inherit inputs outputs;};
+      yama = import ./configurations/yama/nixos {inherit inputs outputs;};
     };
 
     homeConfigurations = {
@@ -100,6 +101,7 @@
       generic = import ./configurations/generic/home-manager {inherit inputs outputs;};
       "dan@hina" = import ./configurations/hina/home-manager {inherit inputs outputs;};
       "dan@maya" = import ./configurations/maya/home-manager {inherit inputs outputs;};
+      "dan@yama" = import ./configurations/yama/home-manager {inherit inputs outputs;};
     };
   };
 }
