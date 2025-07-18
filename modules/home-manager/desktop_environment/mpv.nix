@@ -2,10 +2,6 @@
   programs.mpv = {
     enable = true;
 
-    config = {
-      input-ipc-server = "/tmp/mpv-socket";
-    };
-
     bindings = {
       "h" = "seek -5";
       "j" = "seek 60";

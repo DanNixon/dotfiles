@@ -13,6 +13,8 @@
     # Tools for working with media files
     exiftool
     ffmpeg
+
+    mpc
   ];
 
   programs.ncmpcpp = {
