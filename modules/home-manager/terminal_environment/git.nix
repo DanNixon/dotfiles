@@ -100,10 +100,6 @@
     ];
 
     ignores = [
-      "*~"
-      # Direnv
-      ".env"
-      ".direnv"
       # Tomb
       ".host"
       ".last"
@@ -116,5 +112,6 @@
 
   home.packages = with pkgs; [
     gfold
+    jujutsu
   ];
 }
