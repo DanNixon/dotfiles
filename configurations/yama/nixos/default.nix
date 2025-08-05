@@ -45,10 +45,6 @@ inputs.nixpkgs.lib.nixosSystem {
       };
 
       dotfiles.dan.groups = ["video" "dialout"];
-
-      networking.extraHosts = ''
-        100.101.161.50 grafana.makerspace.org.uk
-      '';
     }
   ];
 }
