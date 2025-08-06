@@ -60,5 +60,8 @@
     # Github Copilot
     copilot-lua
     CopilotChat-nvim
+
+    # Cargo.toml editing
+    crates-nvim
   ];
 }

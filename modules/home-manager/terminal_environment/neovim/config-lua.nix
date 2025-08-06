@@ -83,6 +83,7 @@
         { name = 'nvim_lsp' },
         { name = 'vsnip' },
         { name = 'path' },
+        { name = 'crates' },
       }, {
         { name = 'buffer' },
       }),
@@ -191,5 +192,19 @@
         enable = true,
       },
     })
+
+    -- Creates config
+    require("crates").setup {
+      lsp = {
+        enabled = true,
+        actions = true,
+        completion = true,
+      },
+      completion = {
+        cmp = {
+          enabled = true,
+        },
+      },
+    }
   '';
 }
