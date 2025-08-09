@@ -3,7 +3,7 @@
   networking.firewall.enable = true;
 
   networking.networkmanager.enable = true;
-  dotfiles.dan.groups = ["networkmanager"];
+  users.users.dan.extraGroups = ["networkmanager"];
 
   services.dnscrypt-proxy2 = {
     enable = true;
