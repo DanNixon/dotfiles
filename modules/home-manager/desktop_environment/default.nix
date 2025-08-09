@@ -7,12 +7,24 @@
   imports = [
     ./alacritty.nix
     ./imv.nix
-    ./mpv.nix
     ./zathura.nix
   ];
 
   services.flatpak = {
     enable = true;
+
+    uninstallUnmanaged = true;
+
+    overrides = {
+      # Default to Wayland
+      global.Context.sockets = ["wayland" "!x11" "!fallback-x11"];
+
+      # Apps with no Wayland support
+      "com.bambulab.BambuStudio".Context.sockets = ["x11"];
+      "org.freecad.FreeCAD".Context.sockets = ["x11"];
+      "org.kicad.KiCad".Context.sockets = ["x11"];
+      "org.videolan.VLC".Context.sockets = ["x11"];
+    };
 
     packages = [
       "org.mozilla.firefox"
@@ -25,6 +37,7 @@
 
       "org.musicbrainz.Picard"
       "org.videolan.VLC"
+      "io.mpv.Mpv"
 
       "org.libreoffice.LibreOffice"
       "com.jgraph.drawio.desktop"
@@ -76,7 +89,7 @@
 
       defaultApplications = let
         image = ["imv.desktop"];
-        video = ["mpv.desktop" "org.videolan.VLC.desktop"];
+        video = ["io.mpv.Mpv.desktop" "org.videolan.VLC.desktop"];
       in {
         "image/bmp" = image;
         "image/jpeg" = image;
@@ -106,4 +119,14 @@
     source = ./cosmic_config;
     recursive = true;
   };
+
+  home.file.".var/app/io.mpv.Mpv/config/mpv/input.conf".text = ''
+    h seek -5
+    j seek 60
+    k seek -60
+    l seek 5
+
+    # Make shift-j cycle subtitles normally (since j is used for Vi style transport)
+    J cycle sub
+  '';
 }
