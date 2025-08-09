@@ -48,5 +48,9 @@
   # Required to set user shell
   programs.zsh.enable = true;
 
+  services.upower.enable = true;
+
+  virtualisation.podman.enable = true;
+
   system.stateVersion = lib.mkDefault "23.05";
 }

@@ -19,32 +19,16 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/base
     ../../../modules/nixos/dan.nix
     ../../../modules/nixos/desktop-environment.nix
-    ../../../modules/nixos/peripherals/adb.nix
-    ../../../modules/nixos/peripherals/label-printers.nix
+    ../../../modules/nixos/peripherals
     ../../../modules/nixos/peripherals/printers/home.nix
-    ../../../modules/nixos/peripherals/probe-rs.nix
-    ../../../modules/nixos/peripherals/yubikey.nix
     ../../../modules/nixos/ssh.nix
     ../../../modules/nixos/syncthing.nix
+    ../../../modules/nixos/tailscale.nix
 
     {
       networking.hostName = "yama";
 
-      services.dnscrypt-proxy2.settings.forwarding_rules = "/etc/dnscrypt-proxy2/forwarding-rules.txt";
-      environment.etc."dnscrypt-proxy2/forwarding-rules.txt".text = ''
-        castle.dan-nixon.com 100.65.23.56
-      '';
-
       hardware.bluetooth.enable = true;
-      services.upower.enable = true;
-      virtualisation.podman.enable = true;
-
-      services.tailscale = {
-        enable = true;
-        useRoutingFeatures = "client";
-      };
-
-      dotfiles.dan.groups = ["video" "dialout"];
     }
   ];
 }
