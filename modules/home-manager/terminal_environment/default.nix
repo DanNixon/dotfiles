@@ -17,7 +17,6 @@
     ./shell.nix
     ./ssh-config
     ./yubikey.nix
-    ./zellij.nix
     ./zsh.nix
   ];
 
