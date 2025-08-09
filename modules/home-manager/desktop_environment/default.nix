@@ -6,8 +6,6 @@
 }: {
   imports = [
     ./alacritty.nix
-    ./imv.nix
-    ./zathura.nix
   ];
 
   services.flatpak = {
@@ -103,6 +101,8 @@
         "video/webm" = video;
         "video/x-matroska" = video;
         "video/x-msvideo" = video;
+
+        "application/pdf" = "org.pwmt.zathura-pdf-mupdf.desktop";
       };
     };
   };
@@ -120,6 +120,8 @@
     recursive = true;
   };
 
+  programs.zathura.enable = true;
+
   home.file.".var/app/io.mpv.Mpv/config/mpv/input.conf".text = ''
     h seek -5
     j seek 60
@@ -128,5 +130,19 @@
 
     # Make shift-j cycle subtitles normally (since j is used for Vi style transport)
     J cycle sub
+  '';
+
+  programs.imv.enable = true;
+  xdg.configFile."imv/config".text = ''
+    [binds]
+    h = prev
+    j = next
+    k = prev
+    l = next
+
+    <Shift+H> = pan 50 0
+    <Shift+J> = pan 0 -50
+    <Shift+K> = pan 0 50
+    <Shift+L> = pan -50 0
   '';
 }
