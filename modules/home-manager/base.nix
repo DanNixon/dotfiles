@@ -30,7 +30,7 @@
     username = lib.mkDefault "dan";
     homeDirectory = lib.mkDefault "/home/dan";
 
-    stateVersion = lib.mkDefault "23.05";
+    stateVersion = "23.05";
   };
 
   sops.age.sshKeyPaths = ["${config.home.homeDirectory}/.ssh/sops-nix"];
