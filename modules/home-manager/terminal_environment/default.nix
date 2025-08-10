@@ -2,22 +2,17 @@
   imports = [
     ../base.nix
 
-    ./age.nix
     ./direnv.nix
     ./fzf.nix
     ./git.nix
-    ./gpg.nix
     ./hsxkpasswd
-    ./koishi.nix
     ./neovim
     ./nix-index.nix
     ./nnn.nix
-    ./pass.nix
     ./rclone
+    ./security.nix
     ./shell.nix
     ./ssh-config
-    ./yubikey.nix
-    ./zsh.nix
   ];
 
   # System tools
@@ -28,24 +23,18 @@
   programs.jq.enable = true;
 
   home.packages = with pkgs; [
-    qrencode
-    termdown
-    zbar
-
     devenv
+
+    # Bar/QR code tools
+    qrencode
+    zbar
 
     # System tools
     dmidecode
     lm_sensors
-    fastfetch
     pciutils
     progress
     usbutils
-
-    # Nix tools
-    nix-diff
-    nix-tree
-    nvd
 
     # File tools
     dyff
@@ -62,13 +51,10 @@
     # Networking tools
     bmon
     dogdns
-    ipcalc
     rsync
-    sipcalc
     sshfs
     sshpass # Used for some sshuttle scripts
     sshuttle
-    tcpdump
     wget
   ];
 }
