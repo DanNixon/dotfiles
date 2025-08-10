@@ -27,8 +27,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    nix-flatpak.url = "github:gmodena/nix-flatpak/v0.6.0";
-
     base16.url = "github:SenchoPens/base16.nix";
 
     tt-schemes = {

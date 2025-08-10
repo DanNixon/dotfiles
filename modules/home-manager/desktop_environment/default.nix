@@ -8,55 +8,6 @@
     ./alacritty.nix
   ];
 
-  services.flatpak = {
-    enable = true;
-
-    uninstallUnmanaged = true;
-
-    overrides = {
-      # Default to Wayland
-      global.Context.sockets = ["wayland" "!x11" "!fallback-x11"];
-
-      # Apps with no Wayland support
-      "com.bambulab.BambuStudio".Context.sockets = ["x11"];
-      "org.freecad.FreeCAD".Context.sockets = ["x11"];
-      "org.kicad.KiCad".Context.sockets = ["x11"];
-      "org.videolan.VLC".Context.sockets = ["x11"];
-      "com.microsoft.Edge".Context.sockets = ["x11"];
-    };
-
-    packages = [
-      "org.mozilla.firefox"
-      "com.github.tchx84.Flatseal"
-
-      "net.werwolv.ImHex"
-
-      "org.gimp.GIMP"
-      "org.inkscape.Inkscape"
-
-      "org.musicbrainz.Picard"
-      "org.videolan.VLC"
-      "io.mpv.Mpv"
-
-      "org.libreoffice.LibreOffice"
-      "com.jgraph.drawio.desktop"
-
-      "org.kicad.KiCad"
-      "org.freecadweb.FreeCAD"
-      "org.librecad.librecad"
-      "org.openscad.OpenSCAD"
-      "com.bambulab.BambuStudio"
-
-      "org.rncbc.qpwgraph"
-
-      "net.ankiweb.Anki"
-      "org.gnome.Calculator"
-
-      "app.organicmaps.desktop"
-      "nl.sarine.gpx-viewer"
-    ];
-  };
-
   home.packages = with pkgs; [
     ddcutil
     ddcui

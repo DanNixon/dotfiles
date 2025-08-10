@@ -20,11 +20,6 @@ in
         pkgs,
         ...
       }: {
-        services.flatpak.packages = [
-          "com.microsoft.Edge"
-          "com.valvesoftware.Steam"
-        ];
-
         xdg.userDirs.music = "${config.home.homeDirectory}/music";
         services.mpd.enable = true;
 

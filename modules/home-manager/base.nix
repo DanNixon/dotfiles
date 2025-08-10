@@ -7,7 +7,6 @@
 }: {
   imports = [
     inputs.base16.homeManagerModule
-    inputs.nix-flatpak.homeManagerModules.nix-flatpak
     inputs.sops-nix.homeManagerModules.sops
   ];
 

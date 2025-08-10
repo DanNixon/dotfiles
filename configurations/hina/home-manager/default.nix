@@ -16,10 +16,6 @@ in
 
       ({pkgs, ...}: {
         programs.bottom.settings.flags.battery = true;
-
-        services.flatpak.packages = [
-          "com.vesc_project.VescTool"
-        ];
       })
     ];
   }
