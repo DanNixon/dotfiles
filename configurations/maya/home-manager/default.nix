@@ -20,10 +20,6 @@ in
         pkgs,
         ...
       }: {
-        home.packages = with pkgs; [
-          labelle # Label printer
-        ];
-
         services.flatpak.packages = [
           "com.microsoft.Edge"
           "com.valvesoftware.Steam"

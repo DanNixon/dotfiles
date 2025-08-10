@@ -17,10 +17,6 @@ in
       ({pkgs, ...}: {
         programs.bottom.settings.flags.battery = true;
 
-        home.packages = with pkgs; [
-          labelle # Label printer
-        ];
-
         services.flatpak.packages = [
           "com.vesc_project.VescTool"
         ];
