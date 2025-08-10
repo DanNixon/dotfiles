@@ -61,7 +61,7 @@
     ddcutil
     ddcui
     headsetcontrol
-    labelle  # Label printer
+    labelle # Label printer
     wdisplays
     wl-clipboard
     xdg-utils
