@@ -22,6 +22,7 @@
       "org.freecad.FreeCAD".Context.sockets = ["x11"];
       "org.kicad.KiCad".Context.sockets = ["x11"];
       "org.videolan.VLC".Context.sockets = ["x11"];
+      "com.microsoft.Edge".Context.sockets = ["x11"];
     };
 
     packages = [
