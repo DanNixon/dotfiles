@@ -20,10 +20,6 @@ in
         pkgs,
         ...
       }: {
-        services.flatpak.packages = [
-          "com.microsoft.Edge"
-        ];
-
         xdg.userDirs.music = "${config.home.homeDirectory}/music";
         services.mpd.enable = true;
 

@@ -15,11 +15,6 @@ in
       ../../../modules/home-manager/media.nix
 
       ({pkgs, ...}: {
-        home.packages = with pkgs; [
-          labelle # Label printer
-          lightburn
-        ];
-
         programs.bottom.settings.flags.battery = true;
       })
     ];
