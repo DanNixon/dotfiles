@@ -10,6 +10,7 @@ de.schmidhuberj.tubefeeder
 dev.geopjr.Calligraphy
 io.github.nokse22.Exhibit
 io.mpv.Mpv
+me.iepure.devtoolbox
 net.ankiweb.Anki
 net.werwolv.ImHex
 nl.sarine.gpx-viewer
