@@ -20,7 +20,6 @@
 
   # File tools
   programs.ripgrep.enable = true;
-  programs.jq.enable = true;
 
   home.packages = with pkgs; [
     devenv
@@ -40,6 +39,7 @@
     dyff
     file
     hexdump
+    jaq
 
     # Disk/filesystem tools
     dua
