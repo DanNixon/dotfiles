@@ -22,6 +22,7 @@ inputs.nixpkgs.lib.nixosSystem {
     ../../../modules/nixos/peripherals
     ../../../modules/nixos/peripherals/printers/makerspace.nix
     ../../../modules/nixos/ssh.nix
+    ../../../modules/nixos/syncthing.nix
     ../../../modules/nixos/tailscale.nix
 
     {
