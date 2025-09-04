@@ -60,12 +60,6 @@
     };
   };
 
-  # COSMIC config files
-  xdg.configFile."cosmic" = {
-    source = ./cosmic_config;
-    recursive = true;
-  };
-
   programs.zathura.enable = true;
 
   home.file.".var/app/io.mpv.Mpv/config/mpv/input.conf".text = ''
