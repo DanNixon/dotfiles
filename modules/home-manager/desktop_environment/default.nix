@@ -13,7 +13,6 @@
     ddcui
     headsetcontrol
     labelle # Label printer
-    wdisplays
     wl-clipboard
     xdg-utils
   ];
