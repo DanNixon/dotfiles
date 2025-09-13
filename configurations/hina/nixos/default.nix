@@ -32,6 +32,10 @@ inputs.nixpkgs.lib.nixosSystem {
 
       # Required for Bambu Lab printer discovery
       networking.firewall.allowedUDPPorts = [2021];
+
+      networking.extraHosts = ''
+        130.246.53.247 ndw2982.isis.cclrc.ac.uk
+      '';
     }
   ];
 }
