@@ -26,6 +26,10 @@ inputs.nixpkgs.lib.nixosSystem {
       };
 
       networking.hostName = "maya";
+
+      networking.extraHosts = ''
+        130.246.53.247 ndw2982.isis.cclrc.ac.uk
+      '';
     })
   ];
 }
