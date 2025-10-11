@@ -1,5 +1,4 @@
 keys:
-  - &dannixon-pgp 84E956241243C35EA286B410EA06B7ABA96D6BB8
   - &dannixon-sk-yellow age1yubikey1qgxj47xg2sxwv95w0zhlqw7ay4qsdltjgura29wd57kmx5hjfdaxxxla29h
   - &dannixon-sk-blue age1yubikey1q0ukp0umwpvky9eamjym59mh42p5nz5q02zvx5mhfy57t6xmnzzm5zvaugq
   - &dannixon-sk-green age1yubikey1qvm5j08damled24uvgaeveg0znt9f8sr8e8d5e4sdh9j75g9z8wnq6s5lwg
@@ -13,9 +12,7 @@ keys:
 creation_rules:
   - path_regex: modules/home-manager/.*.secret.(yaml|yml|txt)
     key_groups:
-      - pgp:
-          - *dannixon-pgp
-        age:
+      - age:
           - *dannixon-sk-yellow
           - *dannixon-sk-blue
           - *dannixon-sk-green
