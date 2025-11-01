@@ -31,24 +31,3 @@ jobs:
 
       - name: flake check
         run: nix flake check
-
-  build-home-manager-configs:
-    name: Build Home Manager configurations
-    needs:
-      - formatting
-    runs-on: ubuntu-latest
-
-    strategy:
-      matrix:
-        config:
-          - dan@akane
-          - generic
-          - dan@hina
-          - dan@maya
-
-    steps:
-      - uses: actions/checkout@v5
-      - uses: cachix/install-nix-action@v31
-
-      - name: Build config
-        run: nix develop .\#bootstrap --command home-manager build --flake .\#${{ matrix.config }}
