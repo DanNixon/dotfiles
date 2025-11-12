@@ -1,6 +1,8 @@
 app.organicmaps.desktop
 com.bambulab.BambuStudio
+com.cherry_ai.CherryStudio
 com.github.tchx84.Flatseal
+com.jeffser.Alpaca
 com.jgraph.drawio.desktop
 com.microsoft.Edge
 com.rafaelmardojai.Blanket
