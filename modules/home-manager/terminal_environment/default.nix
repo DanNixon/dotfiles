@@ -33,6 +33,7 @@
     lm_sensors
     pciutils
     progress
+    screen
     usbutils
 
     # File tools
