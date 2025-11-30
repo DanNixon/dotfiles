@@ -1,0 +1,63 @@
+[user]
+	email = "dan@dan-nixon.com"
+	name = "Dan Nixon"
+
+[alias]
+	ap = "add --patch"
+	b = "branch --all"
+	bd = "branch -D"
+	c = "commit"
+	ca = "commit --amend"
+	cf = "commit --fixup"
+	cla = "clean -ixd"
+	co = "checkout"
+	d = "diff"
+	ds = "diff --staged"
+	f = "fetch"
+	l = "log --pretty=concise"
+	la = "log --pretty=full --graph --show-signature"
+	lb = "log --pretty=cleangraph --graph --branches --simplify-by-decoration"
+	lg = "log --pretty=concise --graph"
+	p = "push"
+	pfl = "push --force-with-lease"
+	pu = "push --set-upstream"
+	rb = "rebase"
+	rbc = "rebase --continue"
+	rbi = "rebase --interactive"
+	rl = "log --pretty=reflog --walk-reflogs"
+	s = "status --short --branch"
+	ss = "show"
+	sw = "switch"
+	test-pr = "!f() { git fetch $1 pull/$2/merge:pr/$2-merged && git checkout pr/$2-merged; }; f"
+
+[diff]
+	colorMoved = "plain"
+
+[diff "bin"]
+	textconv = "hexdump -v -C"
+
+[diff "zip"]
+	textconv = "unzip -c -a"
+
+[fetch]
+	prune = true
+
+[init]
+	defaultBranch = "main"
+
+[merge]
+	conflictStyle = "diff3"
+
+[pretty]
+	cleangraph = "%C(yellow)%h %C(reset)%ad %C(reset)%s%C(green)%d"
+	concise = "%C(yellow)%h %C(reset)%ad %C(blue)%an %C(reset)%s%C(green)%d"
+	reflog = "%C(yellow)%h %C(reset)%ad %C(blue)%an %C(reset)%gs%C(green)%d"
+
+[pull]
+	ff = "only"
+
+[push]
+	default = "current"
+
+[rebase]
+	autoSquash = true
