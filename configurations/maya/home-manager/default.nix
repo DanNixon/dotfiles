@@ -15,11 +15,7 @@ in
       ../../../modules/home-manager/development.nix
       ../../../modules/home-manager/media.nix
 
-      ({
-        config,
-        pkgs,
-        ...
-      }: {
+      ({config, ...}: {
         xdg.userDirs.music = "${config.home.homeDirectory}/music";
         services.mpd.enable = true;
 
@@ -36,8 +32,6 @@ in
           };
           storage.encryptionPasscommand = "koishi get borg/maya.yaml passphrase";
         };
-
-        programs.bottom.settings.flags.battery = true;
       })
     ];
   }

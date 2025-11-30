@@ -15,12 +15,6 @@
     ./ssh-config
   ];
 
-  # System tools
-  programs.bottom.enable = true;
-
-  # File tools
-  programs.ripgrep.enable = true;
-
   home.packages = with pkgs; [
     devenv
 
@@ -29,6 +23,7 @@
     zbar
 
     # System tools
+    bottom
     dmidecode
     lm_sensors
     pciutils
@@ -41,6 +36,7 @@
     file
     hexdump
     jaq
+    ripgrep
 
     # Disk/filesystem tools
     dua

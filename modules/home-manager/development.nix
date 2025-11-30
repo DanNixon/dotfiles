@@ -7,8 +7,8 @@
   home.packages = with pkgs; [
     distrobox
 
+    k9s
     kubectl
-    kubectx
 
     shellcheck
 
@@ -21,6 +21,4 @@
     gitCredentialHelper.enable = false;
     settings.git_protocol = "ssh";
   };
-
-  programs.k9s.enable = true;
 }

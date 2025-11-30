@@ -14,6 +14,10 @@
     exiftool
     ffmpeg
 
+    # Retrieval tools
+    gallery-dl
+    yt-dlp
+
     mpc
   ];
 
@@ -89,8 +93,6 @@
       }
     ];
   };
-
-  programs.yt-dlp.enable = true;
 
   services.mpd = {
     extraConfig = ''

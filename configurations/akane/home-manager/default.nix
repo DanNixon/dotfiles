@@ -13,9 +13,5 @@ in
       ../../../modules/home-manager/desktop_environment
       ../../../modules/home-manager/development.nix
       ../../../modules/home-manager/media.nix
-
-      ({pkgs, ...}: {
-        programs.bottom.settings.flags.battery = true;
-      })
     ];
   }
