@@ -4,7 +4,7 @@
 
     ./direnv.nix
     ./fzf.nix
-    ./git.nix
+    ./git
     ./hsxkpasswd
     ./neovim
     ./nix-index.nix

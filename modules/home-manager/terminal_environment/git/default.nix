@@ -13,7 +13,7 @@
   ];
 
   xdg.configFile = {
-    "git/attributes".source = ./gitattributes.txt;
-    "git/config".source = ./gitconfig.txt;
+    "git/attributes".source = ./attributes;
+    "git/config".source = ./config;
   };
 }
