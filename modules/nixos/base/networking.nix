@@ -5,7 +5,7 @@
   networking.networkmanager.enable = true;
   users.users.dan.extraGroups = ["networkmanager"];
 
-  services.dnscrypt-proxy2 = {
+  services.dnscrypt-proxy = {
     enable = true;
 
     settings = {
