@@ -1,12 +1,11 @@
 -- Language server config
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-local lspconfig = require('lspconfig')
 
-lspconfig.marksman.setup { capabilities = capabilities }
-lspconfig.nixd.setup { capabilities = capabilities }
-lspconfig.openscad_lsp.setup { capabilities = capabilities }
-lspconfig.rust_analyzer.setup { capabilities = capabilities }
-lspconfig.yamlls.setup {
+vim.lsp.config('marksman', { capabilities = capabilities })
+vim.lsp.config('nixd', { capabilities = capabilities })
+vim.lsp.config('openscad_lsp', { capabilities = capabilities })
+vim.lsp.config('rust_analyzer', { capabilities = capabilities })
+vim.lsp.config('yamlls', {
   capabilities = capabilities,
   settings = {
     yaml = {
@@ -15,7 +14,7 @@ lspconfig.yamlls.setup {
       },
     },
   },
-}
+})
 
 vim.keymap.set('n', '<space>df', vim.diagnostic.open_float)
 vim.keymap.set('n', '<space>dl', vim.diagnostic.setloclist)
@@ -197,10 +196,5 @@ require("crates").setup {
     enabled = true,
     actions = true,
     completion = true,
-  },
-  completion = {
-    cmp = {
-      enabled = true,
-    },
   },
 }

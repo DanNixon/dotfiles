@@ -6,6 +6,13 @@
     xwayland.enable = true;
   };
 
+  environment.cosmic.excludePackages = with pkgs; [
+    cosmic-edit
+    cosmic-initial-setup
+    cosmic-player
+    cosmic-term
+  ];
+
   fonts = {
     fontDir.enable = true;
 
@@ -20,6 +27,9 @@
 
   # https://github.com/NixOS/nixpkgs/issues/259641#issuecomment-2910335440
   services.geoclue2.enable = true;
+
+  # https://github.com/pop-os/cosmic-session/issues/148
+  services.gnome.gnome-keyring.enable = false;
 
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
 }
