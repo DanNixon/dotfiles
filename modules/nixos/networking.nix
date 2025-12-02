@@ -13,6 +13,17 @@
       ignore_system_dns = true;
 
       netprobe_address = "9.9.9.9:53";
+
+      forwarding_rules = "/etc/dnscrypt-proxy2/forwarding-rules.txt";
     };
   };
+
+  services.tailscale = {
+    enable = true;
+    useRoutingFeatures = "client";
+  };
+
+  environment.etc."dnscrypt-proxy2/forwarding-rules.txt".text = ''
+    castle.dan-nixon.com 100.65.23.56
+  '';
 }

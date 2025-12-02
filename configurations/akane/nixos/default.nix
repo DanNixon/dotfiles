@@ -17,17 +17,10 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-x230
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
-    ../../../modules/nixos/base
-    ../../../modules/nixos/dan.nix
-    ../../../modules/nixos/desktop-environment.nix
-    ../../../modules/nixos/peripherals
-    ../../../modules/nixos/ssh.nix
-    ../../../modules/nixos/tailscale.nix
+    ../../../modules/nixos
 
     {
       networking.hostName = "akane";
-
-      hardware.bluetooth.enable = true;
     }
   ];
 }

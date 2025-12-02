@@ -16,19 +16,13 @@ inputs.nixpkgs.lib.nixosSystem {
     ./disk-config.nix
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
 
-    ../../../modules/nixos/base
-    ../../../modules/nixos/dan.nix
-    ../../../modules/nixos/desktop-environment.nix
-    ../../../modules/nixos/peripherals
-    ../../../modules/nixos/peripherals/printers/home.nix
-    ../../../modules/nixos/ssh.nix
-    ../../../modules/nixos/syncthing.nix
-    ../../../modules/nixos/tailscale.nix
+    ../../../modules/nixos
+    ../../../modules/nixos/printers/home.nix
 
     {
       networking.hostName = "yama";
 
-      hardware.bluetooth.enable = true;
+      services.syncthing.enable = true;
     }
   ];
 }

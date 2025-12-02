@@ -25,9 +25,6 @@
 
   services.udisks2.enable = true;
 
-  # https://github.com/NixOS/nixpkgs/issues/259641#issuecomment-2910335440
-  services.geoclue2.enable = true;
-
   # https://github.com/pop-os/cosmic-session/issues/148
   services.gnome.gnome-keyring.enable = false;
 

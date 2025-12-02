@@ -7,10 +7,15 @@
   ...
 }: {
   imports = [
+    ./dan.nix
+    ./desktop-environment.nix
     ./keyboard.nix
     ./locale.nix
     ./networking.nix
+    ./peripherals.nix
     ./sound.nix
+    ./ssh.nix
+    ./syncthing.nix
   ];
 
   nix = {
@@ -47,8 +52,6 @@
 
   # Required to set user shell
   programs.zsh.enable = true;
-
-  services.upower.enable = true;
 
   virtualisation.podman.enable = true;
 

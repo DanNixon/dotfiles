@@ -9,14 +9,8 @@ inputs.nixpkgs.lib.nixosSystem {
     ./hardware-configuration.nix
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
-    ../../../modules/nixos/base
-    ../../../modules/nixos/dan.nix
-    ../../../modules/nixos/desktop-environment.nix
-    ../../../modules/nixos/peripherals
-    ../../../modules/nixos/peripherals/printers/home.nix
-    ../../../modules/nixos/ssh.nix
-    ../../../modules/nixos/syncthing.nix
-    ../../../modules/nixos/tailscale.nix
+    ../../../modules/nixos
+    ../../../modules/nixos/printers/home.nix
 
     ({...}: {
       boot = {
@@ -26,6 +20,8 @@ inputs.nixpkgs.lib.nixosSystem {
       };
 
       networking.hostName = "maya";
+
+      services.syncthing.enable = true;
     })
   ];
 }
