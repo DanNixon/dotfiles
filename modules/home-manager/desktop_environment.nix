@@ -4,10 +4,6 @@
   pkgs,
   ...
 }: {
-  imports = [
-    ./alacritty.nix
-  ];
-
   home.packages = with pkgs; [
     ddcutil
     ddcui

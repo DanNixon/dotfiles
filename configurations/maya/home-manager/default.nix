@@ -9,11 +9,8 @@ in
     extraSpecialArgs = {inherit inputs outputs pkgs-unstable;};
 
     modules = [
-      ../../../modules/home-manager/terminal_environment
-      ../../../modules/home-manager/desktop_environment
+      ../../../modules/home-manager
       ../../../modules/home-manager/borgmatic.nix
-      ../../../modules/home-manager/development.nix
-      ../../../modules/home-manager/media.nix
 
       ({config, ...}: {
         xdg.userDirs.music = "${config.home.homeDirectory}/music";

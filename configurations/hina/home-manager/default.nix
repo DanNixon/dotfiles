@@ -8,10 +8,5 @@ in
     pkgs = inputs.nixpkgs.legacyPackages.x86_64-linux;
     extraSpecialArgs = {inherit inputs outputs pkgs-unstable;};
 
-    modules = [
-      ../../../modules/home-manager/terminal_environment
-      ../../../modules/home-manager/desktop_environment
-      ../../../modules/home-manager/development.nix
-      ../../../modules/home-manager/media.nix
-    ];
+    modules = [../../../modules/home-manager];
   }
