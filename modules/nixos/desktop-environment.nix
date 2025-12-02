@@ -8,7 +8,6 @@
 
   environment.cosmic.excludePackages = with pkgs; [
     cosmic-edit
-    cosmic-initial-setup
     cosmic-player
     cosmic-term
   ];
