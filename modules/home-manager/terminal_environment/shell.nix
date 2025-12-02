@@ -27,6 +27,8 @@
 
     stripexif = "exiftool -all=";
     today = "date '+%Y-%m-%d'";
+
+    f = "nnn";
   };
 
   programs.zsh = {

@@ -8,7 +8,6 @@
     ./hsxkpasswd
     ./neovim
     ./nix-index.nix
-    ./nnn.nix
     ./rclone
     ./security.nix
     ./shell.nix
@@ -36,6 +35,7 @@
     file
     hexdump
     jaq
+    nnn
     ripgrep
 
     # Disk/filesystem tools
