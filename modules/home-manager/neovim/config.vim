@@ -85,16 +85,6 @@ map <Leader>r :%s/\<<C-r><C-w>\>/
 map <Leader>s :Spell<CR>
 map <Leader>S :SpellOff<CR>
 
-" Find shortcuts
-map <Leader>f :FzfLua git_files<CR>
-map <Leader>F :FzfLua live_grep<CR>
-map <Leader>b :FzfLua buffers<CR>
-map <Leader>t :FzfLua tabs<CR>
-nmap cf :FzfLua lsp_finder<CR>
-nmap ca :FzfLua lsp_code_actions<CR>
-nmap cd :FzfLua diagnostics_document<CR>
-nmap cD :FzfLua diagnostics_workspace<CR>
-
 " easymotion word jumping
 map <Leader>j <Plug>(easymotion-bd-w)
 nmap <Leader>j <Plug>(easymotion-overwin-w)

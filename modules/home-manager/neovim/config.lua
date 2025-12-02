@@ -15,6 +15,7 @@ vim.lsp.config('marksman', { capabilities = capabilities })
 vim.lsp.config('nixd', { capabilities = capabilities })
 vim.lsp.config('openscad_lsp', { capabilities = capabilities })
 vim.lsp.config('rust_analyzer', { capabilities = capabilities })
+vim.lsp.config('tombi', { capabilities = capabilities })
 vim.lsp.config('yamlls', {
   capabilities = capabilities,
   settings = {
@@ -24,6 +25,15 @@ vim.lsp.config('yamlls', {
       },
     },
   },
+})
+
+vim.lsp.enable({
+  'marksman',
+  'nixd',
+  'openscad_lsp',
+  'rust_analyzer',
+  'tombi',
+  'yamalls',
 })
 
 vim.keymap.set('n', '<space>df', vim.diagnostic.open_float)
@@ -36,6 +46,33 @@ vim.api.nvim_create_autocmd('LspAttach', {
     vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
     vim.keymap.set('n', 'cr', vim.lsp.buf.rename, opts)
   end,
+})
+
+-- Copilot config
+require("copilot").setup({
+  suggestion = { enabled = false },
+  panel = { enabled = false },
+})
+require("CopilotChat").setup()
+require("copilot_cmp").setup()
+
+-- Creates config
+require("crates").setup {
+  lsp = {
+    enabled = true,
+    actions = true,
+    completion = true,
+  },
+}
+
+-- Treesitter config
+require('nvim-treesitter.configs').setup({
+  highlight = {
+    enable = true,
+  },
+  indent = {
+    enable = true,
+  },
 })
 
 -- Completion config
@@ -111,14 +148,6 @@ cmp.setup({
   },
 })
 
--- Copilot config
-require("copilot").setup({
-  suggestion = { enabled = false },
-  panel = { enabled = false },
-})
-require("CopilotChat").setup()
-require("copilot_cmp").setup()
-
 -- Fuzzy finding config
 require('fzf-lua').setup({
   keymap = {
@@ -128,6 +157,17 @@ require('fzf-lua').setup({
     },
   },
 })
+
+FzfLua.register_ui_select()
+
+vim.keymap.set('', '<Leader>f', FzfLua.git_files)
+vim.keymap.set('', '<Leader>F', FzfLua.live_grep)
+vim.keymap.set('', '<Leader>b', FzfLua.buffers)
+vim.keymap.set('', '<Leader>t', FzfLua.tabs)
+vim.keymap.set('n', 'cf', FzfLua.lsp_finder)
+vim.keymap.set('n', 'ca', FzfLua.lsp_code_actions)
+vim.keymap.set('n', 'cd', FzfLua.diagnostics_document)
+vim.keymap.set('n', 'cD', FzfLua.diagnostics_workspace)
 
 -- Tree view config
 vim.keymap.set('n', '<space>n', function()
@@ -189,22 +229,3 @@ require('lualine').setup({
     lualine_z = {'location'}
   },
 })
-
--- Treesitter config
-require('nvim-treesitter.configs').setup({
-  highlight = {
-    enable = true,
-  },
-  indent = {
-    enable = true,
-  },
-})
-
--- Creates config
-require("crates").setup {
-  lsp = {
-    enabled = true,
-    actions = true,
-    completion = true,
-  },
-}

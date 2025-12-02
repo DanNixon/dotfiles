@@ -13,6 +13,7 @@
       marksman
       nixd
       openscad-lsp
+      tombi
       yaml-language-server
     ];
 
