@@ -1,3 +1,13 @@
+-- Colour scheme
+vim.opt.termguicolors = true
+require('tinted-colorscheme').setup('base16-bright', {
+  supports = {
+    tinty = false,
+    tinted_shell = false,
+    live_reload = false,
+  },
+})
+
 -- Language server config
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
 

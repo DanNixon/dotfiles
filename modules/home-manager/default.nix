@@ -7,7 +7,6 @@
   ...
 }: {
   imports = [
-    inputs.base16.homeManagerModule
     inputs.sops-nix.homeManagerModules.sops
 
     ./alacritty

@@ -24,11 +24,6 @@ let g:lexical#spelllang = ['en_gb']
 command Spell call lexical#init({'spell': 1})
 command SpellOff call lexical#init({'spell': 0})
 
-" Colour scheme
-set termguicolors background=dark
-let base16colorspace=256
-colorscheme base16-scheme
-
 " Terminal title
 set title
 

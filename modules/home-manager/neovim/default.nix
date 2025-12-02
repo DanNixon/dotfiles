@@ -1,9 +1,4 @@
-{
-  inputs,
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.neovim = {
     enable = true;
     defaultEditor = true;
@@ -22,13 +17,6 @@
     ];
 
     plugins = with pkgs.vimPlugins; [
-      # Colour scheme
-      (base16-vim.overrideAttrs (
-        old: let
-          schemeFile = config.scheme inputs.tinted-vim;
-        in {patchPhase = ''cp ${schemeFile} colors/base16-scheme.vim'';}
-      ))
-
       # Provides easy line/block comment toggling
       vim-commentary
 
@@ -67,6 +55,9 @@
 
       # Format text into one line per sentence
       vim-sentence-chopper
+
+      # Colour schemes
+      tinted-nvim
 
       # Treesitter
       nvim-treesitter.withAllGrammars

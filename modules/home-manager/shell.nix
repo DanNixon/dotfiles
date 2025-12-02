@@ -1,6 +1,4 @@
-{inputs, ...}: {
-  scheme = "${inputs.tt-schemes}/base16/bright.yaml";
-
+{...}: {
   programs.dircolors.enable = true;
 
   home.shellAliases = {

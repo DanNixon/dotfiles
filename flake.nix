@@ -26,18 +26,6 @@
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    base16.url = "github:SenchoPens/base16.nix";
-
-    tt-schemes = {
-      url = "github:tinted-theming/schemes";
-      flake = false;
-    };
-
-    tinted-vim = {
-      url = "github:tinted-theming/tinted-vim/24d384a064d09a20eca7e78a0bfe1fb302c0eb99";
-      flake = false;
-    };
   };
 
   outputs = {
