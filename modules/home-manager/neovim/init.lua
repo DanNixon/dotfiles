@@ -1,6 +1,43 @@
+vim.g.mapleader = " "
+
+vim.opt.title = true;
+
+vim.opt.timeoutlen = 500
+
+vim.opt.swapfile = false
+
+vim.opt.wrap = false
+
+vim.opt.cursorline = true
+
+vim.opt.viewoptions = "cursor"
+
+-- Use two spaces as indent
+vim.opt.tabstop = 2
+vim.opt.shiftwidth = 2
+vim.opt.expandtab = true
+
+-- Show relative line numbers
+vim.opt.number = true
+vim.opt.relativenumber = true
+
+-- Misc. key mappings
+vim.keymap.set("", "<Leader>r", ":%s/\\<<C-r><C-w>\\>/")
+
+vim.keymap.set("", "<Leader>s", ":setlocal spell spelllang=en_gb<CR>")
+vim.keymap.set("", "<Leader>ss", "z=")
+
+vim.keymap.set("v", "<", "<gv")
+vim.keymap.set("v", ">", ">gv")
+
+vim.keymap.set("n", "<Leader>w", ":w<CR>")
+vim.keymap.set("n", "<Leader>x", ":x<CR>")
+vim.keymap.set("n", "<Leader>q", ":q<CR>")
+vim.keymap.set("n", "<Leader>Q", ":q!<CR>")
+
 -- Colour scheme
 vim.opt.termguicolors = true
-require('tinted-colorscheme').setup('base16-bright', {
+require("tinted-colorscheme").setup("base16-bright", {
   supports = {
     tinty = false,
     tinted_shell = false,
@@ -9,14 +46,14 @@ require('tinted-colorscheme').setup('base16-bright', {
 })
 
 -- Language server config
-local capabilities = require('cmp_nvim_lsp').default_capabilities()
+local capabilities = require("cmp_nvim_lsp").default_capabilities()
 
-vim.lsp.config('marksman', { capabilities = capabilities })
-vim.lsp.config('nixd', { capabilities = capabilities })
-vim.lsp.config('openscad_lsp', { capabilities = capabilities })
-vim.lsp.config('rust_analyzer', { capabilities = capabilities })
-vim.lsp.config('tombi', { capabilities = capabilities })
-vim.lsp.config('yamlls', {
+vim.lsp.config("marksman", { capabilities = capabilities })
+vim.lsp.config("nixd", { capabilities = capabilities })
+vim.lsp.config("openscad_lsp", { capabilities = capabilities })
+vim.lsp.config("rust_analyzer", { capabilities = capabilities })
+vim.lsp.config("tombi", { capabilities = capabilities })
+vim.lsp.config("yamlls", {
   capabilities = capabilities,
   settings = {
     yaml = {
@@ -28,23 +65,23 @@ vim.lsp.config('yamlls', {
 })
 
 vim.lsp.enable({
-  'marksman',
-  'nixd',
-  'openscad_lsp',
-  'rust_analyzer',
-  'tombi',
-  'yamalls',
+  "marksman",
+  "nixd",
+  "openscad_lsp",
+  "rust_analyzer",
+  "tombi",
+  "yamalls",
 })
 
-vim.keymap.set('n', '<space>df', vim.diagnostic.open_float)
-vim.keymap.set('n', '<space>dl', vim.diagnostic.setloclist)
+vim.keymap.set("n", "<space>df", vim.diagnostic.open_float)
+vim.keymap.set("n", "<space>dl", vim.diagnostic.setloclist)
 
-vim.api.nvim_create_autocmd('LspAttach', {
-  group = vim.api.nvim_create_augroup('UserLspConfig', {}),
+vim.api.nvim_create_autocmd("LspAttach", {
+  group = vim.api.nvim_create_augroup("UserLspConfig", {}),
   callback = function(ev)
     local opts = { buffer = ev.buf }
-    vim.keymap.set('n', 'K', vim.lsp.buf.hover, opts)
-    vim.keymap.set('n', 'cr', vim.lsp.buf.rename, opts)
+    vim.keymap.set("n", "K", vim.lsp.buf.hover, opts)
+    vim.keymap.set("n", "cr", vim.lsp.buf.rename, opts)
   end,
 })
 
@@ -66,7 +103,7 @@ require("crates").setup {
 }
 
 -- Treesitter config
-require('nvim-treesitter.configs').setup({
+require("nvim-treesitter.configs").setup({
   highlight = {
     enable = true,
   },
@@ -76,7 +113,7 @@ require('nvim-treesitter.configs').setup({
 })
 
 -- Completion config
-local cmp = require('cmp')
+local cmp = require("cmp")
 
 local has_words_before = function()
   unpack = unpack or table.unpack
@@ -103,10 +140,10 @@ cmp.setup({
   preselect = cmp.PreselectMode.None,
 
   mapping = cmp.mapping.preset.insert({
-    ['<Esc>'] = cmp.mapping.abort(),
-    ['<CR>'] = cmp.mapping.confirm({ select = true }),
+    ["<Esc>"] = cmp.mapping.abort(),
+    ["<CR>"] = cmp.mapping.confirm({ select = true }),
 
-    ['<Tab>'] = cmp.mapping(function(fallback)
+    ["<Tab>"] = cmp.mapping(function(fallback)
       if cmp.visible() then
         cmp.select_next_item()
       elseif has_words_before() then
@@ -116,25 +153,25 @@ cmp.setup({
       end
     end, { "i", "s" }),
 
-    ['<S-Tab>'] = cmp.mapping.select_prev_item(),
+    ["<S-Tab>"] = cmp.mapping.select_prev_item(),
 
-    ['<Up>'] = cmp.mapping.select_prev_item(),
-    ['<Down>'] = cmp.mapping.select_next_item(),
+    ["<Up>"] = cmp.mapping.select_prev_item(),
+    ["<Down>"] = cmp.mapping.select_next_item(),
   }),
 
   sources = cmp.config.sources({
-    { name = 'copilot' },
-    { name = 'nvim_lsp' },
-    { name = 'vsnip' },
-    { name = 'path' },
-    { name = 'crates' },
+    { name = "copilot" },
+    { name = "nvim_lsp" },
+    { name = "vsnip" },
+    { name = "path" },
+    { name = "crates" },
   }, {
-    { name = 'buffer' },
+    { name = "buffer" },
   }),
 
   formatting = {
     format = function(entry, vim_item)
-      vim_item.kind = string.format('[%s]', vim_item.kind)
+      vim_item.kind = string.format("[%s]", vim_item.kind)
 
       vim_item.menu = ({
         nvim_lsp = "[LSP]",
@@ -149,7 +186,7 @@ cmp.setup({
 })
 
 -- Fuzzy finding config
-require('fzf-lua').setup({
+require("fzf-lua").setup({
   keymap = {
     fzf = {
       ["tab"]       = "down",
@@ -160,24 +197,24 @@ require('fzf-lua').setup({
 
 FzfLua.register_ui_select()
 
-vim.keymap.set('', '<Leader>f', FzfLua.git_files)
-vim.keymap.set('', '<Leader>F', FzfLua.live_grep)
-vim.keymap.set('', '<Leader>b', FzfLua.buffers)
-vim.keymap.set('', '<Leader>t', FzfLua.tabs)
-vim.keymap.set('n', 'cf', FzfLua.lsp_finder)
-vim.keymap.set('n', 'ca', FzfLua.lsp_code_actions)
-vim.keymap.set('n', 'cd', FzfLua.diagnostics_document)
-vim.keymap.set('n', 'cD', FzfLua.diagnostics_workspace)
+vim.keymap.set("", "<Leader>f", FzfLua.git_files)
+vim.keymap.set("", "<Leader>F", FzfLua.live_grep)
+vim.keymap.set("", "<Leader>b", FzfLua.buffers)
+vim.keymap.set("", "<Leader>t", FzfLua.tabs)
+vim.keymap.set("n", "cf", FzfLua.lsp_finder)
+vim.keymap.set("n", "ca", FzfLua.lsp_code_actions)
+vim.keymap.set("n", "cd", FzfLua.diagnostics_document)
+vim.keymap.set("n", "cD", FzfLua.diagnostics_workspace)
 
 -- Tree view config
-vim.keymap.set('n', '<space>n', function()
+vim.keymap.set("n", "<space>n", function()
   require("neo-tree.command").execute({
     action = "focus",
   });
 end
 );
 
-vim.keymap.set('n', '<space>N', function()
+vim.keymap.set("n", "<space>N", function()
   require("neo-tree.command").execute({
     action = "close",
   });
@@ -213,7 +250,7 @@ vim.cmd([[
 ]])
 
 -- Status line config
-require('lualine').setup({
+require("lualine").setup({
   options = {
     icons_enabled = false,
     theme = "base16",
@@ -221,11 +258,11 @@ require('lualine').setup({
     component_separators = { left = "|", right = "|" },
   },
   sections = {
-    lualine_a = {'mode'},
-    lualine_b = {'branch', 'diff'},
-    lualine_c = {'filename'},
-    lualine_x = {'filetype', 'encoding', 'fileformat'},
-    lualine_y = {'diagnostics'},
-    lualine_z = {'location'}
+    lualine_a = {"mode"},
+    lualine_b = {"branch", "diff"},
+    lualine_c = {"filename"},
+    lualine_x = {"filetype", "encoding", "fileformat"},
+    lualine_y = {"diagnostics"},
+    lualine_z = {"location"}
   },
 })

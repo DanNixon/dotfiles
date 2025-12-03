@@ -3,8 +3,7 @@
     enable = true;
     defaultEditor = true;
 
-    extraConfig = builtins.readFile ./config.vim;
-    extraLuaConfig = builtins.readFile ./config.lua;
+    extraLuaConfig = builtins.readFile ./init.lua;
 
     extraPackages = with pkgs; [
       nodejs
@@ -33,17 +32,11 @@
       # Used to format and make editing CSV files trivial
       csv
 
-      # Fast jumping to markers in a file
-      easymotion
-
       # Fuzzy finding
       fzf-lua
 
       # Status line
       lualine-nvim
-
-      # Enhanced spelling and grammar checking
-      vim-lexical
 
       # Language server client
       nvim-lspconfig
