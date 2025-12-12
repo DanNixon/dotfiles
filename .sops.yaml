@@ -7,7 +7,7 @@ keys:
   - &akane age1y4vswzphs3gm3def7e82vqpmcpl5ce8e27ypf9fd8uljvqe4eqgszxtqzf
   - &hina age18dqaxp2des3d44arx32het4wmux22gry55094c30vc020kecws9sphrfxh
   - &maya age1lj6hkktydycuxw6q88490hh6g7hs3qg72taz3fle0rlcfuq4z3hqyuxl2w
-  - &yama age1xp0s4wghgm8hdefy5s7h023neawq68vvez89qdy0qguzkrsaz3fqp0xk2c
+  - &yama age1wfmadrk7w79egc9wpjjt3uxel62edvwzaslq5fqtv4ejvsprcg0q5d5dja
 
 creation_rules:
   - path_regex: modules/home-manager/.*.secret.(yaml|yml|txt)
