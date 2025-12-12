@@ -49,8 +49,6 @@
       in {
         default = pkgs.mkShell {
           packages = with pkgs; [
-            nixos-anywhere
-
             # Formatting tools
             alejandra
             treefmt
@@ -59,15 +57,6 @@
             # Secret management
             ssh-to-age
             sops
-          ];
-        };
-
-        bootstrap = pkgs.mkShell {
-          NIX_CONFIG = "experimental-features = nix-command flakes";
-
-          packages = with pkgs; [
-            git
-            home-manager
           ];
         };
       }
