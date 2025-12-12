@@ -21,6 +21,7 @@ org.gimp.GIMP
 org.gnome.Calculator
 org.gnome.Papers
 org.inkscape.Inkscape
+org.kde.elisa
 org.kicad.KiCad
 org.librecad.librecad
 org.libreoffice.LibreOffice

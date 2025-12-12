@@ -12,10 +12,7 @@ in
       ../../../modules/home-manager
       ../../../modules/home-manager/borgmatic.nix
 
-      ({config, ...}: {
-        xdg.userDirs.music = "${config.home.homeDirectory}/music";
-        services.mpd.enable = true;
-
+      ({...}: {
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [

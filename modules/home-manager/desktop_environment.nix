@@ -22,7 +22,7 @@
       desktop = null;
       documents = "${config.home.homeDirectory}/documents";
       download = "${config.home.homeDirectory}/downloads";
-      music = lib.mkDefault null;
+      music = "${config.home.homeDirectory}/music";
       pictures = null;
       publicShare = null;
       templates = null;
