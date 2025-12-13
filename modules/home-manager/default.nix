@@ -18,7 +18,6 @@
 
     ./desktop_environment.nix
     ./development.nix
-    ./media.nix
     ./nix-index.nix
     ./security.nix
     ./shell.nix
@@ -87,6 +86,20 @@
     sshpass # Used for some sshuttle scripts
     sshuttle
     wget
+
+    # Tools to aid in creating digital backups of physical media
+    cdparanoia # Backing up audio CDs
+    cdrdao # Backing up PS1 game CDs
+    dvdbackup # Backing up DVDs
+    xsane # Scanning
+
+    # Tools for working with media files
+    exiftool
+    ffmpeg
+
+    # Retrieval tools
+    gallery-dl
+    yt-dlp
   ];
 
   programs.direnv = {
