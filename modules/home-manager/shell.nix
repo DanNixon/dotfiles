@@ -27,6 +27,11 @@
     today = "date '+%Y-%m-%d'";
 
     f = "nnn";
+
+    k = "kubectl";
+    kk = "k9s";
+
+    p = "koishi";
   };
 
   programs.zsh = {

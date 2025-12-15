@@ -13,13 +13,7 @@
     koishi
   ];
 
-  home.sessionVariables = {
-    SOPS_AGE_KEY_CMD = "age-plugin-yubikey -i";
-  };
-
-  home.shellAliases = {
-    p = "koishi";
-  };
+  home.sessionVariables.SOPS_AGE_KEY_CMD = "age-plugin-yubikey -i";
 
   # Legacy password manager
   # TODO: remove

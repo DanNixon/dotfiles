@@ -17,7 +17,6 @@
     ./ssh-config
 
     ./desktop_environment.nix
-    ./development.nix
     ./nix-index.nix
     ./security.nix
     ./shell.nix
@@ -48,8 +47,6 @@
   sops.age.sshKeyPaths = ["${config.home.homeDirectory}/.ssh/sops-nix"];
 
   home.packages = with pkgs; [
-    devenv
-
     # Bar/QR code tools
     qrencode
     zbar
@@ -100,6 +97,16 @@
     # Retrieval tools
     gallery-dl
     yt-dlp
+
+    # Development tools
+    devenv
+    distrobox
+    gcc
+    k9s
+    kubectl
+    shellcheck
+    tokei # Line of code reporting tool
+    rustup
   ];
 
   programs.direnv = {
