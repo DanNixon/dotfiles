@@ -32,6 +32,10 @@
     kk = "k9s";
 
     p = "koishi";
+
+    g = "git";
+    gs = "git s";
+    lg = "lazygit";
   };
 
   programs.zsh = {

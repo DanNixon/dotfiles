@@ -10,7 +10,7 @@ keys:
   - &yama age1wfmadrk7w79egc9wpjjt3uxel62edvwzaslq5fqtv4ejvsprcg0q5d5dja
 
 creation_rules:
-  - path_regex: modules/home-manager/.*.secret.(yaml|yml|txt)
+  - path_regex: modules/home-manager/secrets.yaml
     key_groups:
       - age:
           - *dannixon-sk-yellow

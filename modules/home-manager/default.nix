@@ -8,14 +8,7 @@
 }: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
-
-    ./alacritty
-    ./git
-    ./hsxkpasswd
     ./neovim
-    ./rclone
-    ./ssh-config
-
     ./desktop_environment.nix
     ./nix-index.nix
     ./security.nix
@@ -44,7 +37,10 @@
     stateVersion = "23.05";
   };
 
-  sops.age.sshKeyPaths = ["${config.home.homeDirectory}/.ssh/sops-nix"];
+  sops = {
+    defaultSopsFile = ./secrets.yaml;
+    age.sshKeyPaths = ["${config.home.homeDirectory}/.ssh/sops-nix"];
+  };
 
   home.packages = with pkgs; [
     # Bar/QR code tools
@@ -78,6 +74,7 @@
     # Networking tools
     bmon
     dogdns
+    rclone
     rsync
     sshfs
     sshpass # Used for some sshuttle scripts
@@ -107,7 +104,26 @@
     shellcheck
     tokei # Line of code reporting tool
     rustup
+    gfold
+    git
+    lazygit
+
+    # Security tools
+    perlPackages.CryptHSXKPasswd
   ];
+
+  sops.secrets = {
+    hsxkpasswdrc.path = "${config.home.homeDirectory}/.hsxkpasswdrc";
+    "rclone.conf".path = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
+    ssh_config.path = "${config.home.homeDirectory}/.ssh/config";
+  };
+
+  xdg.configFile = {
+    "alacritty/alacritty.toml".source = ./config/alacritty/alacritty.toml;
+    "alacritty/colors.toml".source = ./config/alacritty/colors.toml;
+    "git/attributes".source = ./config/git/attributes;
+    "git/config".source = ./config/git/config;
+  };
 
   programs.direnv = {
     enable = true;
@@ -116,7 +132,6 @@
 
   programs.fzf = {
     enable = true;
-
     defaultOptions = [
       "--cycle"
     ];
