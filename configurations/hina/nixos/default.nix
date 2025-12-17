@@ -17,7 +17,6 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.nixos-hardware.nixosModules.lenovo-thinkpad-t470s
 
     ../../../modules/nixos
-    ../../../modules/nixos/printers/makerspace.nix
 
     {
       networking.hostName = "hina";

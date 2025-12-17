@@ -10,7 +10,6 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
     ../../../modules/nixos
-    ../../../modules/nixos/printers/home.nix
 
     ({...}: {
       boot = {

@@ -17,7 +17,6 @@ inputs.nixpkgs.lib.nixosSystem {
     inputs.nixos-hardware.nixosModules.common-pc-laptop-ssd
 
     ../../../modules/nixos
-    ../../../modules/nixos/printers/home.nix
 
     {
       networking.hostName = "yama";
