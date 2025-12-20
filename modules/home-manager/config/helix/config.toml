@@ -1,1 +1,6 @@
 theme = "base16-bright"
+
+[keys.normal.space]
+q = ":quit"
+w = ":write"
+x = ":write-quit"
