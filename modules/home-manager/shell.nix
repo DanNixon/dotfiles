@@ -41,7 +41,7 @@
   programs.zsh = {
     enable = true;
 
-    initExtraBeforeCompInit = ''
+    initContent = ''
       zstyle ':completion:*' completer _expand _complete _ignored _approximate
       zstyle ':completion:*' completions 1
       zstyle ':completion:*' format %B%U%F{yellow}%d%f%u%b
@@ -53,9 +53,7 @@
       zstyle ':completion:*' select-prompt %S%F{yellow}%p %l%f%s
       zstyle ':completion:*' verbose true
       zstyle :compinstall filename '/home/dan/.zshrc'
-    '';
 
-    initContent = ''
       # Vi style key bindings
       bindkey -v
       KEYTIMEOUT=10
@@ -86,24 +84,6 @@
       setopt PROMPT_SUBST
       PROMPT='%B%F{cyan}%n%f%b at %B%F{$PROMPT_HOSTNAME_COLOR}%m%f%b in %B%F{blue}%~%f%b [%B%F{$PROMPT_VI_COLOR}$PROMPT_VI_MODE%f%b]%B>%b '
       RPROMPT='%(?..%F{red}%?%f  )%F{green}%D{%H:%M:%S}%f'
-
-      _fzf_complete_pass() {
-        args=$@
-        if [[ $args == 'p'*'otp'* ]]; then
-          _fzf_complete --prompt="otp> " -- "$@" < <(
-            find "$PASSWORD_STORE_DIR" -name "*otp.gpg" -printf "%P\n" | sed -e "s/\.gpg//g"
-          )
-        elif [[ $args == 'p'*'edit'* ]]; then
-          _fzf_complete --prompt="everyting> " -- "$@" < <(
-            find "$PASSWORD_STORE_DIR" -name "*.gpg" -printf "%P\n" | sed -e "s/\.gpg//g"
-          )
-        else
-          _fzf_complete --prompt="everyting(-otp)> " -- "$@" < <(
-            find "$PASSWORD_STORE_DIR" -name "*.gpg" -not -name "*otp.gpg" -printf "%P\n" | sed -e "s/\.gpg//g"
-          )
-        fi
-      }
-      _fzf_complete_p() { _fzf_complete_pass $@ }
     '';
   };
 }
