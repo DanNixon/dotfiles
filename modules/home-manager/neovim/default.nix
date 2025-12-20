@@ -1,19 +1,11 @@
 {pkgs, ...}: {
   programs.neovim = {
     enable = true;
-    defaultEditor = true;
 
     extraLuaConfig = builtins.readFile ./init.lua;
 
     extraPackages = with pkgs; [
       nodejs
-
-      # Language servers
-      marksman
-      nixd
-      openscad-lsp
-      tombi
-      yaml-language-server
     ];
 
     plugins = with pkgs.vimPlugins; [

@@ -108,9 +108,19 @@
     git
     lazygit
 
+    # Text editor stuff
+    helix
+    marksman
+    nixd
+    openscad-lsp
+    tombi
+    yaml-language-server
+
     # Security tools
     perlPackages.CryptHSXKPasswd
   ];
+
+  home.sessionVariables.EDITOR = "hx";
 
   sops.secrets = {
     hsxkpasswdrc.path = "${config.home.homeDirectory}/.hsxkpasswdrc";
