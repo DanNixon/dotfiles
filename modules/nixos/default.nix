@@ -51,7 +51,7 @@
   security.sudo-rs.enable = true;
 
   # Required to set user shell
-  programs.zsh.enable = true;
+  programs.fish.enable = true;
 
   virtualisation.podman.enable = true;
 

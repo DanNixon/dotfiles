@@ -11,7 +11,6 @@
     ./desktop_environment.nix
     ./nix-index.nix
     ./security.nix
-    ./shell.nix
   ];
 
   nixpkgs = {
@@ -130,10 +129,19 @@
   xdg.configFile = {
     "alacritty/alacritty.toml".source = ./config/alacritty/alacritty.toml;
     "alacritty/colors.toml".source = ./config/alacritty/colors.toml;
+    "fish/conf.d/config.fish".source = ./config/fish/config.fish;
+    "fish/functions/fish_bind_count.fish".source = ./config/fish/functions/fish_bind_count.fish;
+    "fish/functions/fish_default_mode_prompt.fish".source = ./config/fish/functions/fish_default_mode_prompt.fish;
+    "fish/functions/fish_helix_command.fish".source = ./config/fish/functions/fish_helix_command.fish;
+    "fish/functions/fish_helix_key_bindings.fish".source = ./config/fish/functions/fish_helix_key_bindings.fish;
+    "fish/functions/fish_prompt.fish".source = ./config/fish/functions/fish_prompt.fish;
     "git/attributes".source = ./config/git/attributes;
     "git/config".source = ./config/git/config;
     "helix/config.toml".source = ./config/helix/config.toml;
   };
+
+  programs.dircolors.enable = true;
+  programs.fish.enable = true;
 
   programs.direnv = {
     enable = true;

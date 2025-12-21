@@ -8,7 +8,7 @@
   ];
 
   programs.nix-index = {
-    enableZshIntegration = false;
+    enableFishIntegration = false;
     enableBashIntegration = false;
   };
 

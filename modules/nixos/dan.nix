@@ -6,7 +6,7 @@
 
     extraGroups = ["wheel" "video"];
 
-    shell = pkgs.zsh;
+    shell = pkgs.fish;
 
     openssh.authorizedKeys.keys = [
       "sk-ssh-ed25519@openssh.com AAAAGnNrLXNzaC1lZDI1NTE5QG9wZW5zc2guY29tAAAAIK7s0LdsRToGiVzKkx6Qb9rfVo/vJFLwPFIdLKB6Eb6qAAAADHNzaDpkYW5uaXhvbg== dannixon-sk-f-yellow"
