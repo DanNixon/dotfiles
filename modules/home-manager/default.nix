@@ -8,7 +8,6 @@
 }: {
   imports = [
     inputs.sops-nix.homeManagerModules.sops
-    ./neovim
     ./desktop_environment.nix
     ./nix-index.nix
     ./security.nix
