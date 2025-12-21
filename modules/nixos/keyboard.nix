@@ -32,7 +32,7 @@
           c   (tap-hold 200 200 c lctl)
 
           ,   (tap-hold 200 200 , rctl)
-          .   (tap-hold 200 200 . ralt)
+          .   (tap-hold 200 200 . lalt)
 
           f   (tap-hold 200 200 f (layer-while-held symbols_right))
           d   (tap-hold 200 200 d (layer-while-held navigation))
