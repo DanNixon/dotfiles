@@ -74,6 +74,10 @@
       bindkey -M menuselect 'l' vi-forward-char
       bindkey -M menuselect 'j' vi-down-line-or-history
 
+      # Edit command line in editor
+      autoload edit-command-line; zle -N edit-command-line
+      bindkey -M vicmd v edit-command-line
+
       # Prompts
       if (( ''${+SSH_CONNECTION} )); then
         PROMPT_HOSTNAME_COLOR='magenta'
