@@ -1,4 +1,4 @@
-theme = "base16-bright"
+theme = "dark-synthwave"
 
 [keys.normal.space]
 q = ":quit"

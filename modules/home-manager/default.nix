@@ -134,7 +134,6 @@
     "git/attributes".source = ./config/git/attributes;
     "git/config".source = ./config/git/config;
     "helix/config.toml".source = ./config/helix/config.toml;
-    "helix/themes/base16-bright.toml".source = ./config/helix/themes/base16-bright.toml;
   };
 
   programs.direnv = {
