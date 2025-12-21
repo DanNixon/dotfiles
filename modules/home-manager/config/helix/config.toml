@@ -4,3 +4,15 @@ theme = "dark-synthwave"
 q = ":quit"
 w = ":write"
 x = ":write-quit"
+
+[editor.cursor-shape]
+normal  = "block"
+insert = "bar"
+select  = "underline"
+
+[editor.whitespace.render]
+space = "none"
+tab = "all"
+nbsp = "none"
+nnbsp = "none"
+newline = "none"
