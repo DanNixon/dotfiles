@@ -5,7 +5,7 @@ if status is-interactive
     abbr -a -- c clear
     abbr -a -- df 'df -h'
     abbr -a -- du 'du -h'
-    abbr -a -- f nnn
+    abbr -a -- f yazi
     abbr -a -- free 'free -h'
     abbr -a -- g git
     abbr -a -- gs 'git s'

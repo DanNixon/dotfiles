@@ -59,8 +59,8 @@
     file
     hexdump
     jaq
-    nnn
     ripgrep
+    yazi
 
     # Disk/filesystem tools
     dua
