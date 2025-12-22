@@ -20,7 +20,7 @@ if status is-interactive
     abbr -a -- mx pulsemixer
     abbr -a -- p koishi
     abbr -a -- q exit
-    abbr -a -- stripexif 'exiftool -all '
+    abbr -a -- stripexif 'exiftool -all= '
     abbr -a -- t 'cat $HOME/notebook/todo.txt'
     abbr -a -- today 'date '\''+%Y-%m-%d'\'''
     abbr -a -- tok 'tomb open -k -'
