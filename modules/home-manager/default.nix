@@ -10,7 +10,6 @@
     inputs.sops-nix.homeManagerModules.sops
     ./desktop_environment.nix
     ./nix-index.nix
-    ./security.nix
   ];
 
   nixpkgs = {
@@ -41,9 +40,10 @@
   };
 
   home.packages = with pkgs; [
-    # Bar/QR code tools
+    # Misc tools
     qrencode
     zbar
+    hydra-check
 
     # System tools
     bottom
@@ -79,13 +79,13 @@
     sshuttle
     wget
 
-    # Tools to aid in creating digital backups of physical media
+    # Physical media backup tools
     cdparanoia # Backing up audio CDs
     cdrdao # Backing up PS1 game CDs
     dvdbackup # Backing up DVDs
     xsane # Scanning
 
-    # Tools for working with media files
+    # Media tools
     exiftool
     ffmpeg
 
@@ -115,10 +115,19 @@
     yaml-language-server
 
     # Security tools
+    age
+    age-plugin-yubikey
+    sops
+    yubikey-manager
+    yubikey-personalization
+    koishi
     perlPackages.CryptHSXKPasswd
   ];
 
-  home.sessionVariables.EDITOR = "hx";
+  home.sessionVariables = {
+    EDITOR = "hx";
+    SOPS_AGE_KEY_CMD = "age-plugin-yubikey -i";
+  };
 
   sops.secrets = {
     hsxkpasswdrc.path = "${config.home.homeDirectory}/.hsxkpasswdrc";
@@ -153,5 +162,15 @@
     defaultOptions = [
       "--cycle"
     ];
+  };
+
+  # Legacy password manager
+  # TODO: remove
+  programs.password-store = {
+    enable = true;
+
+    package = pkgs.pass.withExtensions (exts: [
+      exts.pass-otp
+    ]);
   };
 }
