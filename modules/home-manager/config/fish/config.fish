@@ -24,8 +24,8 @@ if status is-interactive
     abbr -a -- t 'cat $HOME/notebook/todo.txt'
     abbr -a -- today 'date '\''+%Y-%m-%d'\'''
     abbr -a -- tok 'tomb open -k -'
-    abbr -a -- tt '$EDITOR $HOME/notebook/todo.txt'
-    abbr -a -- v '$EDITOR'
+    abbr -a -- tt 'hx $HOME/notebook/todo.txt'
+    abbr -a -- e hx
 end
 
 # TODO: direnv
