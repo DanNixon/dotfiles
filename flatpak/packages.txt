@@ -29,5 +29,6 @@ org.mozilla.firefox
 org.musicbrainz.Picard
 org.openscad.OpenSCAD
 org.rncbc.qpwgraph
+org.squidowl.halloy
 org.videolan.VLC
 re.sonny.Eloquent
