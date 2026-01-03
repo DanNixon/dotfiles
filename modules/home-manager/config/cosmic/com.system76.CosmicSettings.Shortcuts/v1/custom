@@ -1,0 +1,115 @@
+{
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "semicolon",
+    ): System(Launcher),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "g",
+    ): System(LockScreen),
+    (
+        modifiers: [],
+        key: "Print",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "period",
+    ): ToggleWindowFloating,
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "Escape",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "slash",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "b",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "space",
+    ): System(Terminal),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "m",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "p",
+    ): System(Screenshot),
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "Escape",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "f",
+    ): Disable,
+    (
+        modifiers: [
+            Alt,
+        ],
+        key: "F4",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "t",
+    ): Disable,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "comma",
+    ): Maximize,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "a",
+    ): System(AppLibrary),
+    (
+        modifiers: [
+            Super,
+            Shift,
+        ],
+        key: "q",
+    ): Close,
+    (
+        modifiers: [
+            Super,
+        ],
+        key: "q",
+    ): Disable,
+}
