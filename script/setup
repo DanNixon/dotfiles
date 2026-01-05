@@ -9,5 +9,11 @@ SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 # Install config files
 ${SCRIPT_DIR}/copy-configs.sh
 
+# Install Helix
+HELIX_DEB="$(mktemp)"
+wget -O "$HELIX_DEB" "https://github.com/helix-editor/helix/releases/download/25.07.1/helix_25.7.1-1_amd64.deb"
+sudo dpkg -i "$HELIX_DEB"
+rm "$HELIX_DEB"
+
 # Install rustup
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
