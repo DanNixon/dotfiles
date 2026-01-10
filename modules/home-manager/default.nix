@@ -77,6 +77,7 @@
     sshfs
     sshpass # Used for some sshuttle scripts
     sshuttle
+    trippy
     wget
 
     # Physical media backup tools
