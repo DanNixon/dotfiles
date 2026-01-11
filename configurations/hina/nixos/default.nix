@@ -22,9 +22,6 @@ inputs.nixpkgs.lib.nixosSystem {
       networking.hostName = "hina";
 
       services.syncthing.enable = true;
-
-      # Required for Bambu Lab printer discovery
-      networking.firewall.allowedUDPPorts = [2021];
     }
   ];
 }

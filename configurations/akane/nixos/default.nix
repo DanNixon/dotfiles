@@ -21,6 +21,9 @@ inputs.nixpkgs.lib.nixosSystem {
 
     {
       networking.hostName = "akane";
+
+      # Required for Bambu Lab printer discovery
+      networking.firewall.allowedUDPPorts = [2021];
     }
   ];
 }
