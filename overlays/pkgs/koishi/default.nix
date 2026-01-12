@@ -10,12 +10,12 @@ rustPlatform.buildRustPackage {
     owner = "dannixon";
     repo = "koishi";
 
-    rev = "v0.2.0";
+    rev = "v0.2.1";
 
-    hash = "sha256-FoCA8TcW7bEVKFBLlpzIOu0vj90i7fxwOE//RD/y9Sk=";
+    hash = "sha256-TljCtd7m4dCjZ48f49EXahFhr8AsBXvmLK9v7UAcmTw=";
   };
 
-  cargoHash = "sha256-4Sdy/j2suM//SLLi0DIISXKYcFRYcl867ZKXTyOzdcM=";
+  cargoHash = "sha256-SBWy29csUXwbh0I9qqzrkNjVKXAxzPAiWyxLLzdOb2c=";
 
   nativeBuildInputs = [
     installShellFiles
