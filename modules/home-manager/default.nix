@@ -4,6 +4,7 @@
   outputs,
   config,
   pkgs,
+  pkgs-unstable,
   ...
 }: {
   imports = [
@@ -109,6 +110,7 @@
 
     # Text editor stuff
     helix
+    pkgs-unstable.zed-editor
     marksman
     nixd
     openscad-lsp
