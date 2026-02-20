@@ -33,9 +33,16 @@
       enable = true;
 
       defaultApplications = let
+        web = ["org.mozilla.firefox.desktop"];
         image = ["imv.desktop"];
         video = ["io.mpv.Mpv.desktop" "org.videolan.VLC.desktop"];
       in {
+        "text/html" = web;
+        "x-scheme-handler/http" = web;
+        "x-scheme-handler/https" = web;
+        "x-scheme-handler/about" = web;
+        "x-scheme-handler/unknown" = web;
+
         "image/bmp" = image;
         "image/jpeg" = image;
         "image/jpg" = image;
