@@ -24,12 +24,12 @@
 
   services.udisks2.enable = true;
 
-  # https://github.com/pop-os/cosmic-session/issues/148
-  services.gnome.gnome-keyring.enable = false;
-
   environment.sessionVariables.COSMIC_DATA_CONTROL_ENABLED = "1";
 
   environment.systemPackages = with pkgs; [
     alacritty
   ];
+
+  systemd.user.sockets.gcr-ssh-agent.enable = false;
+  systemd.user.services.gcr-ssh-agent.enable = false;
 }
