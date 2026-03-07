@@ -150,8 +150,9 @@
     "git/attributes".source = ./config/git/attributes;
     "git/config".source = ./config/git/config;
     "helix/config.toml".source = ./config/helix/config.toml;
-    "zed/keymap.json".source = ./config/zed/keymap.json;
-    "zed/settings.json".source = ./config/zed/settings.json;
+    # Don't manage these with Nix, having read only config files prevents changing settings from inside Zed
+    # "zed/keymap.json".source = ./config/zed/keymap.json;
+    # "zed/settings.json".source = ./config/zed/settings.json;
   };
 
   programs.dircolors.enable = true;
