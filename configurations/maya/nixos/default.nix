@@ -21,6 +21,10 @@ inputs.nixpkgs.lib.nixosSystem {
       networking.hostName = "maya";
 
       services.syncthing.enable = true;
+
+      networking.extraHosts = ''
+        130.246.53.247 ndw2982.isis.cclrc.ac.uk
+      '';
     })
   ];
 }
