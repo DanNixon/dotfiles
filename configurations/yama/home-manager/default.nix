@@ -12,7 +12,7 @@ in
       ../../../modules/home-manager
       ../../../modules/home-manager/borgmatic.nix
 
-      ({...}: {
+      ({pkgs, ...}: {
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [
@@ -26,6 +26,10 @@ in
           };
           storage.encryptionPasscommand = "koishi get borg/yama.yaml passphrase";
         };
+
+        home.packages = [
+          pkgs.lightburn
+        ];
       })
     ];
   }
