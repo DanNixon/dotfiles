@@ -18,7 +18,6 @@ in
             sourceDirectories = [
               "/home/dan/documents"
               "/home/dan/notebook"
-              "/home/dan/notebook-old"
               "/home/dan/.local/share/koishi-store"
               "/home/dan/.local/share/password-store"
               "/home/dan/phone"
