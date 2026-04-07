@@ -19,6 +19,9 @@
 
       # Pi debug probe
       ATTRS{product}=="*CMSIS-DAP*", MODE="0666"
+
+      # Espressif JTAG interface
+      ACTION=="add", SUBSYSTEMS=="usb", ATTRS{idVendor}=="303a", ATTRS{idProduct}=="1001", MODE="0666"
     '';
   };
 
