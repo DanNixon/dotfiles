@@ -55,5 +55,8 @@
 
   virtualisation.podman.enable = true;
 
+  programs.wireshark.enable = true;
+  users.users.dan.extraGroups = ["wireshark"];
+
   system.stateVersion = lib.mkDefault "23.05";
 }
