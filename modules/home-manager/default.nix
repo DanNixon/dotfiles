@@ -45,6 +45,8 @@
     qrencode
     zbar
     hydra-check
+    qelectrotech
+    wireshark
 
     # System tools
     bottom
