@@ -23,6 +23,7 @@
       download = "${config.home.homeDirectory}/downloads";
       music = "${config.home.homeDirectory}/music";
       pictures = null;
+      projects = null;
       publicShare = null;
       templates = null;
       videos = null;
