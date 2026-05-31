@@ -23,6 +23,7 @@ inputs.nixpkgs.lib.nixosSystem {
       services.syncthing.enable = true;
 
       networking.extraHosts = ''
+        130.246.81.219 grafana.observability.isis.rl.ac.uk
         130.246.53.247 ndw2982.isis.cclrc.ac.uk
       '';
     })
