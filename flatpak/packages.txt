@@ -28,6 +28,7 @@ org.libreoffice.LibreOffice
 org.mozilla.firefox
 org.musicbrainz.Picard
 org.openscad.OpenSCAD
+org.qelectrotech.QElectroTech
 org.rncbc.qpwgraph
 org.squidowl.halloy
 org.videolan.VLC

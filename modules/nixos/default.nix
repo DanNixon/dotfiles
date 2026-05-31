@@ -58,5 +58,5 @@
   programs.wireshark.enable = true;
   users.users.dan.extraGroups = ["wireshark"];
 
-  system.stateVersion = lib.mkDefault "23.05";
+  system.stateVersion = lib.mkDefault "26.05";
 }

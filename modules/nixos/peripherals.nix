@@ -1,8 +1,6 @@
 {pkgs, ...}: {
   users.users.dan.extraGroups = ["dialout" "i2c" "adbusers" "scanner" "lp"];
 
-  programs.adb.enable = true;
-
   hardware.i2c.enable = true; # For ddcutil
 
   hardware.sane.enable = true;

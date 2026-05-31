@@ -32,7 +32,7 @@
     username = lib.mkDefault "dan";
     homeDirectory = lib.mkDefault "/home/dan";
 
-    stateVersion = "23.05";
+    stateVersion = "26.05";
   };
 
   sops = {
@@ -45,7 +45,6 @@
     qrencode
     zbar
     hydra-check
-    qelectrotech
     wireshark
 
     # System tools
@@ -74,7 +73,7 @@
 
     # Networking tools
     bmon
-    dogdns
+    doggo
     rclone
     rsync
     sshfs
@@ -176,9 +175,9 @@
   # TODO: remove
   programs.password-store = {
     enable = true;
-
     package = pkgs.pass.withExtensions (exts: [
       exts.pass-otp
     ]);
+    settings = {PASSWORD_STORE_DIR = "$XDG_DATA_HOME/password-store";};
   };
 }

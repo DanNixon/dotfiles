@@ -1,7 +1,7 @@
 # https://github.com/sshilovsky/fish-helix
 
 function fish_bind_count
-    argparse 'h/help' 'z/zero' 'r/read' -- $argv
+    argparse h/help z/zero r/read -- $argv
     or return 1
     if test -n "$_flag_help"
         echo "Helper function to track count modifier with modal key bindings"
