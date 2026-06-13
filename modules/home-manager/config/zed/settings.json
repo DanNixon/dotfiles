@@ -8,15 +8,13 @@
   "agent": {
     "default_profile": "write",
     "default_model": {
+      "effort": "high",
       "provider": "copilot_chat",
-      "model": "gemini-2.5-pro",
+      "model": "claude-sonnet-4.6",
       "enable_thinking": true,
     },
     "favorite_models": [],
     "model_parameters": [],
-  },
-  "edit_predictions": {
-    "provider": "copilot",
   },
   "which_key": {
     "delay_ms": 100,
