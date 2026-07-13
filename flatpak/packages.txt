@@ -20,6 +20,7 @@ nl.sarine.gpx-viewer
 org.freecad.FreeCAD
 org.gimp.GIMP
 org.gnome.Papers
+org.gnome.SimpleScan
 org.inkscape.Inkscape
 org.kde.elisa
 org.kicad.KiCad

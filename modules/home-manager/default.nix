@@ -86,7 +86,6 @@
     cdparanoia # Backing up audio CDs
     cdrdao # Backing up PS1 game CDs
     dvdbackup # Backing up DVDs
-    xsane # Scanning
 
     # Media tools
     exiftool
