@@ -2,5 +2,6 @@
     "org.mozilla.firefox",
     "Alacritty",
     "dev.zed.Zed",
+    "com.system76.CosmicFiles",
     "qalculate-gtk",
 ]
