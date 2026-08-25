@@ -11,7 +11,11 @@ inputs.nixpkgs.lib.nixosSystem {
 
     ../../../modules/nixos
 
-    ({lib, config, ...}: {
+    ({
+      lib,
+      config,
+      ...
+    }: {
       boot = {
         loader.systemd-boot.enable = true;
         loader.efi.canTouchEfiVariables = true;
@@ -21,7 +25,7 @@ inputs.nixpkgs.lib.nixosSystem {
       networking.hostName = "maya";
 
       hardware.graphics.enable = true;
-      services.xserver.videoDrivers = [ "nvidia" ];
+      services.xserver.videoDrivers = ["nvidia"];
       hardware.nvidia = {
         package = config.boot.kernelPackages.nvidiaPackages.legacy_580;
         open = lib.mkForce false;
