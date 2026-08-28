@@ -27,8 +27,9 @@ in
           storage.encryptionPasscommand = "koishi get borg/yama.yaml passphrase";
         };
 
-        home.packages = [
-          pkgs.lightburn
+        home.packages = with pkgs; [
+          gsender
+          lightburn
         ];
       })
     ];

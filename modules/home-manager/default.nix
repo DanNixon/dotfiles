@@ -107,6 +107,7 @@
     gfold
     git
     lazygit
+    opencode
 
     # Text editor stuff
     helix
