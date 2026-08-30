@@ -50,6 +50,12 @@
 
   security.sudo-rs.enable = true;
 
+  zramSwap = {
+    enable = true;
+    algorithm = "zstd";
+    memoryPercent = 50;
+  };
+
   # Required to set user shell
   programs.fish.enable = true;
 
