@@ -99,6 +99,7 @@
     devenv
     distrobox
     gcc
+    google-cloud-sdk
     k9s
     kubectl
     shellcheck
