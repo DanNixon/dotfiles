@@ -20,6 +20,7 @@ inputs.nixpkgs.lib.nixosSystem {
 
     {
       networking.hostName = "hina";
+      networking.hostId = "88a22c95";
 
       services.syncthing.enable = true;
     }

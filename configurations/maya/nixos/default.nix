@@ -23,6 +23,7 @@ inputs.nixpkgs.lib.nixosSystem {
       };
 
       networking.hostName = "maya";
+      networking.hostId = "4bed7e12";
 
       hardware.graphics.enable = true;
       services.xserver.videoDrivers = ["nvidia"];
