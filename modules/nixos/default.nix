@@ -41,7 +41,7 @@
     ];
   };
 
-  boot.supportedFilesystems = [ "zfs" ];
+  boot.supportedFilesystems = ["zfs"];
   boot.zfs.forceImportRoot = false;
 
   hardware.enableRedistributableFirmware = true;
