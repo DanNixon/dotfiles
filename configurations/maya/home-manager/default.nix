@@ -13,16 +13,17 @@ in
       ../../../modules/home-manager/borgmatic.nix
 
       ({...}: {
+        home.stateVersion = "26.05";
+
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [
-              "/home/dan/docs"
+              "/home/dan/documents"
               "/home/dan/notebook"
               "/home/dan/.local/share/koishi-store"
-              "/home/dan/.local/share/password-store"
               "/home/dan/phone"
             ];
-            repositories = ["ssh://n0f5xqc1@n0f5xqc1.repo.borgbase.com/./repo"];
+            repositories = ["ssh://cs85w49w@cs85w49w.repo.borgbase.com/./repo"];
           };
           storage.encryptionPasscommand = "koishi get borg/maya.yaml passphrase";
         };

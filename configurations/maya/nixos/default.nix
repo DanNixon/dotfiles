@@ -7,6 +7,8 @@ inputs.nixpkgs.lib.nixosSystem {
 
   modules = [
     ./hardware-configuration.nix
+    inputs.disko.nixosModules.disko
+    ./disk-config.nix
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
     ../../../modules/nixos
@@ -16,11 +18,16 @@ inputs.nixpkgs.lib.nixosSystem {
       config,
       ...
     }: {
-      boot = {
-        loader.systemd-boot.enable = true;
-        loader.efi.canTouchEfiVariables = true;
-        initrd.secrets."/crypto_keyfile.bin" = null;
-      };
+      system.stateVersion = "26.05";
+
+      boot.loader.systemd-boot.enable = true;
+      boot.loader.efi.canTouchEfiVariables = true;
+
+      # Min 2 GiB, max 4 GiB
+      boot.kernelParams = [
+        "zfs.zfs_arc_max=4294967296"
+        "zfs.zfs_arc_min=2147483648"
+      ];
 
       networking.hostName = "maya";
       networking.hostId = "4bed7e12";

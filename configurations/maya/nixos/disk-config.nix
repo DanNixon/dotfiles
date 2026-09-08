@@ -3,7 +3,7 @@
     disk = {
       root = {
         type = "disk";
-        device = "/dev/disk/by-id/nvme-SAMSUNG_MZVLW256HEHP-000L7_S35ENA0K226098";
+        device = "/dev/disk/by-id/nvme-WD_Blue_SN570_1TB_23252X802648";
 
         content = {
           type = "gpt";
