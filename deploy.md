@@ -6,7 +6,7 @@
     3. Note ID of target install disk (`ls /dev/disk/by-id`)
     4. Create new configs in `./configurations`
     5. Set hostname, installation disk and make any other changes
-    6. Format disks (`nix run nixpkgs#disko --flake .#CONFIG`)
+    6. Format disks (`disko -m destroy,format,mount --flake .#CONFIG`)
     7. Install NixOS (`sudo nixos-install --root /mnt --flake .#CONFIG`)
     8. Remove installation media
 2. Home Manager setup
