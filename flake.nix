@@ -68,6 +68,7 @@
       hina = import ./configurations/hina/nixos {inherit inputs outputs;};
       maya = import ./configurations/maya/nixos {inherit inputs outputs;};
       yama = import ./configurations/yama/nixos {inherit inputs outputs;};
+      arseache = import ./configurations/arseache/nixos {inherit inputs outputs;};
     };
 
     homeConfigurations = {
