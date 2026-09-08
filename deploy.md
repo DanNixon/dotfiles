@@ -1,7 +1,5 @@
 # Deployment guide
 
-Assumes installation will be from a second machine via `nixos-anywhere`.
-
 1. NixOS installation
     1. Boot NixOS minimal installer
     2. Clone dotfiles repo
