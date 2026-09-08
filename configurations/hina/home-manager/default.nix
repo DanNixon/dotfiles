@@ -13,6 +13,8 @@ in
       ../../../modules/home-manager/borgmatic.nix
 
       ({...}: {
+        home.stateVersion = "26.05";
+
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [
@@ -22,7 +24,7 @@ in
               "/home/dan/.local/share/password-store"
               "/home/dan/phone"
             ];
-            repositories = ["ssh://i3caziwg@i3caziwg.repo.borgbase.com/./repo"];
+            repositories = ["ssh://lkqv1sw2@lkqv1sw2.repo.borgbase.com/./repo"];
           };
           storage.encryptionPasscommand = "koishi get borg/hina.yaml passphrase";
         };

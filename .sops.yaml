@@ -4,9 +4,9 @@ keys:
   - &dannixon-sk-green age1yubikey1qvm5j08damled24uvgaeveg0znt9f8sr8e8d5e4sdh9j75g9z8wnq6s5lwg
   - &dannixon-sk-red age1yubikey1q236gnfv88v7ln4drft9y7swllwc5la5m9dut57ck8e9kcs0e32zqnqfg8l
 
-  - &hina age15yuzzc0lnqtkhdtw3e3d25x2xu27lrwq7hwy2c500auxpep4qf9qzk4e0r
-  - &maya age1lj6hkktydycuxw6q88490hh6g7hs3qg72taz3fle0rlcfuq4z3hqyuxl2w
-  - &yama age1wfmadrk7w79egc9wpjjt3uxel62edvwzaslq5fqtv4ejvsprcg0q5d5dja
+  - &hina age15h88ga5ppyxypef22nxajd9mputzjhhslawz8sua0f0hjv08nyeqc0nkq5
+  - &maya age199xcudp4zg0gy5jwj6qtq59emcwwul0vxpr64p0hy5up6xh5ugvsyxng7u
+  - &yama age1m7gx8exzvvynkujsvjz7wj6pppn9q6jqpunepdvy9hfepg7ervtqeu44j5
 
 creation_rules:
   - path_regex: modules/home-manager/secrets.yaml
