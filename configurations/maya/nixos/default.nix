@@ -7,6 +7,8 @@ inputs.nixpkgs.lib.nixosSystem {
 
   modules = [
     ./hardware-configuration.nix
+    inputs.disko.nixosModules.disko
+    ./disk-config.nix
     inputs.nixos-hardware.nixosModules.common-pc-ssd
 
     ../../../modules/nixos
@@ -16,11 +18,8 @@ inputs.nixpkgs.lib.nixosSystem {
       config,
       ...
     }: {
-      boot = {
-        loader.systemd-boot.enable = true;
-        loader.efi.canTouchEfiVariables = true;
-        initrd.secrets."/crypto_keyfile.bin" = null;
-      };
+      boot.loader.systemd-boot.enable = true;
+      boot.loader.efi.canTouchEfiVariables = true;
 
       networking.hostName = "maya";
       networking.hostId = "4bed7e12";

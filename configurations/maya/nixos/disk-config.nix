@@ -3,7 +3,7 @@
     disk = {
       root = {
         type = "disk";
-        device = "/dev/disk/by-id/nvme-UMIS_RPJTJ512MEE1OWX_SS0L25190X1LC09T03DM";
+        device = "/dev/disk/by-id/todo";
 
         content = {
           type = "gpt";
