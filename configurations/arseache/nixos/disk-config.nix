@@ -17,7 +17,6 @@
                 type = "filesystem";
                 format = "vfat";
                 mountpoint = "/boot";
-                mountOptions = ["nofail"];
               };
             };
 
@@ -44,7 +43,9 @@
           mountpoint = "none";
           acltype = "posixacl";
           xattr = "sa";
+          dnodesize = "auto";
           atime = "off";
+          compression = "lz4";
           encryption = "on";
           keyformat = "passphrase";
           keylocation = "prompt";
@@ -64,7 +65,6 @@
           "nix" = {
             type = "zfs_fs";
             options.mountpoint = "legacy";
-            options.compression = "lz4";
             mountpoint = "/nix";
           };
           "reserved" = {

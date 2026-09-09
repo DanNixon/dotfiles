@@ -42,7 +42,8 @@
   };
 
   boot.supportedFilesystems = ["zfs"];
-  boot.zfs.forceImportRoot = false;
+  boot.zfs.forceImportRoot = true;
+  boot.kernelPackages = config.boot.zfs.package.latestCompatibleLinuxPackages;
 
   hardware.enableRedistributableFirmware = true;
   services.fwupd.enable = true;
