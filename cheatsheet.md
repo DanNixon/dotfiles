@@ -11,7 +11,6 @@
 
 ## Home Manager
 
-- Bootstrap: `nix run nixpkgs#home-manager -- switch --flake .`
 - Update: `home-manager switch --flake .`
 
 ## Managing NixOS generations

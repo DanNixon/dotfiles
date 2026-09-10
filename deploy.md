@@ -16,7 +16,8 @@ Assumptions:
     7. Install NixOS (`sudo nixos-install --root /mnt --flake .#CONFIG`)
     8. Reboot and remove external storage devices
 2. Home Manager setup
-    1. (TODO)
+    1. Insert and mount dotfiles storage device
+    2. Deploy (`nix run nixpkgs#home-manager -- switch --flake .#CONFIG`)
 3. COSMIC setup (`./script/cosmic-config-deploy.sh`)
 4. sops-nix setup
     1. Generate new SSH key in `~/.ssh/sops-nix`
