@@ -11,8 +11,8 @@ Assumptions:
     2. Insert and mount dotfiles storage device
     3. Note ID of target install disk (`ls /dev/disk/by-id`)
     4. Create/adjust appropriate config in `./configurations`
-    5. Prepare disks (`disko -m destroy,format,mount --flake .#CONFIG`)
-    6. Generate `hardware-configuration.nix` and amend as required (`nixos-generate-config --dir CONFIG-DIR`)
+    5. Generate `hardware-configuration.nix` and amend as required (`nixos-generate-config --dir CONFIG-DIR`)
+    6. Prepare disks (`sudo disko -m destroy,format,mount --flake .#CONFIG`)
     7. Install NixOS (`sudo nixos-install --root /mnt --flake .#CONFIG`)
     8. Reboot and remove external storage devices
 2. Home Manager setup
