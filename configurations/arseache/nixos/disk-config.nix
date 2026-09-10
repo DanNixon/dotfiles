@@ -3,7 +3,7 @@
     disk = {
       root = {
         type = "disk";
-        device = "/dev/disk/by-id/ata-ST500LM021-1KJ152_W62D15JD";
+        device = "/dev/disk/by-id/ata-LITEON_LCH-128V2S_SD0F66244L1TH681078Y";
 
         content = {
           type = "gpt";
