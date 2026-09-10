@@ -28,9 +28,7 @@ Assumptions:
     3. Update `.sops.yaml`
     4. Update keys for each secret (`sops updatekeys SECRET`)
 6. [Firefox](./firefox/)
-7. Tailscale
-    1. `sudo tailscale up --accept-routes` on target
-    2. Enter URL on machine used for installation
+7. Tailscale (`sudo tailscale up --accept-routes`)
 8. Borg/Borgmatic
     1. Create new repository in BorgBase
     2. Set config as required
