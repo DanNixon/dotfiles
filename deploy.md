@@ -18,13 +18,13 @@ Assumptions:
 2. Home Manager setup
     1. Insert and mount dotfiles storage device
     2. Deploy (`nix run nixpkgs#home-manager -- switch --flake .#CONFIG`)
-    3. `fish_helix_key_bindings`
+    3. Set Helix key bindings (`set -U fish_key_bindings fish_helix_key_bindings`)
     4. Remove unused XDG user directories
 3. COSMIC setup (`./script/cosmic-config-deploy.sh`)
 4. [Flatpak](./flatpak)
 5. sops-nix setup
     1. Generate new SSH key in `~/.ssh/sops-nix`
-    2. Note age key (`ssh-to-age < ~/.ssh/sops-nix.pub`)
+    2. Derive age key (`ssh-to-age < ~/.ssh/sops-nix.pub`)
     3. Update `.sops.yaml`
     4. Update keys for each secret (`sops updatekeys SECRET`)
 6. [Firefox](./firefox/)
