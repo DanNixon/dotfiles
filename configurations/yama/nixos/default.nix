@@ -19,6 +19,12 @@ inputs.nixpkgs.lib.nixosSystem {
       boot.loader.systemd-boot.enable = true;
       boot.loader.efi.canTouchEfiVariables = true;
 
+      # Min 2 GiB, max 4 GiB
+      boot.kernelParams = [
+        "zfs.zfs_arc_max=4294967296"
+        "zfs.zfs_arc_min=2147483648"
+      ];
+
       networking.hostName = "yama";
       networking.hostId = "9f04a798";
 
