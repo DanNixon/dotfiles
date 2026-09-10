@@ -19,16 +19,17 @@ Assumptions:
     1. Insert and mount dotfiles storage device
     2. Deploy (`nix run nixpkgs#home-manager -- switch --flake .#CONFIG`)
 3. COSMIC setup (`./script/cosmic-config-deploy.sh`)
-4. sops-nix setup
+4. [Flatpak](./flatpak)
+5. sops-nix setup
     1. Generate new SSH key in `~/.ssh/sops-nix`
     2. Note age key (`ssh-to-age < ~/.ssh/sops-nix.pub`)
     3. Update `.sops.yaml`
     4. Update keys for each secret (`sops updatekeys SECRET`)
-5. Tailscale
+6. Tailscale
     1. `sudo tailscale up --accept-routes` on target
     2. Enter URL on machine used for installation
-6. [Firefox](./firefox/)
-7. Borg/Borgmatic
+7. [Firefox](./firefox/)
+8. Borg/Borgmatic
     1. Create new repository in BorgBase
     2. Set config as required
     3. Insert a passphrase into password store
