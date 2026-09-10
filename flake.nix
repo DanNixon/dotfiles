@@ -6,7 +6,7 @@
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     disko = {
-      url = "github:nix-community/disko/v1.11.0";
+      url = "github:nix-community/disko/v1.13.0";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -68,7 +68,6 @@
       hina = import ./configurations/hina/nixos {inherit inputs outputs;};
       maya = import ./configurations/maya/nixos {inherit inputs outputs;};
       yama = import ./configurations/yama/nixos {inherit inputs outputs;};
-      arseache = import ./configurations/arseache/nixos {inherit inputs outputs;};
     };
 
     homeConfigurations = {
