@@ -18,6 +18,7 @@ Assumptions:
 2. Home Manager setup
     1. Insert and mount dotfiles storage device
     2. Deploy (`nix run nixpkgs#home-manager -- switch --flake .#CONFIG`)
+    3. Remove unused XDG user directories
 3. COSMIC setup (`./script/cosmic-config-deploy.sh`)
 4. [Flatpak](./flatpak)
 5. sops-nix setup
@@ -25,10 +26,10 @@ Assumptions:
     2. Note age key (`ssh-to-age < ~/.ssh/sops-nix.pub`)
     3. Update `.sops.yaml`
     4. Update keys for each secret (`sops updatekeys SECRET`)
-6. Tailscale
+6. [Firefox](./firefox/)
+7. Tailscale
     1. `sudo tailscale up --accept-routes` on target
     2. Enter URL on machine used for installation
-7. [Firefox](./firefox/)
 8. Borg/Borgmatic
     1. Create new repository in BorgBase
     2. Set config as required
