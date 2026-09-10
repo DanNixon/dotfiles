@@ -7,9 +7,7 @@ I am also pretty sure trying to do anyting smarter than manual configuration wou
 ## Configuration steps
 
 1. New Tab page
-   - Disable *Sponsored shortcuts*
-   - Disable *Recommended stories*
-   - Disable *Sponsored stories*
+   - Disable everything
 2. Bookmarks Toolbar
    - Set to *Never Show*
 3. Install the following addons, allowing them to run in private windows:
@@ -30,21 +28,16 @@ I am also pretty sure trying to do anyting smarter than manual configuration wou
    - Pinned to toolbar: Dark Reader
    - Everything else in extensions menu
 7. Customize Toolbar
-   - Remove:
-      - Padding around omnibox
-      - Pocket icon
-      - Account icon
+   - Remove unused items
    - Right of omnibox: Downloads, Dark Reader, Extensions
-8. *Settings* > *General*
-   - Disable *picture in picture video controls*
-9. *Settings* > *Search*
-   - Set default to *DuckDuckGo*
-10. *Settings* > *Privacy & Security*
-   - Enable no data sharing and no tracking under *Web Site Privacy Preferences*
+8. *Settings*
+   - Disable *Use Picture-in-Picture*
+   - Set default search provider to *DuckDuckGo*
+   - Enable vertical tabs
+   - Remove unused tools from vertical tab bar
    - Disable *Ask to save passwords*
    - Disable *Autofill*
    - Enable *HTTPS-Only Mode in all windows*
-11. Optionally, or as required, install the following plugins:
+9. Optionally, or as required, install the following plugins:
    - [Image Search Options](https://addons.mozilla.org/en-US/firefox/addon/image-search-options/)
-   - [Redirector](https://addons.mozilla.org/en-US/firefox/addon/redirector/)
    - [Wallabagger](https://addons.mozilla.org/en-US/firefox/addon/wallabagger/)
