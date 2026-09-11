@@ -35,4 +35,4 @@ Assumptions:
     3. Insert a passphrase into password store
     4. `borgmatic init -e keyfile-blake2`
     5. Backup key into password store
-    6. Do a backup (`borgmatic -v2 create`)
+    6. Do a backup (`borgmatic -v2`)
