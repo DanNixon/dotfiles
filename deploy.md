@@ -33,6 +33,6 @@ Assumptions:
     1. Create new repository in BorgBase
     2. Set config as required
     3. Insert a passphrase into password store
-    4. `borgmatic init -e keyfile-blake2`
-    5. Backup key into password store
+    4. Init repo (`borgmatic init -e keyfile-blake2`)
+    5. Backup key into password store (`borgmatic key export`)
     6. Do a backup (`borgmatic -v2`)
