@@ -6,7 +6,7 @@ keys:
 
   - &hina age15h88ga5ppyxypef22nxajd9mputzjhhslawz8sua0f0hjv08nyeqc0nkq5
   - &maya age1lj6hkktydycuxw6q88490hh6g7hs3qg72taz3fle0rlcfuq4z3hqyuxl2w
-  - &yama age1wfmadrk7w79egc9wpjjt3uxel62edvwzaslq5fqtv4ejvsprcg0q5d5dja
+  - &yama age1m7gx8exzvvynkujsvjz7wj6pppn9q6jqpunepdvy9hfepg7ervtqeu44j5
 
 creation_rules:
   - path_regex: modules/home-manager/secrets.yaml
