@@ -13,6 +13,8 @@ in
       ../../../modules/home-manager/borgmatic.nix
 
       ({pkgs, ...}: {
+        home.stateVersion = "26.05";
+
         programs.borgmatic.backups."main" = {
           location = {
             sourceDirectories = [

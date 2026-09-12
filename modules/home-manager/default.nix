@@ -31,8 +31,6 @@
   home = {
     username = lib.mkDefault "dan";
     homeDirectory = lib.mkDefault "/home/dan";
-
-    stateVersion = "26.05";
   };
 
   sops = {
@@ -152,9 +150,6 @@
     "git/attributes".source = ./config/git/attributes;
     "git/config".source = ./config/git/config;
     "helix/config.toml".source = ./config/helix/config.toml;
-    # Don't manage these with Nix, having read only config files prevents changing settings from inside Zed
-    # "zed/keymap.json".source = ./config/zed/keymap.json;
-    # "zed/settings.json".source = ./config/zed/settings.json;
   };
 
   programs.dircolors.enable = true;
@@ -170,15 +165,5 @@
     defaultOptions = [
       "--cycle"
     ];
-  };
-
-  # Legacy password manager
-  # TODO: remove
-  programs.password-store = {
-    enable = true;
-    package = pkgs.pass.withExtensions (exts: [
-      exts.pass-otp
-    ]);
-    settings = {PASSWORD_STORE_DIR = "$XDG_DATA_HOME/password-store";};
   };
 }
