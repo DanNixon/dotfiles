@@ -22,7 +22,7 @@ in
               "/home/dan/.local/share/password-store"
               "/home/dan/phone"
             ];
-            repositories = ["ssh://j409s2e9@j409s2e9.repo.borgbase.com/./repo"];
+            repositories = ["ssh://o2dl3om5@o2dl3om5.repo.borgbase.com/./repo"];
           };
           storage.encryptionPasscommand = "koishi get borg/yama.yaml passphrase";
         };
