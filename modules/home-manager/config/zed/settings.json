@@ -1,16 +1,24 @@
 {
   "project_panel": {
-    "folder_icons": false,
+    "folder_indicator": "chevron",
     "file_icons": true,
     "entry_spacing": "comfortable",
     "dock": "left",
   },
   "agent": {
+    "sandbox_permissions": {
+      "network_hosts": [
+        "crates.io",
+        "github.com",
+        "api.github.com",
+        "raw.githubusercontent.com",
+        "docs.rs"
+      ]
+    },
     "default_profile": "write",
     "default_model": {
-      "effort": "high",
-      "provider": "copilot_chat",
-      "model": "claude-sonnet-4.6",
+      "provider": "openrouter",
+      "model": "openrouter/auto-beta",
       "enable_thinking": true,
     },
     "favorite_models": [],
