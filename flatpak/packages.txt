@@ -17,6 +17,7 @@ me.iepure.devtoolbox
 net.ankiweb.Anki
 net.werwolv.ImHex
 nl.sarine.gpx-viewer
+no.mifi.losslesscut
 org.freecad.FreeCAD
 org.gimp.GIMP
 org.gnome.Papers
