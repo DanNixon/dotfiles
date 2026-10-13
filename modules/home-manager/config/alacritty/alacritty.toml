@@ -3,14 +3,15 @@ live_config_reload = true
 import = ["~/.config/alacritty/colors.toml"]
 
 [cursor]
-style = "Block"
+style.shape = "Block"
+style.blinking = "Never"
 unfocused_hollow = true
 
 [env]
 TERM = "alacritty"
 
 [font]
-size = 8.5
+size = 9.5
 normal = { family = "DejaVuSansM Nerd Font Mono", style = "Regular" }
 bold   = { family = "DejaVuSansM Nerd Font Mono", style = "Bold" }
 italic = { family = "DejaVuSansM Nerd Font Mono", style = "Italic" }
