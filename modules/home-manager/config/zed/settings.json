@@ -1,4 +1,10 @@
 {
+  "collaboration_panel": {
+    "button": false
+  },
+  "git_panel": {
+    "dock": "left"
+  },
   "project_panel": {
     "folder_indicator": "chevron",
     "file_icons": true,
@@ -6,6 +12,10 @@
     "dock": "left",
   },
   "agent": {
+    "dock": "right",
+    "threads_sidebar": {
+      "position": "right"
+    },
     "sandbox_permissions": {
       "network_hosts": [
         "crates.io",
@@ -17,8 +27,9 @@
     },
     "default_profile": "write",
     "default_model": {
-      "provider": "openrouter",
-      "model": "openrouter/auto-beta",
+      "effort": "medium",
+      "provider": "zed.dev",
+      "model": "gpt-6-luna",
       "enable_thinking": true,
     },
     "favorite_models": [],
