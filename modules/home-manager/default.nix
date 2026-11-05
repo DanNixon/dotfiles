@@ -43,7 +43,6 @@
     qrencode
     zbar
     hydra-check
-    wireshark
 
     # System tools
     bottom
@@ -79,6 +78,7 @@
     sshuttle
     trippy
     wget
+    wireshark
 
     # Physical media backup tools
     cdparanoia # Backing up audio CDs
@@ -108,6 +108,7 @@
     git
     lazygit
     opencode
+    quickemu
 
     # Text editor stuff
     helix
