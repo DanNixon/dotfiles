@@ -152,6 +152,10 @@
     "git/attributes".source = ./config/git/attributes;
     "git/config".source = ./config/git/config;
     "helix/config.toml".source = ./config/helix/config.toml;
+    "imv/config".source = ./config/imv/config;
+  };
+  home.file = {
+    ".var/app/io.mpv.Mpv/config/mpv/input.conf".source = ./config/mpv/input.conf;
   };
 
   programs.dircolors.enable = true;
