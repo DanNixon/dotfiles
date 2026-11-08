@@ -6,7 +6,7 @@ set -e
 SCRIPT_DIR="$( cd "$( dirname "${BASH_SOURCE[0]}" )" &> /dev/null && pwd )"
 
 CONFIG_FILES=(
-    "fish/config.fish"
+    "fish/conf.d/config.fish"
     "fish/functions/fish_bind_count.fish"
     "fish/functions/fish_default_mode_prompt.fish"
     "fish/functions/fish_helix_command.fish"

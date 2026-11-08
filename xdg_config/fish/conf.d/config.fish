@@ -1,6 +1,25 @@
 set -U fish_greeting
 
+set -gx XDG_BIN_HOME "$HOME/.local/bin"
+set -gx XDG_CACHE_HOME "$HOME/.cache"
+set -gx XDG_CONFIG_HOME "$HOME/.config"
+set -gx XDG_DATA_HOME "$HOME/.local/share"
+set -gx XDG_STATE_HOME "$HOME/.local/state"
+
 if status is-interactive
+    set -gx COMMA_PICKER fzf
+    set -gx EDITOR hx
+    set -gx FZF_DEFAULT_OPTS --cycle
+    set -gx SOPS_AGE_KEY_CMD 'age-plugin-yubikey -i'
+
+    if command -v fzf &>/dev/null
+        eval "$(fzf --fish)"
+    end
+
+    if command -v direnv &>/dev/null
+        eval "$(direnv hook fish)"
+    end
+
     abbr -a -- .. 'cd ..'
     abbr -a -- c clear
     abbr -a -- df 'df -h'
@@ -27,6 +46,3 @@ if status is-interactive
     abbr -a -- tt 'hx $HOME/notebook/todo.txt'
     abbr -a -- e hx
 end
-
-# TODO: direnv
-# TODO: fzf

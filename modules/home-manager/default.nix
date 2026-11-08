@@ -8,9 +8,9 @@
   ...
 }: {
   imports = [
+    inputs.nix-index-database.homeModules.nix-index
     inputs.sops-nix.homeManagerModules.sops
     ./desktop_environment.nix
-    ./nix-index.nix
   ];
 
   nixpkgs = {
@@ -40,6 +40,8 @@
 
   home.packages = with pkgs; [
     # Misc tools
+    direnv
+    fzf
     qrencode
     zbar
     hydra-check
@@ -129,11 +131,6 @@
     perlPackages.CryptHSXKPasswd
   ];
 
-  home.sessionVariables = {
-    EDITOR = "hx";
-    SOPS_AGE_KEY_CMD = "age-plugin-yubikey -i";
-  };
-
   sops.secrets = {
     hsxkpasswdrc.path = "${config.home.homeDirectory}/.hsxkpasswdrc";
     "rclone.conf".path = "${config.home.homeDirectory}/.config/rclone/rclone.conf";
@@ -143,7 +140,7 @@
   xdg.configFile = {
     "alacritty/alacritty.toml".source = ../../xdg_config/alacritty/alacritty.toml;
     "alacritty/colors.toml".source = ../../xdg_config/alacritty/colors.toml;
-    "fish/conf.d/config.fish".source = ../../xdg_config/fish/config.fish;
+    "fish/conf.d/config.fish".source = ../../xdg_config/fish/conf.d/config.fish;
     "fish/functions/fish_bind_count.fish".source = ../../xdg_config/fish/functions/fish_bind_count.fish;
     "fish/functions/fish_default_mode_prompt.fish".source = ../../xdg_config/fish/functions/fish_default_mode_prompt.fish;
     "fish/functions/fish_helix_command.fish".source = ../../xdg_config/fish/functions/fish_helix_command.fish;
@@ -158,18 +155,9 @@
     ".var/app/io.mpv.Mpv/config/mpv/input.conf".source = ../../xdg_config/mpv/input.conf;
   };
 
-  programs.dircolors.enable = true;
-  programs.fish.enable = true;
-
-  programs.direnv = {
-    enable = true;
-    nix-direnv.enable = true;
+  programs.nix-index = {
+    enableFishIntegration = false;
+    enableBashIntegration = false;
   };
-
-  programs.fzf = {
-    enable = true;
-    defaultOptions = [
-      "--cycle"
-    ];
-  };
+  programs.nix-index-database.comma.enable = true;
 }
