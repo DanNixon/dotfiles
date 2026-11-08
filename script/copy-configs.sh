@@ -18,7 +18,7 @@ CONFIG_FILES=(
 )
 
 for config_rel_path in "${CONFIG_FILES[@]}"; do
-    full_repo_path="${SCRIPT_DIR}/../modules/home-manager/config/${config_rel_path}"
+    full_repo_path="${SCRIPT_DIR}/../xdg_config/${config_rel_path}"
     local_path="$HOME/.config/${config_rel_path}"
     
     mkdir -p "$(dirname "$local_path")"
