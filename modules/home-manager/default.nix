@@ -100,7 +100,6 @@
     devenv
     distrobox
     gcc
-    google-cloud-sdk
     k9s
     kubectl
     shellcheck
@@ -109,7 +108,6 @@
     gfold
     git
     lazygit
-    opencode
     quickemu
 
     # Text editor stuff
