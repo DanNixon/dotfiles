@@ -5,6 +5,7 @@ keys:
   - &dannixon-sk-red age1yubikey1q236gnfv88v7ln4drft9y7swllwc5la5m9dut57ck8e9kcs0e32zqnqfg8l
 
   - &hina age15h88ga5ppyxypef22nxajd9mputzjhhslawz8sua0f0hjv08nyeqc0nkq5
+  - &koa age19ekmqc4400ysg44hejl2wmc8qfe02z4j38xc5khdcgduchrwt48q25jhxc
   - &maya age199xcudp4zg0gy5jwj6qtq59emcwwul0vxpr64p0hy5up6xh5ugvsyxng7u
   - &yama age1m7gx8exzvvynkujsvjz7wj6pppn9q6jqpunepdvy9hfepg7ervtqeu44j5
 
@@ -17,5 +18,6 @@ creation_rules:
           - *dannixon-sk-green
           - *dannixon-sk-red
           - *hina
+          - *koa
           - *maya
           - *yama

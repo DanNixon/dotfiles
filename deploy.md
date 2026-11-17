@@ -18,7 +18,7 @@ Assumptions:
 2. Home Manager setup
     1. Insert and mount dotfiles storage device
     2. Deploy (`nix run nixpkgs#home-manager -- switch --flake .`)
-    3. Set Helix key bindings (`set -U fish_key_bindings fish_helix_key_bindings`)
+    3. Set Fish Helix key bindings (`set -U fish_key_bindings fish_helix_key_bindings`)
     4. Remove unused XDG user directories
 3. COSMIC setup (`./script/cosmic-config-deploy.sh`)
 4. [Flatpak](./flatpak)
